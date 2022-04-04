@@ -40,3 +40,11 @@ Clone down this repository and run in VS Code.
 ### Show your support
 
 Give a ⭐ if you like this repo!!
+
+## Contributors
+
+<table>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/shashank-indukuri/"><img src="https://avatars.githubusercontent.com/u/65766473?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shashank Indukuri</b></sub></a><br /></td>
+  </tr>  
+</table>
