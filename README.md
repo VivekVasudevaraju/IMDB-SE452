@@ -46,5 +46,8 @@ Give a ⭐ if you like this repo!!
 <table>
   <tr>
     <td align="center"><a href="https://www.linkedin.com/in/shashank-indukuri/"><img src="https://avatars.githubusercontent.com/u/65766473?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shashank Indukuri</b></sub></a><br /></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://www.linkedin.com/in/devin-garrett-06a26b146/"><img src="https://avatars.githubusercontent.com/u/24257423?v=4" width="100px;" alt=""/><br /><sub><b>Devin Garrett</b></sub></a><br /></td>
   </tr>  
 </table>
