@@ -10,6 +10,7 @@
 /bin
 /.gradle
 /.vscode
+HELP.md
 
 # Package Files #
 *.jar
