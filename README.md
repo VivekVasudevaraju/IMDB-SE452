@@ -44,13 +44,23 @@ Give a ⭐ if you like this repo!!
 ## Contributors
 
 <table>
-  <tr>
-    <td><a href="https://www.linkedin.com/in/shashank-indukuri/"><img src="https://avatars.githubusercontent.com/u/65766473?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Shashank Indukuri</b></sub></a><br /></td>
-  </tr>
-  <tr>
-    <td><a href="https://www.linkedin.com/in/devin-garrett-06a26b146/"><img src="https://avatars.githubusercontent.com/u/24257423?v=4" width="100px;" alt=""/><br /><sub><b>Devin Garrett</b></sub></a><br /></td>
-  </tr>
-  <tr>
-    <td><a href="https://www.linkedin.com/in/vivekraju-vasudevaraju/"><img src="https://avatars.githubusercontent.com/u/45933612?v=4" width="100px;" alt=""/><br /><sub><b>Vivekraju Vasudevaraju</b></sub></a><br /></td>
-  </tr>  
+   <tr>
+      <td>
+        <a href="https://www.linkedin.com/in/shashank-indukuri/">
+          <img src="https://avatars.githubusercontent.com/u/65766473?v=4?s=100" width="100px;" alt=""/><br />
+          <sub><b>Shashank Indukuri</b></sub>
+        </a><br />
+      </td>
+      <td>
+        <a href="https://www.linkedin.com/in/devin-garrett-06a26b146/">
+          <img src="https://avatars.githubusercontent.com/u/24257423?v=4" width="100px;" alt=""/><br />
+          <sub><b>Devin Garrett</b></sub></a><br />
+      </td>
+      <td>
+        <a href="https://www.linkedin.com/in/vivekraju-vasudevaraju/">
+          <img src="https://avatars.githubusercontent.com/u/45933612?v=4" width="100px;" alt=""/><br />
+          <sub><b>Vivekraju Vasudevaraju</b></sub>
+        </a><br />
+      </td>
+   </tr>
 </table>
