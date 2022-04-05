@@ -68,5 +68,11 @@ Give a ⭐ if you like this repo!!
           <sub><b>Leo D. Penrose</b></sub>
         </a><br />
       </td>
+      <td>
+        <a href="https://www.linkedin.com/in/kvss-rohit-953757192/">
+          <img src="https://avatars.githubusercontent.com/u/60591737?v=4" width="100px;" alt=""/><br />
+          <sub><b>Rohit Kuppili</b></sub>
+        </a><br />
+      </td>
    </tr>
 </table>
