@@ -62,5 +62,11 @@ Give a ⭐ if you like this repo!!
           <sub><b>Vivekraju Vasudevaraju</b></sub>
         </a><br />
       </td>
+      <td>
+        <a href="https://www.linkedin.com/in/leodpenrose">
+          <img src="https://media-exp1.licdn.com/dms/image/C4E03AQGvIc1DedH-4w/profile-displayphoto-shrink_400_400/0/1645900904884?e=1654732800&v=beta&t=nAerf_da43OFnz6YPY9zcv7uqwen6K9obZb4fYSQvbM" width="100px;" alt=""/><br />
+          <sub><b>Leo D. Penrose</b></sub>
+        </a><br />
+      </td>
    </tr>
 </table>
