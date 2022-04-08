@@ -42,6 +42,10 @@ Clone down this repository and run in VS Code.
 #### Running the container:
 
 ```
+gradle build
+```
+
+```
 docker build -t group-5/imdb .
 ```
 
