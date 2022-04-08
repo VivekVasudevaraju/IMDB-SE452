@@ -33,9 +33,28 @@ This project was built using these technologies.
 - Allow to book the movie tickets in the nearby theaters
 - Create, Read, Update and Delete the review of the selected movie
 
-## 🛠 Installation and Setup Instructions
+## 🛠 Installation and Local Setup Instructions
 
 Clone down this repository and run in VS Code.
+
+## 🐋 Docker Instructions
+
+#### Running the container:
+
+```
+docker build -t group-5/imdb .
+```
+
+```
+docker run -d --name imdb-app group-5/imdb
+```
+
+#### Stopping the container:
+```
+docker stop imdb-app
+```
+
+
 
 ### Show your support
 
@@ -76,3 +95,5 @@ Give a ⭐ if you like this repo!!
       </td>
    </tr>
 </table>
+
+<hr>
