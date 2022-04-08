@@ -50,7 +50,7 @@ docker build -t group-5/imdb .
 ```
 
 ```
-docker run -d --name imdb-app group-5/imdb
+docker run -d --name imdb-app -p 8080:8080 group-5/imdb
 ```
 
 #### Stopping the container:
