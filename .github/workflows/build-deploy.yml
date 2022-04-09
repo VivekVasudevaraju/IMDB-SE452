@@ -1,0 +1,58 @@
+name: Build-Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  #Build's job
+  build:
+    name: Build
+    #Run on Ubuntu using the latest version
+    runs-on: ubuntu-latest
+    steps:
+      #Check-out your repository under $GITHUB_WORKSPACE, so your workflow can access it
+      - uses: actions/checkout@v3
+      #Set up JDK 17
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: "temurin"
+          java-version: "17"
+      # Build the application with Gradle
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          arguments: build
+      #Upload the build file
+      - name: Upload JAR
+        #This uploads artifacts from your workflow allowing you to share data between jobs and store data once a workflow is complete.
+        uses: actions/upload-artifact@v3
+        with:
+          #Set artifact name
+          name: IMDB-0.0.1-SNAPSHOT.jar
+          #From this paths
+          path: build/libs/IMDB-0.0.1-SNAPSHOT.jar
+
+  #Deploy's Job
+  deploy:
+    #Depends on build's job
+    needs: build
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      #Download JAR file
+      - name: Download JAR
+        #Download the artifact which was uploaded in the build's job
+        uses: actions/download-artifact@v3
+        with:
+          name: IMDB-0.0.1-SNAPSHOT.jar
+          path: build/libs/
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}} #Must be unique in Heroku
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
+          usedocker: true
