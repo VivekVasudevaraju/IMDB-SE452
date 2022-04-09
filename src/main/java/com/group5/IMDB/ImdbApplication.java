@@ -14,7 +14,12 @@ public class ImdbApplication {
 	}
 
 	@GetMapping
-	public String helloWorld() {
+	public String welcome() {
 		return "Welcome to IMDB";
+	}
+
+	@GetMapping("/version")
+	public String version() {
+		return "The current version is 0.0.1";
 	}
 }
