@@ -24,6 +24,7 @@ This project was built using these technologies.
 - MongoDB
 - GitHub
 - Heroku
+- CI/CD Pipeline using GitHub Actions
 
 ## Features
 
@@ -45,6 +46,12 @@ Clone down this repository and run in VS Code.
 gradle build
 ```
 
+or
+
+```
+./gradlew build
+```
+
 ```
 docker build -t group-5/imdb .
 ```
@@ -54,11 +61,28 @@ docker run -d --name imdb-app -p 8080:8080 group-5/imdb
 ```
 
 #### Stopping the container:
+
 ```
 docker stop imdb-app
 ```
 
+## 👨‍💻 Contributing Instructions
 
+```
+git checkout -b featureBranch
+```
+
+```
+git add .
+```
+
+```
+git commit -m "Commit message"
+```
+
+```
+git push -u origin featureBranch
+```
 
 ### Show your support
 
