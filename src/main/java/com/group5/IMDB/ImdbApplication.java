@@ -13,6 +13,7 @@ public class ImdbApplication {
 		SpringApplication.run(ImdbApplication.class, args);
 	}
 
+	/* Testing */
 	@GetMapping
 	public String welcome() {
 		return "Welcome to IMDB";
