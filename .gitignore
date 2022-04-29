@@ -10,6 +10,7 @@
 /bin
 /.gradle
 /.vscode
+/.idea
 HELP.md
 .DS_Store
 
