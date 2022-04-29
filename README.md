@@ -85,6 +85,14 @@ git commit -m "Commit message"
 git push -u origin featureBranch
 ```
 
+```
+git checkout main
+```
+
+```
+git branch -d featureBranch
+```
+
 ### Show your support
 
 Give a ⭐ if you like this repo!!
