@@ -29,6 +29,4 @@ public class UserReviewEntity {
     @Column(name = "user_review_text", length = 2048)
     private String userReviewText;
 
-
-
 }
