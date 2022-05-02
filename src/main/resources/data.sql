@@ -73,3 +73,37 @@ values (9, 'One Deadly Summer (L''été meurtrier)',
 insert into reviews (review_id, review_title, review_text)
 values (10, 'Life Is But a Dream', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.');
 
+
+-- Ratings Table Dummy Data
+insert into ratings (rating) values (1);
+insert into ratings (rating) values (2);
+insert into ratings (rating) values (3);
+insert into ratings (rating) values (4);
+insert into ratings (rating) values (5);
+insert into ratings (rating) values (6);
+insert into ratings (rating) values (7);
+insert into ratings (rating) values (8);
+insert into ratings (rating) values (9);
+insert into ratings (rating) values (10);
+
+-- Users Table Dummy Data
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('gtwiddell0', 'Grayce', 'Twiddell', 'gtwiddell0@youtu.be', '17126', 'PA', 'Harrisburg', '7179404563', 'jPviz39cZY');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('bgorse1', 'Bax', 'Gorse', 'bgorse1@clickbank.net', '81015', 'CO', 'Pueblo', '7196273009', 'JiGzYoC4u3');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('ggratland2', 'Gaby', 'Gratland', 'ggratland2@simplemachines.org', '20319', 'DC', 'Washington', '2025188797', 'y0B0J4');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('jbrearley3', 'Jean', 'Brearley', 'jbrearley3@hp.com', '33169', 'FL', 'Miami', '7861247719', '3hxQScti');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('mpodd4', 'Marilyn', 'Podd', 'mpodd4@indiatimes.com', '66276', 'KS', 'Shawnee Mission', '9131403117', 'dg9aaLCw');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('rfippe5', 'Rayner', 'Fippe', 'rfippe5@nature.com', '06145', 'CT', 'Hartford', '8607166538', 'wRjSNc4MTW');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('lmacmichael6', 'Layney', 'MacMichael', 'lmacmichael6@hatena.ne.jp', '46614', 'IN', 'South Bend', '5741299805', 'v0RHMCylpzx');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('icolebrook7', 'Irvin', 'Colebrook', 'icolebrook7@ft.com', '78235', 'TX', 'San Antonio', '2104047755', 'uo3zo3ig');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('nlivoir8', 'Neal', 'Livoir', 'nlivoir8@geocities.jp', '50330', 'IA', 'Des Moines', '5159472657', 'nVgze6gpZ');
+insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
+        values ('radin9', 'Ronny', 'Adin', 'radin9@yahoo.com', '80305', 'CO', 'Boulder', '3034853651', 'S7mZwoYFAZJ');
