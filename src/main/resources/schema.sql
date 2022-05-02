@@ -59,3 +59,16 @@ CREATE TABLE auditoriums (
     available_seats INTEGER NOT NULL,
     PRIMARY KEY (auditorium_id)
 );
+
+CREATE TABLE Categories(
+    category_id BIGINT AUTO_INCREMENT,
+    category VARCHAR(255) NOT NULL,
+    PRIMARY KEY (category_id)
+);
+
+CREATE TABLE Movie_Categories(
+    movie_category_id BIGINT AUTO_INCREMENT,
+    movie_id BIGINT NOT NULL,
+    category_id BIGINT NOT NULL,
+    PRIMARY KEY (movie_category_id)
+);

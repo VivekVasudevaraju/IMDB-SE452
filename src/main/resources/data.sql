@@ -121,3 +121,11 @@ insert into auditoriums (auditorium_name, available_seats) values ('Skyble', 60)
 insert into auditoriums (auditorium_name, available_seats) values ('Avavee', 58);
 insert into auditoriums (auditorium_name, available_seats) values ('Gabspot', 66);
 insert into auditoriums (auditorium_name, available_seats) values ('Linklinks', 15);
+
+
+-- Categories Table Dummy Data
+insert into categories (category) values ('Upcoming');
+insert into categories (category) values ('In Theaters');
+insert into categories (category) values ('Fan Favorities');
+insert into categories (category) values ('Top Box Office');
+insert into categories (category) values ('Originals');
