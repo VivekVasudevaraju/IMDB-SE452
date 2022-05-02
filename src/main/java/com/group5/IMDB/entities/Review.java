@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "reviews")
 @Data
-public class Review_Entity {
+public class Review {
 
     @Id
     @Column(name = "review_id", columnDefinition = "bigint")
