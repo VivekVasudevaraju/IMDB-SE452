@@ -107,3 +107,18 @@ insert into users (user_name, first_name, last_name, email, zipcode, state, city
         values ('nlivoir8', 'Neal', 'Livoir', 'nlivoir8@geocities.jp', '50330', 'IA', 'Des Moines', '5159472657', 'nVgze6gpZ');
 insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
         values ('radin9', 'Ronny', 'Adin', 'radin9@yahoo.com', '80305', 'CO', 'Boulder', '3034853651', 'S7mZwoYFAZJ');
+
+
+-- Genres Table Dummy Data
+INSERT INTO genres (genre_id, genre_name) VALUES (1, 'ACTION');
+INSERT INTO genres (genre_id, genre_name) VALUES (2, 'DRAMA');
+INSERT INTO genres (genre_id, genre_name) VALUES (3, 'ADVENTURE');
+INSERT INTO genres (genre_id, genre_name) VALUES (4, 'COMEDY');
+INSERT INTO genres (genre_id, genre_name) VALUES (5, 'HORROR');
+
+-- Movie Genres Table Dummy Data
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (1,1,1);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (2,2,2);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (3,3,3);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (4,4,4);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (5,5,5);
