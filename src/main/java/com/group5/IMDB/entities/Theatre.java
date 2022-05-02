@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Table(name = "theatres")
 @Data
 
-public class TheatreEntity {
+public class Theatre {
 
     @Id
     @Column(name = "theatre_id",columnDefinition = "bigint")
