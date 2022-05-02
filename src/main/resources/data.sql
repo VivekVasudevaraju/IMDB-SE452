@@ -107,3 +107,17 @@ insert into users (user_name, first_name, last_name, email, zipcode, state, city
         values ('nlivoir8', 'Neal', 'Livoir', 'nlivoir8@geocities.jp', '50330', 'IA', 'Des Moines', '5159472657', 'nVgze6gpZ');
 insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)
         values ('radin9', 'Ronny', 'Adin', 'radin9@yahoo.com', '80305', 'CO', 'Boulder', '3034853651', 'S7mZwoYFAZJ');
+
+
+
+-- Audiotorium Data
+insert into auditoriums (auditorium_name, available_seats) values ('Livefish', 46);
+insert into auditoriums (auditorium_name, available_seats) values ('Tambee', 07);
+insert into auditoriums (auditorium_name, available_seats) values ('Digitube', 30);
+insert into auditoriums (auditorium_name, available_seats) values ('Plajo', 37);
+insert into auditoriums (auditorium_name, available_seats) values ('Blogtag', 14);
+insert into auditoriums (auditorium_name, available_seats) values ('Jabbertype', 95);
+insert into auditoriums (auditorium_name, available_seats) values ('Skyble', 60);
+insert into auditoriums (auditorium_name, available_seats) values ('Avavee', 58);
+insert into auditoriums (auditorium_name, available_seats) values ('Gabspot', 66);
+insert into auditoriums (auditorium_name, available_seats) values ('Linklinks', 15);

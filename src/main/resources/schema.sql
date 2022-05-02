@@ -2,6 +2,8 @@ DROP TABLE IF EXISTS theatres;
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS ratings;
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS auditoriums;
 
 CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
 
@@ -38,4 +40,22 @@ CREATE TABLE users(
     phone_number BIGINT(10) NOT NULL,
     password VARCHAR(255) NOT NULL,
     PRIMARY KEY (user_name)
+);
+
+CREATE TABLE tickets (
+    ticket_id       BIGINT AUTO_INCREMENT,
+    user_name       VARCHAR(255) NOT NULL,
+    movie_id        BIGINT NOT NULL,
+    theatre_id      BIGINT NOT NULL,
+    auditorium_id   BIGINT NOT NULL,
+    showtime_id     BIGINT NOT NULL,
+    seats_booked    INTEGER NOT NULL,
+    PRIMARY KEY (ticket_id)
+);
+
+CREATE TABLE auditoriums (
+    auditorium_id   BIGINT AUTO_INCREMENT,
+    auditorium_name VARCHAR(255) NOT NULL,
+    available_seats INTEGER NOT NULL,
+    PRIMARY KEY (auditorium_id)
 );
