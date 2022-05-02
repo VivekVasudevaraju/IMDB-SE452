@@ -129,3 +129,17 @@ insert into categories (category) values ('In Theaters');
 insert into categories (category) values ('Fan Favorities');
 insert into categories (category) values ('Top Box Office');
 insert into categories (category) values ('Originals');
+
+-- Genres Table Dummy Data
+INSERT INTO genres (genre_id, genre_name) VALUES (1, 'ACTION');
+INSERT INTO genres (genre_id, genre_name) VALUES (2, 'DRAMA');
+INSERT INTO genres (genre_id, genre_name) VALUES (3, 'ADVENTURE');
+INSERT INTO genres (genre_id, genre_name) VALUES (4, 'COMEDY');
+INSERT INTO genres (genre_id, genre_name) VALUES (5, 'HORROR');
+
+-- Movie Genres Table Dummy Data
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (1,1,1);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (2,2,2);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (3,3,3);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (4,4,4);
+INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (5,5,5);

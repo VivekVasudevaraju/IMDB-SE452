@@ -72,3 +72,17 @@ CREATE TABLE Movie_Categories(
     category_id BIGINT NOT NULL,
     PRIMARY KEY (movie_category_id)
 );
+
+CREATE TABLE genres(
+    genre_id INTEGER,
+    genre_name VARCHAR(50) NOT NULL,
+    PRIMARY KEY (genre_id)
+);
+
+CREATE TABLE movie_genres(
+    movie_genre_id INTEGER,
+    movie_id INTEGER,
+    genre_id INTEGER NOT NULL,
+    PRIMARY KEY (movie_genre_id),
+    FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
+);
