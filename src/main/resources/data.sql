@@ -75,16 +75,16 @@ values (10, 'Life Is But a Dream', 'Sed ante. Vivamus tortor. Duis mattis egesta
 
 
 -- Ratings Table Dummy Data
-insert into ratings (rating) values (1);
-insert into ratings (rating) values (2);
-insert into ratings (rating) values (3);
-insert into ratings (rating) values (4);
-insert into ratings (rating) values (5);
-insert into ratings (rating) values (6);
-insert into ratings (rating) values (7);
-insert into ratings (rating) values (8);
-insert into ratings (rating) values (9);
-insert into ratings (rating) values (10);
+insert into ratings (rating_level) values (1);
+insert into ratings (rating_level) values (2);
+insert into ratings (rating_level) values (3);
+insert into ratings (rating_level) values (4);
+insert into ratings (rating_level) values (5);
+insert into ratings (rating_level) values (6);
+insert into ratings (rating_level) values (7);
+insert into ratings (rating_level) values (8);
+insert into ratings (rating_level) values (9);
+insert into ratings (rating_level) values (10);
 
 -- Users Table Dummy Data
 insert into users (user_name, first_name, last_name, email, zipcode, state, city, phone_number, password)

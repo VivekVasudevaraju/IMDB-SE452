@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS movie_genres;
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS ratings;
 DROP TABLE IF EXISTS users;
-DROP TABLE IF EXISTS cast;
+DROP TABLE IF EXISTS casts;
 DROP TABLE IF EXISTS movie_cast;
 DROP TABLE IF EXISTS theatre_movie;
 DROP TABLE IF EXISTS theatres;
@@ -23,7 +23,7 @@ CREATE TABLE categories (
     PRIMARY KEY (category_id)
 );
 
-CREATE TABLE movies(
+CREATE TABLE movies (
     movie_id            BIGINT NOT NULL,
     movie_title         VARCHAR(255) NOT NULL,
     description         VARCHAR(255) NOT NULL,
@@ -51,26 +51,23 @@ CREATE TABLE movie_genres (
     FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
 );
 
-CREATE TABLE reviews(
+CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
     review_text         VARCHAR(255) NOT NULL,
-    movie_id            BIGINT NOT NULL,
-    user_name           VARCHAR(255) NOT NULL,
-    review_likes        INTEGER NOT NULL,
+    -- movie_id            BIGINT NOT NULL,
+    -- user_name           VARCHAR(255) NOT NULL,
+    -- review_likes        INTEGER NOT NULL,
 
-    PRIMARY KEY (movie_id),
-    PRIMARY KEY (user_name)
+    PRIMARY KEY (review_id)
 );
 
 CREATE TABLE ratings (
     rating_id           BIGINT AUTO_INCREMENT,
-    movie_id            BIGINT NOT NULL,
-    user_name           VARCHAR(255) NOT NULL
-    rating              INTEGER NOT NULL,
+    -- movie_id            BIGINT NOT NULL,
+    -- user_name           VARCHAR(255) NOT NULL,
+    rating_level        INTEGER NOT NULL,
 
-    PRIMARY KEY (movie_id),
-    PRIMARY KEY (user_name),
     PRIMARY KEY (rating_id)
 );
 
@@ -88,7 +85,7 @@ CREATE TABLE users (
     PRIMARY KEY (user_name)
 );
 
-CREATE TABLE cast (
+CREATE TABLE casts (
     cast_id             BIGINT NOT NULL,
     cast_name           VARCHAR(255) NOT NULL,
     gender              VARCHAR(255) NOT NULL,
@@ -114,11 +111,9 @@ CREATE TABLE theatre_movie (
     theatre_movie_id    BIGINT,
     theatre_id          BIGINT NOT NULL,
     movie_id            BIGINT NOT NULL,
-    theatre_movie_id    BIGINT NOT NULL,
 
     PRIMARY KEY (theatre_movie_id),
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
-    FOREIGN KEY (cast_id) REFERENCES cast(cast_id)
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
 CREATE TABLE theatres (
@@ -132,11 +127,11 @@ CREATE TABLE theatres (
 );
 
 CREATE TABLE theatre_auditorium (
+    theatre_auditorium_id BIGINT,
     theatre_id          BIGINT NOT NULL,
     auditorium_id       BIGINT NOT NULL,
 
-    PRIMARY KEY (theatre_id),
-    PRIMARY KEY (auditorium_id)
+    PRIMARY KEY (theatre_auditorium_id)
 );
 
 CREATE TABLE auditoriums (
@@ -147,7 +142,7 @@ CREATE TABLE auditoriums (
     PRIMARY KEY (auditorium_id)
 );
 
-CREATE TABLE showtimes(
+CREATE TABLE showtimes (
     showtime_id         BIGINT NOT NULL,
     auditorium_id       BIGINT NOT NULL,
     start_time          TIME(0) WITHOUT TIME ZONE NOT NULL,
