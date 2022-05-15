@@ -1,0 +1,32 @@
+.modal-content {
+  background-color: #313131;
+  color: #ffffff;
+}
+
+.modal-header {
+  border-bottom: 0px;
+}
+
+.movie-title {
+  width: 95%;
+  text-align: center;
+  color: #f5c937;
+}
+
+.movie-name {
+  width: 100%;
+  text-align: center;
+}
+
+.movie-rating {
+  width: 100%;
+  text-align: center;
+}
+
+.modal-footer {
+  border-top: 0px;
+}
+
+.rate-button {
+  width: 20em;
+}
