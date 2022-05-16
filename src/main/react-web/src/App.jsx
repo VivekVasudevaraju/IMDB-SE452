@@ -19,7 +19,7 @@ function App() {
     </Routes>
   );
   return (
-    <div>
+    <div className="App">
       <StateContext.Provider value={{ state, dispatch }}>
         <Router>
           <Container>
