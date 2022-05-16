@@ -17,6 +17,9 @@ const HeaderBar = () => {
             <Link to="/movies" className="btn text-decoration-none">
               Movies
             </Link>
+            <Link to="/userReviews" className="btn text-decoration-none">
+              User Reviews
+            </Link>
           </Nav>
           <React.Suspense fallback="Loading...">
             <UserCard />
