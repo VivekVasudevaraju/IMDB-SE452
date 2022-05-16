@@ -22,15 +22,15 @@ function UserCard() {
   }
   return (
     <div className="justify-content-end">
-      <Button variant="light" onClick={() => setShowRating(true)}>
+      <Button variant="dark" onClick={() => setShowRating(true)}>
         Rate
       </Button>
       <Rating show={showRating} handleClose={() => setShowRating(false)} />
-      <Button variant="light" onClick={() => setShowLogin(true)}>
+      <Button variant="dark" onClick={() => setShowLogin(true)}>
         Login
       </Button>
       <Login show={showLogin} handleClose={() => setShowLogin(false)} />
-      <Button variant="light" onClick={() => setShowRegister(true)}>
+      <Button variant="dark" onClick={() => setShowRegister(true)}>
         Register
       </Button>
       <Register
