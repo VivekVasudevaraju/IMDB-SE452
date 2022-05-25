@@ -29,13 +29,27 @@ class UserReviewPage extends Component{
                 <h1 className="display-1">MOVIE POSTER</h1>
                 <h1 className="display-3">MOVIE RATING</h1>
 
-                <form action=""> add review </form>
+                <form action="">
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlInput1"></label>
+                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="enter review title"></input>
+                    </div>
+                    <div className="form-group">
+                        <label htmlFor="exampleFormControlTextarea1"> </label>
+                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder={"enter movie review"}></textarea>
+                    </div>
+                    <div style={{paddingTop:"10px",paddingLeft:"575px"}} className="btn-group" role="group" aria-label="Basic mixed styles example">
+                        <button type="button" className="btn btn-success">Submit</button>
+                    </div>
+                </form>
+
+
 
             </div>
 
 
 
-            <div className={"col"} style={{paddingLeft:"50px"}}>
+            <div className={"col"} style={{paddingLeft:"80px"}}>
                 <h1 className="display-1">User Reviews</h1>
                 <br/>
                 <MovieReview
