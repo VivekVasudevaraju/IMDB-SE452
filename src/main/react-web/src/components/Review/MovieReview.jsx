@@ -12,7 +12,7 @@ class MovieReview extends React.Component{
         return(
 
 
-            <div className={"row"} style={{display:"auto",width:"75%",height:"50%"}} >
+            <div className={"row"}  >
                     <div >
 
 
@@ -20,7 +20,7 @@ class MovieReview extends React.Component{
                             <p style={ {color:"#4A5CFF",fontSize:14, fontWeight: "bold"} } >{this.props.userName}</p>
                             <p  style={ {color:"white",fontSize:"12px"} }>{this.props.reviewData}</p>
 
-                        <div className={"row"} style={{paddingBottom:"45px"}}>
+                        <div className={"row"}>
                             <div className={"col-1"}>
                                 <i style={{color:"green"}} className="fa-regular fa-thumbs-up fa-1xl"></i>
                                 <p>0</p>

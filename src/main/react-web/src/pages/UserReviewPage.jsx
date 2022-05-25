@@ -22,7 +22,7 @@ class UserReviewPage extends Component{
 
         <div className={"row"} style={{paddingTop:"10%",paddingBottom:"15%"}}>
 
-            <div className={"col"}>
+            <div className={"col-6"}>
 
                 <h1 className="display-1">MOVIE TITLE</h1>
                 <br/>
@@ -38,7 +38,7 @@ class UserReviewPage extends Component{
                         <label htmlFor="exampleFormControlTextarea1"> </label>
                         <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder={"enter movie review"}></textarea>
                     </div>
-                    <div style={{paddingTop:"10px",paddingLeft:"575px"}} className="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <div style={{paddingTop:"10px"}} className="btn-group" role="group" aria-label="Basic mixed styles example">
                         <button type="button" className="btn btn-success">Submit</button>
                     </div>
                 </form>
@@ -62,7 +62,11 @@ class UserReviewPage extends Component{
                     reviewTitle={userTitleData}
                     reviewData = {movieDummyData}/>
 
+                <i style={{color:"#F2DB83",paddingLeft:"140px"}} className="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                <i style={{color:"#F2DB83",paddingLeft:"30px"}} className="fa-solid fa-circle-chevron-right fa-2xl"></i>
+
             </div>
+
 
 
                 </div>
