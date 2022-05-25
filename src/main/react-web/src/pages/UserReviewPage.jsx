@@ -20,7 +20,7 @@ class UserReviewPage extends Component{
         return(
 
             <div style={{paddingTop:"10%",paddingLeft:"670px",paddingBottom:"15%"}}>
-                <h1>User Reviews</h1>
+                <h1 className="display-1">User Reviews</h1>
                 <br/>
                 <MovieReview
                     userName={usernameData}
