@@ -19,7 +19,23 @@ class UserReviewPage extends Component{
 
         return(
 
-            <div style={{paddingTop:"10%",paddingLeft:"670px",paddingBottom:"15%"}}>
+
+        <div className={"row"} style={{paddingTop:"10%",paddingBottom:"15%"}}>
+
+            <div className={"col"}>
+
+                <h1 className="display-1">MOVIE TITLE</h1>
+                <br/>
+                <h1 className="display-1">MOVIE POSTER</h1>
+                <h1 className="display-3">MOVIE RATING</h1>
+
+                <form action=""> add review </form>
+
+            </div>
+
+
+
+            <div className={"col"} style={{paddingLeft:"50px"}}>
                 <h1 className="display-1">User Reviews</h1>
                 <br/>
                 <MovieReview
@@ -32,13 +48,10 @@ class UserReviewPage extends Component{
                     reviewTitle={userTitleData}
                     reviewData = {movieDummyData}/>
 
-                <MovieReview
-                    userName={usernameData}
-                    reviewTitle={userTitleData}
-                    reviewData = {movieDummyData}/>
-
-
             </div>
+
+
+                </div>
         );
     }
 
