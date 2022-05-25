@@ -24,10 +24,17 @@ class UserReviewPage extends Component{
 
             <div className={"col-6"}>
 
-                <h1 className="display-1">MOVIE TITLE</h1>
+                <h1 style={{color:"#F2DB83"}} className="display-3">Moon Knight</h1>
                 <br/>
                 <img src="https://m.media-amazon.com/images/M/MV5BYTc5OWNhYjktMThlOS00ODUxLTgwNDQtZjdjYjkyM2IwZTZlXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_QL75_UX380_CR0,0,380,562_.jpg" alt=""/>
-                <h1 className="display-3">MOVIE RATING</h1>
+
+                <div style={{paddingTop:"25px"}} className={"row"}>
+                    <p style={{fontSize:"38px",paddingLeft:"175px"}} className="col-1">7/10</p>
+                    <i style={{color:"#F2DB83",paddingTop:"30px",paddingLeft:"70px"}} className="col-1 fa-regular fa-star fa-2xl"></i>
+
+                </div>
+
+
 
                 <form action="">
                     <div className="form-group">
@@ -50,7 +57,7 @@ class UserReviewPage extends Component{
 
 
             <div className={"col"} style={{paddingLeft:"80px"}}>
-                <h1 className="display-1">User Reviews</h1>
+                <h1 className="display-1">USER REVIEWS</h1>
                 <br/>
                 <MovieReview
                     userName={usernameData}
