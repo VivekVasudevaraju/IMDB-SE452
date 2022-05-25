@@ -6,6 +6,8 @@ import appReducer from "./store/reducers";
 import StateContext from "./store/Contexts";
 import HeaderBar from "./pages/HeaderBar";
 import HomePage from "./pages/HomePage";
+import UserReviewPage from "./pages/UserReviewPage";
+
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, {
@@ -16,6 +18,8 @@ function App() {
   const routes = (
     <Routes>
       <Route index element={<HomePage />} />
+      <Route path={"userreviews"} element={<UserReviewPage />} />
+
     </Routes>
   );
   return (

@@ -17,7 +17,7 @@ const HeaderBar = () => {
             <Link to="/movies" className="btn text-decoration-none">
               Movies
             </Link>
-            <Link to="/userReviews" className="btn text-decoration-none">
+            <Link to="/userreviews"  className="btn text-decoration-none">
               User Reviews
             </Link>
           </Nav>
