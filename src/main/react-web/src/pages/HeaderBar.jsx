@@ -6,7 +6,7 @@ import Header from "../components/Header";
 
 const HeaderBar = () => {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="dark" expand="lg">
       <Container>
         <Navbar.Brand>
           <Header text="IMDB" />
@@ -14,7 +14,7 @@ const HeaderBar = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Link to="/movies" className="btn text-decoration-none">
+            <Link to="/movies" className="btn btn-dark">
               Movies
             </Link>
             <Link to="/userreviews"  className="btn text-decoration-none">

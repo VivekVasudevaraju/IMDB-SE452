@@ -1,9 +1,11 @@
 .App {
-  background-color: #000000;
+  background-color: #212529;
+  color: #FCFFF7;
+  height: 100vh;
 }
 
 .App-header {
-  background-color: #000000;
+  background-color: #212529;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
