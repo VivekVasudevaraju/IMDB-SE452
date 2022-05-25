@@ -16,12 +16,24 @@ class UserReviewPage extends Component{
 
 
         return(
-            <div>
-                <h1>User Reviews</h1>
+            <div style={{paddingTop:"10%",paddingLeft:"670px",paddingBottom:"15%"}}>
+
                 <MovieReview
                     userName={usernameData}
                     reviewTitle={userTitleData}
                     reviewData = {movieDummyData}/>
+
+                <MovieReview
+                    userName={usernameData}
+                    reviewTitle={userTitleData}
+                    reviewData = {movieDummyData}/>
+
+                <MovieReview
+                    userName={usernameData}
+                    reviewTitle={userTitleData}
+                    reviewData = {movieDummyData}/>
+
+
             </div>
         );
     }

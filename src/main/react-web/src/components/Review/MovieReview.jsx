@@ -4,32 +4,24 @@ class MovieReview extends React.Component{
     render(){
 
         const styleObj = {
-            fontSize: 40,
+            fontSize: 18,
             fontWeight: "bold",
-            color: "Purple",
+            color: "White",
         }
 
         return(
 
 
-            <div className={"element"}>
+            <div style={{display:"auto",width:"75%",height:"50%"}} >
 
 
                 <p style= { styleObj } > {this.props.reviewTitle} </p>
-
-                <h2 style={ {color:"#72a4d4"} } >{this.props.userName}</h2>
-
-
-
-
-                <p style={ {width: 750, color:"white",fontSize:"20px"} }>
-                    {this.props.reviewData}
-                </p>
+                <p style={ {color:"#4A5CFF",fontSize:14, fontWeight: "bold"} } >{this.props.userName}</p>
+                <p style={ {display:"auto",width: "75%",height:"50%", color:"white",fontSize:"12px"} }>{this.props.reviewData}</p>
 
                 <div style={{paddingBottom:"45px"}}>
-                    <i style={{color:"green",paddingLeft:"665px", paddingRight:"30px"}} className="fa-regular fa-thumbs-up fa-2xl"></i>
-                    <i style={{color:"red"}}className="fa-regular fa-thumbs-down fa-2xl"></i>
-
+                    <i style={{color:"green",paddingLeft:"60px", paddingRight:"30px"}} className="fa-regular fa-thumbs-up fa-1xl"></i>
+                    <i style={{color:"red"}}className="fa-regular fa-thumbs-down fa-1xl"></i>
                 </div>
 
 
