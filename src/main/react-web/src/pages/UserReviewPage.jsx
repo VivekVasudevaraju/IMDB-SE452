@@ -20,13 +20,13 @@ class UserReviewPage extends Component{
         return(
 
 
-        <div className={"row"} style={{paddingTop:"10%",paddingBottom:"15%"}}>
+        <div className={"row"} style={{paddingTop:"3%"}}>
 
             <div className={"col-6"}>
 
                 <h1 className="display-1">MOVIE TITLE</h1>
                 <br/>
-                <h1 className="display-1">MOVIE POSTER</h1>
+                <img src="https://m.media-amazon.com/images/M/MV5BYTc5OWNhYjktMThlOS00ODUxLTgwNDQtZjdjYjkyM2IwZTZlXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_QL75_UX380_CR0,0,380,562_.jpg" alt=""/>
                 <h1 className="display-3">MOVIE RATING</h1>
 
                 <form action="">
@@ -62,7 +62,7 @@ class UserReviewPage extends Component{
                     reviewTitle={userTitleData}
                     reviewData = {movieDummyData}/>
 
-                <i style={{color:"#F2DB83",paddingLeft:"140px"}} className="fa-solid fa-circle-chevron-left fa-2xl"></i>
+                <i style={{color:"#F2DB83"}} className="fa-solid fa-circle-chevron-left fa-2xl"></i>
                 <i style={{color:"#F2DB83",paddingLeft:"30px"}} className="fa-solid fa-circle-chevron-right fa-2xl"></i>
 
             </div>
