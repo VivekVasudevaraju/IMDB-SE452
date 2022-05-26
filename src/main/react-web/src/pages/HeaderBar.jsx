@@ -14,39 +14,45 @@ const HeaderBar = () => {
   return (
     <Navbar bg="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">IMDB</Navbar.Brand>
+        <Navbar.Brand className="rounded btn" href="#">
+          IMDb
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
-          <Form className="d-flex">
+          <Form id="search" className="d-flex form">
             <FormControl
               type="search"
               placeholder="Search"
-              className="me-2"
               aria-label="Search"
             />
             <Button variant="outline-success d-flex align-items-center">
               <BsSearch />
             </Button>
           </Form>
+          <Nav.Link className="link" href="#home">
+            Home
+          </Nav.Link>
+          <Nav.Link className="link" href="#movies">
+            Movies
+          </Nav.Link>
+          <Nav.Link className="link" href="#tv_shows">
+            TV Shows
+          </Nav.Link>
+          <Nav.Link className="link" href="#liked">
+            Liked
+          </Nav.Link>
         </Navbar.Collapse>
         <Nav
           className="me-auto my-2 my-lg-0"
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <Nav.Link href="#action1">Home</Nav.Link>
-          <Nav.Link href="#action2">Link</Nav.Link>
-          <NavDropdown title="Link" id="navbarScrollingDropdown">
-            <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action4">Another action</NavDropdown.Item>
+          <NavDropdown title="User" id="navbarScrollingDropdown">
+            <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
+            <NavDropdown.Item href="#setting">Settings</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#action5">
-              Something else here
-            </NavDropdown.Item>
+            <NavDropdown.Item href="#log_out">Log out</NavDropdown.Item>
           </NavDropdown>
-          <Nav.Link href="#" disabled>
-            Link
-          </Nav.Link>
         </Nav>
       </Container>
     </Navbar>
