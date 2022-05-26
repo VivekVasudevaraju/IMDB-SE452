@@ -1,20 +1,69 @@
 .App {
+  padding-top: 0.5rem;
+  padding-bottom: 3rem;
   background-color: #212529;
-  color: #FCFFF7;
-  height: 100vh;
+  color: #fcfff7;
+  height: 100%;
 }
 
-.App-header {
-  background-color: #212529;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: white;
+.form {
+  margin-right: 2rem;
 }
 
-.tab {
-  display: inline-block;
-  margin-left: 25px;
+.link,
+#navbarScrollingDropdown {
+  color: #fcfff7 !important;
+  display: block !important;
+  padding: 0.5rem 1rem !important;
+  text-decoration: none !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out !important;
+}
+
+.link:focus,
+#navbarScrollingDropdown:focus {
+  border-bottom: 2px solid #f5c518;
+}
+
+.link:hover,
+#navbarScrollingDropdown:hover,
+.link:active,
+#navbarScrollingDropdown:active,
+.link:visited,
+#navbarScrollingDropdown:visited {
+  color: #fcfff7bd !important;
+}
+
+.navbar-light .navbar-brand {
+  background: #f5c518;
+  color: black;
+  font-weight: bold;
+}
+
+#search > input {
+  color: #fcfff7;
+  border: 0.25px solid #fcfff7db;
+  background-color: #212529;
+  border-radius: 1rem;
+  border-right: none;
+  border-top-right-radius: 0rem;
+  border-bottom-right-radius: 0rem;
+}
+
+#search > button {
+  border: 0.25px solid #fcfff7db;
+  color: #fcfff7;
+  border-radius: 1rem;
+  border-left: none;
+  border-top-left-radius: 0rem;
+  border-bottom-left-radius: 0rem;
+}
+
+#search > button:hover {
+  background-color: #f5c518;
+  color: #212529;
+}
+
+.dropdown-menu {
+  min-width: 9rem !important;
 }
