@@ -22,4 +22,10 @@ public class Review {
     @Column(name = "review_text", columnDefinition = "varchar(500)")
     private String reviewText;
 
+    @Column(name = "thumbs_up", columnDefinition = "bigint")
+    private Integer thumbsUp;
+
+    @Column(name = "thumbs_down", columnDefinition = "bigint")
+    private Integer thumbsDown;
+
 }
