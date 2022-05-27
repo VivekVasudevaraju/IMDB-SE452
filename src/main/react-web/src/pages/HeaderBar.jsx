@@ -12,6 +12,7 @@ import { BsSearch } from "react-icons/bs";
 import {Link} from "react-router-dom";
 import UserCard from "../components/User/UserCard";
 
+
 const HeaderBar = () => {
   return (
     <Navbar bg="dark" expand="lg">
