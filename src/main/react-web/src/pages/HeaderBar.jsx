@@ -9,6 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
+import { Link } from "react-router-dom";
 import UserCard from "../components/User/UserCard";
 import Rating from "../components/Rating/MovieRating";
 
@@ -17,8 +18,10 @@ const HeaderBar = () => {
   return (
     <Navbar bg="dark" expand="lg">
       <Container fluid>
-        <Navbar.Brand className="rounded btn" href="#">
-          IMDb
+        <Navbar.Brand className="rounded btn">
+          <Link to="/" className="text-decoration-none text-reset">
+            IMDb
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -32,9 +35,9 @@ const HeaderBar = () => {
               <BsSearch />
             </Button>
           </Form>
-          <Nav.Link className="link" href="#home">
+          <Link to="/" className="text-decoration-none text-reset">
             Home
-          </Nav.Link>
+          </Link>
           <Nav.Link className="link" href="#movies">
             Movies
           </Nav.Link>
@@ -54,11 +57,12 @@ const HeaderBar = () => {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
+          <Link to={"/userreviews"}> user review </Link>
           <NavDropdown title="User" id="navbarScrollingDropdown">
             <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#setting">Settings</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#log_out">
+            <NavDropdown.Item>
               <UserCard />
             </NavDropdown.Item>
           </NavDropdown>

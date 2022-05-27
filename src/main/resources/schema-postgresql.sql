@@ -56,6 +56,9 @@ CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
     review_text         VARCHAR(255) NOT NULL,
+    review_likes        INTEGER NOT NULL,
+    review_dislikes     INTEGER NOT NULL,
+
     -- movie_id            BIGINT NOT NULL,
     -- user_name           VARCHAR(255) NOT NULL,
     -- review_likes        INTEGER NOT NULL,
