@@ -9,6 +9,7 @@ import {
   Button,
 } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
+import {Link} from "react-router-dom";
 
 const HeaderBar = () => {
   return (
@@ -41,12 +42,14 @@ const HeaderBar = () => {
           <Nav.Link className="link" href="#liked">
             Liked
           </Nav.Link>
+
         </Navbar.Collapse>
         <Nav
           className="me-auto my-2 my-lg-0"
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
+          <Link to={"/userreviews"} > user review </Link>
           <NavDropdown title="User" id="navbarScrollingDropdown">
             <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#setting">Settings</NavDropdown.Item>
