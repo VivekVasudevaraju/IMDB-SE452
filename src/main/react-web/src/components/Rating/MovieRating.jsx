@@ -6,14 +6,13 @@ import "./MovieRating.css";
 import { Rating } from "react-simple-star-rating";
 
 const MovieRating = ({ show, handleClose }) => {
-  const { dispatch } = useContext(StateContext);
-  const [rating, setRating] = useState(0);
+  const [ratingLevel, setRating] = useState(0);
   const [saveRatingFailed, setSaveRatingFailed] = useState(false);
 
   const [rate, storeRating] = useResource(() => ({
-    url: "/rest/rate/",
+    url: "/api/rating/",
     method: "post",
-    data: { rating },
+    data: { ratingLevel },
   }));
 
   useEffect(() => {
@@ -22,6 +21,7 @@ const MovieRating = ({ show, handleClose }) => {
         setSaveRatingFailed(true);
       } else {
         setSaveRatingFailed(false);
+        console.log(rate.data);
         // dispatch({
         //   type: "LOGIN",
         //   id: user.data.id,
@@ -43,7 +43,7 @@ const MovieRating = ({ show, handleClose }) => {
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            storeRating(rating);
+            storeRating(ratingLevel);
           }}
         >
           <Modal.Header closeButton>
@@ -56,7 +56,7 @@ const MovieRating = ({ show, handleClose }) => {
             <div className="movie-rating">
               <Rating
                 onClick={handleRating}
-                ratingValue={rating}
+                ratingValue={ratingLevel}
                 fillColor="#65A1F0"
                 iconsCount={10}
               />
@@ -71,7 +71,7 @@ const MovieRating = ({ show, handleClose }) => {
             <Button
               variant="dark"
               className="rate-button"
-              disabled={rating.length === 0}
+              disabled={ratingLevel.length === 0}
               type="submit"
             >
               Rate

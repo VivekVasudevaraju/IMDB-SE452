@@ -18,17 +18,17 @@ function UserCard() {
   } else if (!authState.isAuthenticated) {
     return (
       <div>
-        <a variant="dark" onClick={handleLogin}>
+        <Button variant="light" onClick={handleLogin}>
           Login
-        </a>
+        </Button>
       </div>
     );
   } else {
     return (
       <div className="justify-content-end">
-        <a variant="dark" onClick={handleLogout}>
+        <Button variant="light" onClick={handleLogout}>
           Logout
-        </a>
+        </Button>
       </div>
     );
   }
