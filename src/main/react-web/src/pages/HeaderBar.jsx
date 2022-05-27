@@ -10,7 +10,6 @@ import {
 } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import {Link} from "react-router-dom";
-import UserCard from "../components/User/UserCard";
 
 const HeaderBar = () => {
   return (
@@ -55,7 +54,9 @@ const HeaderBar = () => {
             <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#setting">Settings</NavDropdown.Item>
             <NavDropdown.Divider />
-            <NavDropdown.Item href="#log_out">Log out</NavDropdown.Item>
+            <NavDropdown.Item href="#log_out">
+              <UserCard />
+            </NavDropdown.Item>
           </NavDropdown>
         </Nav>
       </Container>
