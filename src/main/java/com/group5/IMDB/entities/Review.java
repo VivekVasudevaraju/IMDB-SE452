@@ -22,10 +22,10 @@ public class Review {
     @Column(name = "review_text", columnDefinition = "varchar(500)")
     private String reviewText;
 
-    @Column(name = "thumbs_up", columnDefinition = "bigint")
+    @Column(name = "review_likes", columnDefinition = "bigint")
     private Integer thumbsUp;
 
-    @Column(name = "thumbs_down", columnDefinition = "bigint")
+    @Column(name = "review_dislikes", columnDefinition = "bigint")
     private Integer thumbsDown;
 
 }
