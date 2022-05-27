@@ -9,12 +9,6 @@ class UserReviewPage extends Component{
 
 
 
-        const movieDummyData = " Low expectations were what I had when the trailer first appeared on my phone screen." +
-            " I wasn't even interested to watch it till the end. I would roll my eyes on the animation style, its not eye-catching nor it is impressive." +
-            "But damnnnnnnn! I wasnt expecting it to be good. Its a feature animated film filled with genuine laughter,comical characters and an above the par plot"
-
-        const usernameData = "MovieLover724"
-        const userTitleData = "Movie Was Worth A Watch!"
 
 
         return(
@@ -60,14 +54,10 @@ class UserReviewPage extends Component{
                 <h1 className="display-1">USER REVIEWS</h1>
                 <br/>
                 <MovieReview
-                    userName={usernameData}
-                    reviewTitle={userTitleData}
-                    reviewData = {movieDummyData}/>
+                  />
 
                 <MovieReview
-                    userName={usernameData}
-                    reviewTitle={userTitleData}
-                    reviewData = {movieDummyData}/>
+                  />
 
                 <i style={{color:"#F2DB83"}} className="fa-solid fa-circle-chevron-left fa-2xl"></i>
                 <i style={{color:"#F2DB83",paddingLeft:"30px"}} className="fa-solid fa-circle-chevron-right fa-2xl"></i>
