@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS genres;
 DROP TABLE IF EXISTS movie_genres;
 DROP TABLE IF EXISTS reviews;
+DROP TABLE IF EXISTS rating_user;
 DROP TABLE IF EXISTS ratings;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS casts;
@@ -84,6 +85,16 @@ CREATE TABLE users (
     password            VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (user_name)
+);
+
+CREATE TABLE rating_user (
+    rating_user_id BIGINT AUTO_INCREMENT,
+    rating_id BIGINT,
+    user_name VARCHAR(50),
+
+    PRIMARY KEY (rating_user_id),
+    FOREIGN KEY (rating_id) REFERENCES ratings(rating_id),
+    FOREIGN KEY (user_name) REFERENCES users(user_name)
 );
 
 CREATE TABLE casts (

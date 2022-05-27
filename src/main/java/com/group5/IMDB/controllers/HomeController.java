@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import lombok.extern.java.Log;
 
 @RestController
-@RequestMapping("/rest/welcome")
+@RequestMapping("/api/welcome")
 @Log
 public class HomeController {
     @Value("${app.greeting}")

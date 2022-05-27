@@ -87,6 +87,16 @@ CREATE TABLE users (
     UNIQUE (email)
 );
 
+CREATE TABLE rating_user (
+    rating_user_id SERIAL,
+    rating_id BIGINT,
+    user_name VARCHAR(50),
+
+    PRIMARY KEY (rating_user_id),
+    FOREIGN KEY (rating_id) REFERENCES ratings(rating_id),
+    FOREIGN KEY (user_name) REFERENCES users(user_name)
+);
+
 CREATE TABLE casts (
     cast_id             BIGINT NOT NULL,
     cast_name           VARCHAR(255) NOT NULL,

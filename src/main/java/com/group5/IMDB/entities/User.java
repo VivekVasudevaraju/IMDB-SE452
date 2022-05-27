@@ -26,7 +26,7 @@ public class User {
     @Column(name = "email", columnDefinition = "varchar(50)", nullable = false)
     private String email;
 
-    @Column(name = "zip_code", columnDefinition = "integer(6)", nullable = false)
+    @Column(name = "zipcode", columnDefinition = "integer(6)", nullable = false)
     private int zipCode;
 
     @Column(name = "state", columnDefinition = "varchar(50)", nullable = false)
