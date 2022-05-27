@@ -1,18 +1,18 @@
 package com.group5.IMDB.entities;
 
 import lombok.Data;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
+import java.io.Serializable;
 
 
 @Entity
 @Table(name = "reviews")
 @Data
-public class Review {
+public class Review implements Serializable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "review_id", columnDefinition = "bigint")
     private Long reviewId;
 
