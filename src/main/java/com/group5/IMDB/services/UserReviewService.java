@@ -26,5 +26,15 @@ public class UserReviewService {
     public List<Review> getAllReviews(){
        return userReviewRepository.findAll();
     }
+
+    public void updateUserReview(Review userReview){
+        userReviewRepository.save(userReview);
+    }
+
+
+    public void deleteUserReview(Long id){
+        userReviewRepository.deleteReviewById(id);
+    }
+
 }
 
