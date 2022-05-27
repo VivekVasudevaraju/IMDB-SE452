@@ -8,6 +8,5 @@ import org.springframework.stereotype.Repository;
 public interface UserReviewRepository extends JpaRepository<Review,Long> {
     void deleteReviewById(Long id);
 
-    //PlaceHolder For Repo Class
 
 }

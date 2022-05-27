@@ -14,7 +14,7 @@ public class Review implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "review_id", columnDefinition = "bigint")
-    private Long reviewId;
+    private Long id;
 
     @Column(name = "review_title", columnDefinition = "varchar(100)")
     private String reviewTitle;
