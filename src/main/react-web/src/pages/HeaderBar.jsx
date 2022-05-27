@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
 import {Link} from "react-router-dom";
+import UserCard from "../components/User/UserCard";
 
 const HeaderBar = () => {
   return (
