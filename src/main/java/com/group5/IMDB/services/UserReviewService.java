@@ -36,5 +36,9 @@ public class UserReviewService {
         userReviewRepository.deleteReviewById(id);
     }
 
+    public Review getUserReview(Long id){
+        return userReviewRepository.getUserReviewById(id);
+    }
+
 }
 

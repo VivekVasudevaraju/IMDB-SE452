@@ -9,4 +9,5 @@ public interface UserReviewRepository extends JpaRepository<Review,Long> {
     void deleteReviewById(Long id);
 
 
+    Review getUserReviewById(Long id);
 }

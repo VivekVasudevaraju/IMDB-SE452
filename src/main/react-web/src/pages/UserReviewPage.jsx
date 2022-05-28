@@ -56,11 +56,11 @@ class UserReviewPage extends Component{
                 <MovieReview
                   />
 
-                <MovieReview
-                  />
+                {/*<MovieReview*/}
+                {/*  />*/}
 
-                <i style={{color:"#F2DB83"}} className="fa-solid fa-circle-chevron-left fa-2xl"></i>
-                <i style={{color:"#F2DB83",paddingLeft:"30px"}} className="fa-solid fa-circle-chevron-right fa-2xl"></i>
+                {/*<i style={{color:"#F2DB83"}} className="fa-solid fa-circle-chevron-left fa-2xl"></i>*/}
+                {/*<i style={{color:"#F2DB83",paddingLeft:"30px"}} className="fa-solid fa-circle-chevron-right fa-2xl"></i>*/}
 
             </div>
 
