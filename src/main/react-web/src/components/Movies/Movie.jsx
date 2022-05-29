@@ -6,7 +6,7 @@ import { Rating } from "react-simple-star-rating";
 
 const Movie = ({ title, imageUrl, rating }) => {
   return (
-    <Card style={{ width: "12rem", margin: "0em 1em 1em 0em" }}>
+    <Card style={{ maxWidth: "75%", margin: "0em 1em 1em 0em" }}>
       <Card.Img variant="top" src={imageUrl} />
       <Card.Body>
         <Card.Title style={{ fontSize: "1.15rem" }}>{title}</Card.Title>
