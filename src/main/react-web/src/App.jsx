@@ -49,7 +49,8 @@ function App() {
           <Container>
             <HeaderBar />
             <Route path="/" exact component={HomePage} />
-            <SecureRoute path="/booking" component={Booking} />
+            <Route path="/booking" component={Booking} />{" "}
+            {/* <!-- SecureRoute /--> */}
             <Route path="/userreviews" component={UserReviewPage} />
             <Route path="/login" render={() => <Login />} />
             <Route path="/login/callback" component={LoginCallback} />
