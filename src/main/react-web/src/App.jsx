@@ -17,7 +17,16 @@ const oktaAuth = new OktaAuth(config.oidc);
 
 function App() {
   const [state, dispatch] = useReducer(appReducer, {
-    user: {},
+    user: {
+      userName: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      zipcode: "",
+      state: "",
+      city: "",
+      phoneNumber: "",
+    },
   });
   const history = useHistory();
 
