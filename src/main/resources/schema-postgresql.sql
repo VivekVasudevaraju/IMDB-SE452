@@ -81,11 +81,10 @@ CREATE TABLE users (
     first_name          VARCHAR(50) NOT NULL,
     last_name           VARCHAR(50) NOT NULL,
     email               VARCHAR(50) NOT NULL,
-    zipcode             INTEGER NOT NULL,
-    state               VARCHAR(50) NOT NULL,
-    city                VARCHAR(50) NOT NULL,
-    phone_number        BIGINT NOT NULL,
-    password            VARCHAR(255) NOT NULL,
+    zipcode             INTEGER,
+    state               VARCHAR(50),
+    city                VARCHAR(50),
+    phone_number        BIGINT,
 
     PRIMARY KEY (user_name),
     UNIQUE (email)

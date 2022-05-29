@@ -44,7 +44,7 @@ public class RatingController {
     @PostMapping
     public ResponseEntity createRating(@RequestBody Rating rating) throws URISyntaxException {
         service.save(rating);
-        return ResponseEntity.created(new URI("/clients/" + rating.getRatingId())).body(rating);
+        return ResponseEntity.created(new URI("/rating/" + rating.getRatingId())).body(rating);
     }
 
     @PutMapping("/{ratingId}")

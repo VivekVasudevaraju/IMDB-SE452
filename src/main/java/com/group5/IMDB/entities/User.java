@@ -20,7 +20,7 @@ public class User {
     private String firstName;
 
     @Column(name = "last_name", columnDefinition = "varchar(50)", nullable = false)
-    private String lastaName;
+    private String lastName;
 
     @Email(message = "Please check the email address")
     @Column(name = "email", columnDefinition = "varchar(50)", nullable = false)
@@ -37,8 +37,5 @@ public class User {
 
     @Column(name = "phone_number", columnDefinition = "bigint(10)", nullable = false)
     private Long phoneNumber;
-
-    @Column(name = "password", columnDefinition = "varchar(50)", nullable = false)
-    private String password;
 
 }

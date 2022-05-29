@@ -1,18 +1,24 @@
 import React, { useState, useContext, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 import { useResource } from "react-request-hook";
 import { Modal, Form, Button } from "react-bootstrap";
 import StateContext from "../../store/Contexts";
+import { useOktaAuth } from "@okta/okta-react";
 import "./MovieRating.css";
 import { Rating } from "react-simple-star-rating";
 
 const MovieRating = ({ show, handleClose }) => {
   const [ratingLevel, setRating] = useState(0);
+  const history = useHistory();
   const [saveRatingFailed, setSaveRatingFailed] = useState(false);
+  const { authState } = useOktaAuth();
+  const { state } = useContext(StateContext);
+  const { user } = state;
 
   const [rate, storeRating] = useResource(() => ({
     url: "/api/rating/",
     method: "post",
-    data: { ratingLevel },
+    data: { ratingLevel, user },
   }));
 
   useEffect(() => {
@@ -22,12 +28,6 @@ const MovieRating = ({ show, handleClose }) => {
       } else {
         setSaveRatingFailed(false);
         console.log(rate.data);
-        // dispatch({
-        //   type: "LOGIN",
-        //   id: user.data.id,
-        //   username,
-        //   access_token: user.data.access_token,
-        // });
         handleClose();
       }
     }
@@ -37,13 +37,22 @@ const MovieRating = ({ show, handleClose }) => {
     setRating(rate);
   };
 
+  const validate = () => {
+    if (!authState || !authState.isAuthenticated) {
+      history.push("/login");
+      handleClose();
+    } else {
+      storeRating(ratingLevel);
+    }
+  };
+
   return (
     <>
       <Modal show={show} onHide={handleClose} centered="true">
         <Form
           onSubmit={(e) => {
             e.preventDefault();
-            storeRating(ratingLevel);
+            validate();
           }}
         >
           <Modal.Header closeButton>
