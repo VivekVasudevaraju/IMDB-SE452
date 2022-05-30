@@ -25,7 +25,7 @@ public class Review implements Serializable {
     @Column(name = "review_id", columnDefinition = "bigint",nullable = true)
     private Long id;
 
-    @Column(name = "review_title", columnDefinition = "varchar(100)")
+    @Column(name = "review_title", columnDefinition = "varchar(100)",nullable = false)
     private String reviewTitle;
 
     @Column(name = "review_text", columnDefinition = "varchar(500)")

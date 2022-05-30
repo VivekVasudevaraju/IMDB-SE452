@@ -1,11 +1,26 @@
-import react, {Component} from "react"
+import React, {useState} from "react"
 import MovieReview from "../components/Review/MovieReview";
 import axios from "axios";
 
-class UserReviewPage extends Component{
+function UserReviewPage() {
+    const apiURL = "api/review/add/"
+
+    const [myReviewTitle,setMyReviewTitle] = useState("")
+    const [myReviewData,setMyReviewData] = useState("")
 
 
-    render() {
+    const  sendDataToAPI = async (e) => {
+        e.preventDefault();
+
+        try{
+            console.log(myReviewTitle,myReviewData)
+
+            await axios.post(apiURL, {reviewTitle:myReviewData,reviewText:myReviewData});
+        }catch (error){
+            console.log(error)
+        }
+
+    }
 
 
 
@@ -33,14 +48,16 @@ class UserReviewPage extends Component{
                 <form style={{width:"400px"}} action="">
                     <div className="form-group">
                         <label htmlFor="exampleFormControlInput1"></label>
-                        <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="enter review title"></input>
+                        <input name={"theReviewTitle"} value={myReviewTitle} onChange={(e)=>setMyReviewTitle(e.target.value)} type="text" className="form-control" id="exampleFormControlInput1" placeholder="enter review title"></input>
                     </div>
+
                     <div className="form-group">
                         <label htmlFor="exampleFormControlTextarea1"> </label>
-                        <textarea className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder={"enter movie review"}></textarea>
+                        <textarea name={"theReviewData"}  value={myReviewData} onChange={(e)=>setMyReviewData(e.target.value)} className="form-control" id="exampleFormControlTextarea1" rows="3" placeholder={"enter movie review"}></textarea>
                     </div>
+
                     <div style={{paddingTop:"10px"}} className="btn-group" role="group" aria-label="Basic mixed styles example">
-                        <button type="button" className="btn btn-success">Submit</button>
+                        <button onClick={sendDataToAPI} type="button" className="btn btn-success">Submit</button>
                     </div>
                 </form>
 
@@ -68,7 +85,7 @@ class UserReviewPage extends Component{
 
                 </div>
         );
-    }
+
 
 }
 
