@@ -12,7 +12,16 @@ import java.io.Serializable;
 public class Review implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @SequenceGenerator(
+            name = "sequence",
+            sequenceName = "sequence",
+            allocationSize = 1,
+            initialValue = 11
+    )
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "sequence"
+    )
     @Column(name = "review_id", columnDefinition = "bigint",nullable = true)
     private Long id;
 

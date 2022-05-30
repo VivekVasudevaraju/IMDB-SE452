@@ -38,6 +38,8 @@ values (9,'Springfield', 'Marcus Theatres', 'Illinois', '62794');
 
 
 -- Reviews Table Dummy Data
+-- STARTING AT 11 BECAUSE OF DUMMY DATA
+CREATE SEQUENCE sequence START 11;
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
 values (1, 'Bad Words', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.',110,07);
