@@ -1,0 +1,9 @@
+.row {
+  flex-wrap: nowrap;
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}

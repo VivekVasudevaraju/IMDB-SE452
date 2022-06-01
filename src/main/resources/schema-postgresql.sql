@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS tickets;
 DROP TABLE IF EXISTS showtimes;
 DROP TABLE IF EXISTS movie_cast;
 DROP TABLE IF EXISTS theatre_movie;
+DROP TABLE IF EXISTS movie_categories;
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS movie_genres;
@@ -26,14 +27,22 @@ CREATE TABLE categories (
 );
 
 CREATE TABLE movies (
-    movie_id            BIGINT NOT NULL,
+    movie_id            SERIAL,
     movie_title         VARCHAR(255) NOT NULL,
     description         VARCHAR(255) NOT NULL,
-    duration            TIME(0) WITHOUT TIME ZONE NOT NULL,
-    category_id         BIGINT NOT NULL,
+    duration            INTEGER NOT NULL,
     movie_img           TEXT NOT NULL,
 
-    PRIMARY KEY (movie_id),
+    PRIMARY KEY (movie_id)
+);
+
+CREATE TABLE movie_categories (
+    movie_category_id   SERIAL,
+    movie_id            BIGINT NOT NULL,
+    category_id         BIGINT NOT NULL,
+
+    PRIMARY KEY (movie_category_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 

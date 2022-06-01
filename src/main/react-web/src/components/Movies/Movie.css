@@ -1,8 +1,18 @@
 .card {
-    background-color: #1A1A1A;
+    background-color: #1a1a1a;
+    transition: transform 400ms;
 }
-
+  
+.card:hover {
+    transform: scale(1.05);
+}
+  
 .card-rating {
     padding: 0.5em;
     font-size: 1.2em;
 }
+  
+.card-img-top {
+    object-fit: contain;
+}
+
