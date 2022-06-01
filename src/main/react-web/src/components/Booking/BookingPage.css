@@ -43,3 +43,9 @@
     color: black;
     background-color: #f5c518;
 }
+
+.ticket_print {
+    background-color: #fcfff7;
+    margin: 3rem;
+    border-radius: 8%;
+}

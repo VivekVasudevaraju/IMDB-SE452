@@ -14,22 +14,47 @@ const BookingPage = () => {
           imageUrl="https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX380_CR0,0,380,562_.jpg"
           rating="7.4"
         />
-        <div className="theatres mt-5">
-          <div className="theatre_location">
-            <h5>Theatre locations</h5>
-            <Form>
-              <div key="default-radio" className="mb-3">
-                <Form.Check
-                  type="radio"
-                  id="default-radio"
-                  label="Check this switch"
-                />
-              </div>
-            </Form>
-          </div>
-        </div>
       </div>
       <div className="col-lg-4 mr-3">
+        <div className="theatre_location">
+          <h5>Theatre locations</h5>
+          <Form>
+            <div key="default-radio" className="mb-3">
+              <Form.Check
+                type="radio"
+                id="default-radio"
+                label="Check this switch"
+              />
+            </div>
+          </Form>
+          <Form>
+            <div key="default-radio" className="mb-3">
+              <Form.Check
+                type="radio"
+                id="default-radio"
+                label="Check this switch"
+              />
+            </div>
+          </Form>
+          <Form>
+            <div key="default-radio" className="mb-3">
+              <Form.Check
+                type="radio"
+                id="default-radio"
+                label="Check this switch"
+              />
+            </div>
+          </Form>
+          <Form>
+            <div key="default-radio" className="mb-3">
+              <Form.Check
+                type="radio"
+                id="default-radio"
+                label="Check this switch"
+              />
+            </div>
+          </Form>
+        </div>
         <h5>Dates</h5>
         <div className="dates">
           <div className="date">
@@ -103,6 +128,9 @@ const BookingPage = () => {
       <div className="col-lg-4">
         <div className="col-lg-12 ticket">
           <h5 style={{ padding: "1rem 0 0 1rem;" }}>Ticket Booking</h5>
+          <div className="ticket_print">
+            <h6>Doctor Strange</h6>
+          </div>
         </div>
         <div className="col-lg-12"></div>
       </div>
