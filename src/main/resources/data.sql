@@ -149,3 +149,31 @@ INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (2,2,2);
 INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (3,3,3);
 INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (4,4,4);
 INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (5,5,5);
+
+-- Movies Table Dummy Data
+
+insert into movies (movie_title, description, duration, movie_img) values ('Doctor Strange', 'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo.', 124, 'https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX380_CR0,0,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('Moon knight', 'Ut at dolor quis odio consequat varius.', 35, 'https://m.media-amazon.com/images/M/MV5BYTc5OWNhYjktMThlOS00ODUxLTgwNDQtZjdjYjkyM2IwZTZlXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_QL75_UX380_CR0,0,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('The Batman', 'Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.', 44, 'https://m.media-amazon.com/images/M/MV5BMDdmMTBiNTYtMDIzNi00NGVlLWIzMDYtZTk3MTQ3NGQxZGEwXkEyXkFqcGdeQXVyMzMwOTU5MDk@._V1_QL75_UX380_CR0,0,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('NorthMan', 'Cras non velit nec nisi vulputate nonummy.', 139, 'https://m.media-amazon.com/images/M/MV5BMzVlMmY2NTctODgwOC00NDMzLWEzMWYtM2RiYmIyNTNhMTI0XkEyXkFqcGdeQXVyNTAzNzgwNTg@._V1_QL75_UX380_CR0,0,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('Uncharted', 'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis.', 11, 'https://m.media-amazon.com/images/M/MV5BMWEwNjhkYzYtNjgzYy00YTY2LThjYWYtYzViMGJkZTI4Y2MyXkEyXkFqcGdeQXVyNTM0OTY1OQ@@._V1_QL75_UX380_CR0,0,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('Batman v Superman', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 78, 'https://m.media-amazon.com/images/M/MV5BYzgyMTMzZjUtNGNjMy00NTJjLWIzNDYtMTc2YzQwOGE5MGM4XkEyXkFqcGdeQXVyMTUwODYzMjcw._V1_QL75_UX380_CR0,4,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('Halo', 'Cras in purus eu magna vulputate luctus.', 199, 'https://m.media-amazon.com/images/M/MV5BYzhlOTkzZDMtNDYxYS00NTY2LWJjZDEtNjI3NmE3MTI2NGU2XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX380_CR0,0,380,562_.jpg');
+
+insert into movies (movie_title, description, duration, movie_img) values ('John Wick 2', 'Aliquam quis turpis eget elit sodales scelerisque.', 72, 'https://m.media-amazon.com/images/M/MV5BYzk0MGFlZGMtYTk4ZS00MDFiLWJhNDAtODhmYWI2NmNhZDU4XkEyXkFqcGdeQXVyODA1NjQ0OTY@._V1_QL75_UX380_CR0,4,380,562_.jpg');
+
+-- Movie_Categories Table Dummy Data
+insert into movie_categories (movie_id, category_id) VALUES (1,1);
+insert into movie_categories (movie_id, category_id) VALUES (2,1);
+insert into movie_categories (movie_id, category_id) VALUES (3,1);
+insert into movie_categories (movie_id, category_id) VALUES (4,2);
+insert into movie_categories (movie_id, category_id) VALUES (5,3);
+insert into movie_categories (movie_id, category_id) VALUES (6,1);
+insert into movie_categories (movie_id, category_id) VALUES (7,1);
+insert into movie_categories (movie_id, category_id) VALUES (8,1);
