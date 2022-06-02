@@ -76,9 +76,8 @@ function MovieReview(prp) {
             <p>{review.thumbsDown}</p>
           </div>
         </div>
-      </div>
 
-      <div>
+
         <p style={styleObj}> {review_2.reviewTitle} </p>
         <p style={{ color: "#4A5CFF", fontSize: 14, fontWeight: "bold" }}>
           {" "}
@@ -107,9 +106,7 @@ function MovieReview(prp) {
             <p>{review_2.thumbsDown}</p>
           </div>
         </div>
-      </div>
 
-      <div>
         <p style={styleObj}> {review_3.reviewTitle} </p>
         <p style={{ color: "#4A5CFF", fontSize: 14, fontWeight: "bold" }}>
           {" "}
@@ -138,14 +135,13 @@ function MovieReview(prp) {
             <p>{review_3.thumbsDown}</p>
           </div>
         </div>
-      </div>
 
       <div style={{ paddingTop: "30px" }}>
         <i
           onClick={() => {
             setA(a - 3), setB(b - 3), setC(c - 3);
           }}
-          style={{ color: "#e1ad0b" }}
+          style={{ color: "#e1ad0b", paddingBottom:"10%" }}
           className="fa-solid fa-circle-chevron-left fa-2xl"
         ></i>
         <i
@@ -156,6 +152,7 @@ function MovieReview(prp) {
           className="fa-solid fa-circle-chevron-right fa-2xl"
         ></i>
       </div>
+    </div>
     </div>
   );
 }
