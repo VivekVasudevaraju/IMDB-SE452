@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function MovieReview(reviewTitle, userName, reviewData) {
+function MovieReview(prp) {
   const movieDummyData =
     " Low expectations were what I had when the trailer first appeared on my phone screen." +
     " I wasn't even interested to watch it till the end. I would roll my eyes on the animation style, its not eye-catching nor it is impressive." +
     "But damnnnnnnn! I wasnt expecting it to be good. Its a feature animated film filled with genuine laughter,comical characters and an above the par plot";
+
+  const userData = prp.reviewData
 
   const usernameData = "MovieLover724";
   const userTitleData = "Movie Was Worth A Watch!";
@@ -22,20 +24,25 @@ function MovieReview(reviewTitle, userName, reviewData) {
   useEffect(() => {
     async function getData() {
       const response = await axios.get(`api/review/find/${a}/`);
-      setReview(response.data);
+        setReview(response.data);
+
 
       const response_2 = await axios.get(`/api/review/find/${b}/`);
-      setReview_2(response_2.data);
+        setReview_2(response_2.data);
+
 
       const response_3 = await axios.get(`/api/review/find/${c}/`);
-      setReview_3(response_3.data);
+        setReview_3(response_3.data);
+
       //console.log(response)
     }
     getData();
-  }, [a, b, c]);
+  }, [userData,a, b, c]);
+
+
 
   const styleObj = {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
     color: "White",
   };

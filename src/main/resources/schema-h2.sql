@@ -18,6 +18,8 @@ DROP TABLE IF EXISTS auditoriums;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
+-- STARTING AT 11 BECAUSE OF DUMMY DATA -Temp
+CREATE SEQUENCE sequence START 11;
 
 CREATE TABLE categories (
     category_id         BIGINT AUTO_INCREMENT,
