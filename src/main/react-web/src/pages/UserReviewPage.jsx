@@ -14,8 +14,6 @@ function UserReviewPage() {
         try{
             console.log(myReviewTitle,myReviewData)
             await axios.post(apiURL, {reviewTitle:myReviewTitle,reviewText:myReviewData});
-            setTimeout(()=>{console.log("HEY!")}, 2000);
-            setMyReviewTitle(myReviewTitle);
             setMyReviewData(myReviewData + " ");
         }catch (error){
             console.log(error)
