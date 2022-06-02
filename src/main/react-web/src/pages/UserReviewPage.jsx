@@ -13,23 +13,29 @@ function UserReviewPage() {
 
         try{
             console.log(myReviewTitle,myReviewData)
-
             await axios.post(apiURL, {reviewTitle:myReviewTitle,reviewText:myReviewData});
+            setTimeout(()=>{console.log("HEY!")}, 2000);
+            setMyReviewTitle(myReviewTitle);
+            setMyReviewData(myReviewData + " ");
         }catch (error){
             console.log(error)
         }
 
     }
-    //
-    // useEffect(() => {
-    //      function postData() {
-    //         setMyReviewTitle(myReviewTitle);
-    //         setMyReviewData(myReviewData);
-    //     }
-    //     postData();
-    // }, [myReviewTitle,myReviewData]);
 
 
+    useEffect(() => {
+         function postData() {
+            setMyReviewTitle(myReviewTitle);
+            setMyReviewData(myReviewData);
+        }
+        postData();
+    }, [myReviewTitle,myReviewData])
+
+
+    function abc(){
+
+    }
 
 
 
@@ -77,8 +83,11 @@ function UserReviewPage() {
             <div className={"col"} style={{paddingLeft:"80px"}}>
                 <h1 className="display-1">USER REVIEWS</h1>
                 <br/>
+
                 <MovieReview
-                  />
+                  reviewTitle={myReviewTitle}
+                  reviewData={myReviewData}
+                />
 
                 {/*<MovieReview*/}
                 {/*  />*/}
