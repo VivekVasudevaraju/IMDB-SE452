@@ -35,7 +35,7 @@ function MovieReview(reviewTitle, userName, reviewData) {
   }, [a, b, c]);
 
   const styleObj = {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
     color: "White",
   };

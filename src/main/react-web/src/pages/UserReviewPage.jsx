@@ -1,10 +1,9 @@
-import React, {useState} from "react"
+import React, {useState,useEffect} from "react"
 import MovieReview from "../components/Review/MovieReview";
 import axios from "axios";
 
 function UserReviewPage() {
     const apiURL = "api/review/add/"
-
     const [myReviewTitle,setMyReviewTitle] = useState("")
     const [myReviewData,setMyReviewData] = useState("")
 
@@ -15,12 +14,20 @@ function UserReviewPage() {
         try{
             console.log(myReviewTitle,myReviewData)
 
-            await axios.post(apiURL, {reviewTitle:myReviewData,reviewText:myReviewData});
+            await axios.post(apiURL, {reviewTitle:myReviewTitle,reviewText:myReviewData});
         }catch (error){
             console.log(error)
         }
 
     }
+    //
+    // useEffect(() => {
+    //      function postData() {
+    //         setMyReviewTitle(myReviewTitle);
+    //         setMyReviewData(myReviewData);
+    //     }
+    //     postData();
+    // }, [myReviewTitle,myReviewData]);
 
 
 
