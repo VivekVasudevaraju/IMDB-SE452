@@ -8,7 +8,7 @@ import appReducer from "./store/reducers";
 import StateContext from "./store/Contexts";
 import HeaderBar from "./pages/HeaderBar";
 import HomePage from "./pages/HomePage";
-import Booking from "./pages/Booking";
+import BookingPage from "./components/Booking/BookingPage";
 import Login from "./components/User/Login";
 import UserReviewPage from "./pages/UserReviewPage";
 import config from "./config";
@@ -51,6 +51,9 @@ function App() {
             <HeaderBar />
             <Route path="/movie/:movieId" component={MovieDetailsPage} />
             <SecureRoute path="/booking" component={Booking} />
+            <Route path="/" exact component={HomePage} />
+            <Route path="/booking" component={BookingPage} />{" "}
+            {/* <!-- SecureRoute /--> */}
             <Route path="/userreviews" component={UserReviewPage} />
             <Route path="/login" render={() => <Login />} />
             <Route path="/login/callback" component={LoginCallback} />

@@ -57,8 +57,10 @@ const HeaderBar = () => {
           style={{ maxHeight: "100px" }}
           navbarScroll
         >
-          <Link to={"/userreviews"}> user review </Link>
           <NavDropdown title="User" id="navbarScrollingDropdown">
+            <NavDropdown.Item>
+              <Link to={"/userreviews"}> user review </Link>
+            </NavDropdown.Item>
             <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#setting">Settings</NavDropdown.Item>
             <NavDropdown.Divider />

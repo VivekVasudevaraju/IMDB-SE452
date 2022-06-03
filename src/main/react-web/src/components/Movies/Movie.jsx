@@ -6,17 +6,19 @@ import { Rating } from "react-simple-star-rating";
 
 const Movie = ({ title, imageUrl, rating }) => {
   return (
-    <Card style={{ width: "12rem" }}>
+    <Card style={{ width: "12em", margin: "0em 1em 1em 0em" }}>
       <Card.Img variant="top" src={imageUrl} />
       <Card.Body>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title style={{ fontSize: "1.0rem" }}>{title}</Card.Title>
         <Rating
           ratingValue={rating}
           emptyColor="#f5c518"
           iconsCount={1}
           readonly="true"
         />
-        <span className="card-rating">{rating}</span>
+        <span className="card-rating" style={{ fontSize: "1rem" }}>
+          {rating}
+        </span>
       </Card.Body>
     </Card>
   );

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-function MovieReview(reviewTitle, userName, reviewData) {
+function MovieReview(prp) {
   const movieDummyData =
     " Low expectations were what I had when the trailer first appeared on my phone screen." +
     " I wasn't even interested to watch it till the end. I would roll my eyes on the animation style, its not eye-catching nor it is impressive." +
     "But damnnnnnnn! I wasnt expecting it to be good. Its a feature animated film filled with genuine laughter,comical characters and an above the par plot";
+
+  const userData = prp.reviewData
 
   const usernameData = "MovieLover724";
   const userTitleData = "Movie Was Worth A Watch!";
@@ -22,20 +24,25 @@ function MovieReview(reviewTitle, userName, reviewData) {
   useEffect(() => {
     async function getData() {
       const response = await axios.get(`api/review/find/${a}/`);
-      setReview(response.data);
+        setReview(response.data);
+
 
       const response_2 = await axios.get(`/api/review/find/${b}/`);
-      setReview_2(response_2.data);
+        setReview_2(response_2.data);
+
 
       const response_3 = await axios.get(`/api/review/find/${c}/`);
-      setReview_3(response_3.data);
+        setReview_3(response_3.data);
+
       //console.log(response)
     }
     getData();
-  }, [a, b, c]);
+  }, [userData,a, b, c]);
+
+
 
   const styleObj = {
-    fontSize: 18,
+    fontSize: 24,
     fontWeight: "bold",
     color: "White",
   };
@@ -69,9 +76,8 @@ function MovieReview(reviewTitle, userName, reviewData) {
             <p>{review.thumbsDown}</p>
           </div>
         </div>
-      </div>
 
-      <div>
+
         <p style={styleObj}> {review_2.reviewTitle} </p>
         <p style={{ color: "#4A5CFF", fontSize: 14, fontWeight: "bold" }}>
           {" "}
@@ -100,9 +106,7 @@ function MovieReview(reviewTitle, userName, reviewData) {
             <p>{review_2.thumbsDown}</p>
           </div>
         </div>
-      </div>
 
-      <div>
         <p style={styleObj}> {review_3.reviewTitle} </p>
         <p style={{ color: "#4A5CFF", fontSize: 14, fontWeight: "bold" }}>
           {" "}
@@ -131,14 +135,13 @@ function MovieReview(reviewTitle, userName, reviewData) {
             <p>{review_3.thumbsDown}</p>
           </div>
         </div>
-      </div>
 
       <div style={{ paddingTop: "30px" }}>
         <i
           onClick={() => {
             setA(a - 3), setB(b - 3), setC(c - 3);
           }}
-          style={{ color: "#e1ad0b" }}
+          style={{ color: "#e1ad0b", paddingBottom:"10%" }}
           className="fa-solid fa-circle-chevron-left fa-2xl"
         ></i>
         <i
@@ -149,6 +152,7 @@ function MovieReview(reviewTitle, userName, reviewData) {
           className="fa-solid fa-circle-chevron-right fa-2xl"
         ></i>
       </div>
+    </div>
     </div>
   );
 }

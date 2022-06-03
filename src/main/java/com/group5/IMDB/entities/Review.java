@@ -12,20 +12,29 @@ import java.io.Serializable;
 public class Review implements Serializable {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "review_id", columnDefinition = "bigint")
+    @SequenceGenerator(
+            name = "sequence",
+            sequenceName = "sequence",
+            allocationSize = 1,
+            initialValue = 11
+    )
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "sequence"
+    )
+    @Column(name = "review_id", columnDefinition = "bigint",nullable = true)
     private Long id;
 
-    @Column(name = "review_title", columnDefinition = "varchar(100)")
+    @Column(name = "review_title", columnDefinition = "varchar(100)",nullable = false)
     private String reviewTitle;
 
     @Column(name = "review_text", columnDefinition = "varchar(500)")
     private String reviewText;
 
     @Column(name = "review_likes", columnDefinition = "bigint")
-    private Integer thumbsUp;
+    private Integer thumbsUp = 0;
 
     @Column(name = "review_dislikes", columnDefinition = "bigint")
-    private Integer thumbsDown;
+    private Integer thumbsDown = 0;
 
 }

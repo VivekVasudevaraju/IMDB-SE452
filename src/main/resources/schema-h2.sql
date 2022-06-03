@@ -1,28 +1,53 @@
-DROP TABLE IF EXISTS categories;
+DROP TABLE IF EXISTS tickets;
+DROP TABLE IF EXISTS showtimes;
+DROP TABLE IF EXISTS movie_cast;
+DROP TABLE IF EXISTS theatre_movie;
+DROP TABLE IF EXISTS movie_categories;
 DROP TABLE IF EXISTS movies;
-DROP TABLE IF EXISTS genres;
+DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS movie_genres;
+DROP TABLE IF EXISTS genres;
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS rating_user;
 DROP TABLE IF EXISTS ratings;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS casts;
-DROP TABLE IF EXISTS movie_cast;
-DROP TABLE IF EXISTS theatre_movie;
 DROP TABLE IF EXISTS theatres;
 DROP TABLE IF EXISTS theatre_auditorium;
 DROP TABLE IF EXISTS auditoriums;
-DROP TABLE IF EXISTS showtimes;
-DROP TABLE IF EXISTS tickets;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
+DROP SEQUENCE IF EXISTS sequence;
+
 
 CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
+-- STARTING AT 11 BECAUSE OF DUMMY DATA -Temp
+CREATE SEQUENCE sequence START 11;
 
 CREATE TABLE categories (
     category_id         BIGINT AUTO_INCREMENT,
     category            VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (category_id)
+);
+
+CREATE TABLE movies (
+    movie_id            BIGINT AUTO_INCREMENT,
+    movie_title         VARCHAR(255) NOT NULL,
+    description         VARCHAR(255) NOT NULL,
+    duration            INTEGER NOT NULL,
+    movie_img           TEXT NOT NULL,
+
+    PRIMARY KEY (movie_id)
+);
+
+CREATE TABLE movie_categories (
+    movie_category_id   BIGINT AUTO_INCREMENT,
+    movie_id             BIGINT NOT NULL,
+    category_id            BIGINT NOT NULL,
+
+    PRIMARY KEY (movie_category_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
 CREATE TABLE genres (
@@ -62,24 +87,6 @@ CREATE TABLE reviews (
     -- review_likes        INTEGER NOT NULL,
 
     PRIMARY KEY (review_id)
-);
-
-CREATE TABLE movies (
-    movie_id            BIGINT NOT NULL,
-    movie_title         VARCHAR(255) NOT NULL,
-    description         VARCHAR(255) NOT NULL,
-    duration            INT NOT NULL,
-    category_id         BIGINT NOT NULL,
-    movie_image         TEXT NOT NULL,
-    genres              BIGINT NOT NULL,
-    ratings             BIGINT NOT NULL,
-    reviews             BIGINT NOT NULL,
-
-    PRIMARY KEY (movie_id),
-    FOREIGN KEY (category_id) REFERENCES categories(category_id),
-    FOREIGN KEY (genres) REFERENCES movie_genres(movie_genre_id),
-    FOREIGN KEY (ratings) REFERENCES ratings(rating_id),
-    FOREIGN KEY (reviews) REFERENCES reviews(review_id)
 );
 
 CREATE TABLE users (
