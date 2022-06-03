@@ -25,18 +25,6 @@ CREATE TABLE categories (
     PRIMARY KEY (category_id)
 );
 
-CREATE TABLE movies (
-    movie_id            BIGINT NOT NULL,
-    movie_title         VARCHAR(255) NOT NULL,
-    description         VARCHAR(255) NOT NULL,
-    duration            TIME(0) WITHOUT TIME ZONE NOT NULL,
-    category_id         BIGINT NOT NULL,
-    movie_img           TEXT NOT NULL,
-
-    PRIMARY KEY (movie_id),
-    FOREIGN KEY (category_id) REFERENCES categories(category_id)
-);
-
 CREATE TABLE genres (
     genre_id            INTEGER,
     genre_name          VARCHAR(50) NOT NULL,
@@ -53,6 +41,15 @@ CREATE TABLE movie_genres (
     FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
 );
 
+CREATE TABLE ratings (
+    rating_id           BIGINT AUTO_INCREMENT,
+    -- movie_id            BIGINT NOT NULL,
+    -- user_name           VARCHAR(255) NOT NULL,
+    rating_level        INTEGER NOT NULL,
+
+    PRIMARY KEY (rating_id)
+);
+
 CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
@@ -67,13 +64,22 @@ CREATE TABLE reviews (
     PRIMARY KEY (review_id)
 );
 
-CREATE TABLE ratings (
-    rating_id           BIGINT AUTO_INCREMENT,
-    -- movie_id            BIGINT NOT NULL,
-    -- user_name           VARCHAR(255) NOT NULL,
-    rating_level        INTEGER NOT NULL,
+CREATE TABLE movies (
+    movie_id            BIGINT NOT NULL,
+    movie_title         VARCHAR(255) NOT NULL,
+    description         VARCHAR(255) NOT NULL,
+    duration            INT NOT NULL,
+    category_id         BIGINT NOT NULL,
+    movie_image         TEXT NOT NULL,
+    genres              BIGINT NOT NULL,
+    ratings             BIGINT NOT NULL,
+    reviews             BIGINT NOT NULL,
 
-    PRIMARY KEY (rating_id)
+    PRIMARY KEY (movie_id),
+    FOREIGN KEY (category_id) REFERENCES categories(category_id),
+    FOREIGN KEY (genres) REFERENCES movie_genres(movie_genre_id),
+    FOREIGN KEY (ratings) REFERENCES ratings(rating_id),
+    FOREIGN KEY (reviews) REFERENCES reviews(review_id)
 );
 
 CREATE TABLE users (

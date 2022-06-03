@@ -1,7 +1,4 @@
 
-
-
-
 -- Theatre Table Dummy Data
 
 insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
@@ -142,6 +139,11 @@ INSERT INTO genres (genre_id, genre_name) VALUES (2, 'DRAMA');
 INSERT INTO genres (genre_id, genre_name) VALUES (3, 'ADVENTURE');
 INSERT INTO genres (genre_id, genre_name) VALUES (4, 'COMEDY');
 INSERT INTO genres (genre_id, genre_name) VALUES (5, 'HORROR');
+
+-- Movie Table Dummy Data
+
+INSERT INTO movies (movie_id, movie_title, description, duration, movie_image, genres, category_id, ratings, reviews)
+   VALUES (1, 'movie title', 'description', 100, '/path/to/movie/image', 1, 1, 1, 1);
 
 -- Movie Genres Table Dummy Data
 INSERT INTO movie_genres (movie_genre_id, movie_id, genre_id) VALUES (1,1,1);

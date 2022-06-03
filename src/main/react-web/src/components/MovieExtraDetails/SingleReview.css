@@ -1,0 +1,19 @@
+.review-text-container {
+    max-height: 100px;
+    text-overflow: ellipsis;
+    overflow: auto;
+}
+
+.review-button {
+    background-color: #f5c518;
+    color: black;
+    border: 1px solid black;
+    width: 120px;
+    height: 30px;
+}
+
+.review-button:hover {
+    background-color: #d6aa0d;
+    color: white;
+    border: 1px solid black;
+}
