@@ -6,7 +6,7 @@ function ReviewSection() {
   return (
     <Col lg={5}>
       <Row>
-        <Col lg={12} className="d-flex justify-content-between">
+        <Col sm={12} className="d-flex flex-col justify-content-between">
           <h3>Reviews</h3>
           <Button className="review-button rounded" size="sm">See All Reviews</Button>
         </Col>

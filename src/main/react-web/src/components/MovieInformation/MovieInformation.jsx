@@ -1,10 +1,11 @@
 import React from "react";
 import { Col, Image, Row } from "react-bootstrap";
-import './MovieInformation.css'
+import { Rating } from "react-simple-star-rating";
+import "./MovieInformation.css";
 
 function MovieInformation() {
   return (
-    <Row className="justify-content-center mt-3">
+    <Row className="justify-content-center mt-3 movie-content-container">
       <Col lg={6}>
         <Row>
           <Col>
@@ -13,12 +14,24 @@ function MovieInformation() {
               fluid
             />
           </Col>
-          <Col>
+          <Col className="d-flex flex-column">
             <h2>Doctor Strange</h2>
-            <div>
-              <small className="me-3">Action</small>
-              <small>Action</small>
-            </div>
+            <Row className="align-items-center">
+              <Col lg={6} className="overflow-auto">
+                <small className="me-3">Action</small>
+                <small className="me-3">Comedy</small>
+                <small>Drama</small>
+              </Col>
+              <Col lg={6}>
+                <Rating
+                  ratingValue={3}
+                  emptyColor="#f5c518"
+                  iconsCount={5}
+                  readonly="true"
+                  size={25}
+                />
+              </Col>
+            </Row>
             <div className="movie-description-container mt-3">
               <p>
                 Integer leo sapien, fermentum in ante eget, interdum vehicula

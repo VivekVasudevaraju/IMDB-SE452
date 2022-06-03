@@ -5,14 +5,14 @@
 }
 
 .review-button {
-    background-color: #f5c518;
+    background-color: #f5c518 !important;
     color: black;
     border: 1px solid black;
-    width: 120px;
+    width: fit-content;
     height: 30px;
 }
 
-.review-button:hover {
+.review-button:hover, .review-button:click {
     background-color: #d6aa0d;
     color: white;
     border: 1px solid black;

@@ -5,6 +5,13 @@ import MovieInformation from "../components/MovieInformation/MovieInformation";
 function MovieDetailsPage() {
   return (
     <>
+      <style>
+        {`
+          .App {
+              height: 100vh;
+          }
+          `}
+      </style>
       <MovieInformation />
       <MovieExtraDetails />
     </>

@@ -4,7 +4,7 @@ import './SingleReview.css'
 
 function SingleReview() {
   return (
-    <Col lg={12} className="single-review-container border-left-orange mb-3">
+    <Col sm={12} className="single-review-container border-left-orange mb-3">
       <h4>Amazing title</h4>
       <div className="review-text-container">
       <p>

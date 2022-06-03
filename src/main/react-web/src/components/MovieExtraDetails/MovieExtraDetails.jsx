@@ -3,6 +3,7 @@ import { Col, Row } from "react-bootstrap";
 import ReviewSection from "./ReviewSection";
 import './MovieExtraDetails.css'
 import AwardSection from "./AwardSection";
+import CastSection from "./CastSection";
 
 function MovieExtraDetails() {
   return (
@@ -13,7 +14,9 @@ function MovieExtraDetails() {
           <AwardSection />
         </Row>
       </Col>
-      <Col lg={6}></Col>
+      <Col lg={6}>
+        <CastSection />
+      </Col>
     </Row>
   );
 }

@@ -50,7 +50,7 @@ function App() {
           <Container>
             <HeaderBar />
             <Route path="/movie/:movieId" component={MovieDetailsPage} />
-            <SecureRoute path="/booking" component={Booking} />
+            {/* <SecureRoute path="/booking" component={Booking} /> */}
             <Route path="/" exact component={HomePage} />
             <Route path="/booking" component={BookingPage} />{" "}
             {/* <!-- SecureRoute /--> */}

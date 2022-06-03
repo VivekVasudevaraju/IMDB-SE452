@@ -7,7 +7,7 @@ const Category = ({ title, movies }) => {
   return (
     <>
       <h4 style={{ padding: "1em 0em 1em 0em" }}>{title}</h4>
-      <Row>
+      <Row className="category-row">
         {movies.map((movie) => (
           <Col>
             <Movie
@@ -24,4 +24,3 @@ const Category = ({ title, movies }) => {
 };
 
 export default Category;
-
