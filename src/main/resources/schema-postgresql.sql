@@ -94,10 +94,10 @@ CREATE TABLE users (
     first_name          VARCHAR(50) NOT NULL,
     last_name           VARCHAR(50) NOT NULL,
     email               VARCHAR(50) NOT NULL UNIQUE,
-    zipcode             INTEGER(6),
+    zipcode             INTEGER,
     state               VARCHAR(50),
     city                VARCHAR(50),
-    phone_number        BIGINT(10),
+    phone_number        BIGINT,
 
     PRIMARY KEY (user_name)
 );
