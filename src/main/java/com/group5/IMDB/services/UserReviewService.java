@@ -27,6 +27,22 @@ public class UserReviewService {
        return userReviewRepository.findAll();
     }
 
+    public Review thumbsUpIncrease(Long thumbId){
+
+        Review existingReviewDetails = getUserReview(thumbId);
+        existingReviewDetails.setThumbsUp(existingReviewDetails.getThumbsUp()+1);
+        return userReviewRepository.save(existingReviewDetails);
+
+    }
+
+    public Review thumbsDownIncrease(Long thumbId){
+
+        Review existingReviewDetails = getUserReview(thumbId);
+        existingReviewDetails.setThumbsDown(existingReviewDetails.getThumbsDown()+1);
+        return userReviewRepository.save(existingReviewDetails);
+
+    }
+
     public void updateUserReview(Review userReview){
         userReviewRepository.save(userReview);
     }
@@ -39,6 +55,10 @@ public class UserReviewService {
     public Review getUserReview(Long id){
         return userReviewRepository.getUserReviewById(id);
     }
+
+//    public List<Review> getUserReviewsByMovieId(Long movieID){
+//        return userReviewRepository.getUserReviewsByMovieId(movieID);
+//    }
 
 }
 

@@ -31,10 +31,28 @@ public class UserReviewController {
         return  new ResponseEntity<>(userReview,HttpStatus.OK);
     }
 
+//    @GetMapping("search/{id}")
+//    public ResponseEntity<List<Review>> getUserReviewsByMovieId(@PathVariable("id") Long id){
+//        List<Review> userReview = userReviewService.getUserReviewsByMovieId(id);
+//        return  new ResponseEntity<>(userReview,HttpStatus.OK);
+//    }
+
 
     @PostMapping("/add")
     public ResponseEntity<Review> addReview( @RequestBody Review review ){
         Review review_1 = userReviewService.addUserReview(review);
+        return  new ResponseEntity<>(review_1,HttpStatus.CREATED);
+    }
+
+    @PutMapping("/updatethumbsup/{thumbId}")
+    public ResponseEntity<Review> updateThumbCountUp( @PathVariable("thumbId") Long id ){
+        Review review_1 = userReviewService.thumbsUpIncrease(id);
+        return  new ResponseEntity<>(review_1,HttpStatus.CREATED);
+    }
+
+    @PutMapping("/updatethumbsdown/{thumbId}")
+    public ResponseEntity<Review> updateThumbDownCountUp( @PathVariable("thumbId") Long id ){
+        Review review_1 = userReviewService.thumbsDownIncrease(id);
         return  new ResponseEntity<>(review_1,HttpStatus.CREATED);
     }
 }
