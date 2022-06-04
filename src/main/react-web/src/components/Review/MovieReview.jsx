@@ -40,88 +40,6 @@ function MovieReview(prp) {
   }, [likeCount,dislikeCount,userData,a, b, c]);
 
 
-  const  sendThumbsUpInc_1 = async (e) => {
-    e.preventDefault();
-
-    try{
-      await axios.put(`/api/review/updatethumbsup/${review.id}`, );
-      setLikeCount(likeCount+1);
-      console.log("REVIEW ID: " + review.id)
-      console.log("REVIEW Likes: " + review.likes)
-
-    }catch (error){
-      console.log(error)
-    }
-
-  }
-
-  const  sendThumbsDownInc_1 = async (e) => {
-    e.preventDefault();
-
-    try{
-      await axios.put(`/api/review/updatethumbsdown/${review.id}`, );
-      setDislikeCount(dislikeCount+1);
-      console.log("REVIEW Dislikes: " + review.review_dislikes)
-    }catch (error){
-      console.log(error)
-    }
-
-  }
-
-
-  const  sendThumbsUpInc_2 = async (e) => {
-    e.preventDefault();
-
-    try{
-      await axios.put(`/api/review/updatethumbsup/${review_2.id}`, );
-      setLikeCount(likeCount+1);
-      console.log("REVIEW_2 ID: " + review_2.id)
-    }catch (error){
-      console.log(error)
-    }
-
-  }
-
-
-  const  sendThumbsDownInc_2 = async (e) => {
-    e.preventDefault();
-
-    try{
-      await axios.put(`/api/review/updatethumbsdown/${review_2.id}`, );
-      setDislikeCount(dislikeCount+1);
-      console.log("REVIEW Dislikes: " + review_2.review_dislikes)
-    }catch (error){
-      console.log(error)
-    }
-
-  }
-
-  const  sendThumbsUpInc_3 = async (e) => {
-    e.preventDefault();
-
-    try{
-      await axios.put(`/api/review/updatethumbsup/${review_3.id}`, );
-      setLikeCount(likeCount+1);
-      console.log("REVIEW_3 ID: " + review_3.id)
-    }catch (error){
-      console.log(error)
-    }
-
-  }
-
-  const  sendThumbsDownInc_3 = async (e) => {
-    e.preventDefault();
-
-    try{
-      await axios.put(`/api/review/updatethumbsdown/${review_3.id}`, );
-      setDislikeCount(dislikeCount+1);
-      console.log("REVIEW Dislikes: " + review_3.review_dislikes)
-    }catch (error){
-      console.log(error)
-    }
-
-  }
-
   const styleObj = {
     fontSize: 26,
     fontWeight: "bold",
@@ -131,12 +49,49 @@ function MovieReview(prp) {
 
   const strNum = 0;
   const endNum = 3
+  let sendThumbsUpInc_1;
+  let sendThumbsDownInc_1;
   return (
 
     <div className={"row"}>
 
         {review.slice(a,c).map((review) => (
             <span className={"col-9"}>
+
+
+                {sendThumbsUpInc_1 = async (e) => {
+                  e.preventDefault();
+
+                try{
+                console.log("ID is:: " + review.id)
+                await axios.put(`/api/review/updatethumbsup/${review.id}`, );
+                setLikeCount(likeCount+1);
+                console.log("REVIEW ID: " + review.id)
+                console.log("REVIEW Likes: " + review.likes)
+
+              }catch (error){
+                console.log("BROKE!")
+                console.log(error)
+              }
+
+              }
+                }
+
+              { sendThumbsDownInc_1 = async (e) => {
+                e.preventDefault();
+
+                try{
+                await axios.put(`/api/review/updatethumbsdown/${review.id}`, );
+                setDislikeCount(dislikeCount+1);
+                console.log("REVIEW Dislikes: " + review.review_dislikes)
+              }catch (error){
+                console.log(error)
+              }
+
+              }
+              }
+
+
 
                <div style={styleObj}>
                  {review.reviewTitle}
@@ -149,9 +104,6 @@ function MovieReview(prp) {
                <div style={{paddingTop: "10px", color: "white", fontSize: "17px", paddingBottom: "10px"}}>
                                 {review.reviewText}
                </div>
-
-
-
 
 
         <div className={"row"}>
