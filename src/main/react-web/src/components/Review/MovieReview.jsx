@@ -23,7 +23,7 @@ function MovieReview(prp) {
 
   useEffect(() => {
     async function getData() {
-      const response = await axios.get(`api/review/find/${a}/`);
+      const response = await axios.get(`api/review/userreviews`);
         setReview(response.data);
 
 
@@ -123,26 +123,39 @@ function MovieReview(prp) {
   }
 
   const styleObj = {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "bold",
     color: "White",
+    paddingTop:"25px"
   };
 
   return (
     <div className={"row"}>
-      <div>
-        <p style={styleObj}> {review.reviewTitle} </p>
-        <p style={{ color: "#4A5CFF", fontSize: 12, fontWeight: "bold" }}>
-          {" "}
-          {usernameData}{" "}
-        </p>
-        <p style={{ color: "white", fontSize: "14px" }}>{review.reviewText}</p>
+
+        {review.map((review) => (
+            <span className={"col-9"}>
+
+               <div style={styleObj}>
+                 {review.reviewTitle}
+               </div>
+
+               <div style={{color: "#4A5CFF", fontSize: 14, fontWeight: "bold"}}>
+                 MovieLover96
+               </div>
+
+               <div style={{paddingTop: "10px", color: "white", fontSize: "17px", paddingBottom: "10px"}}>
+                                {review.reviewText}
+               </div>
+
+
+
+
 
         <div className={"row"}>
           <div className={"col-1"}>
             <i
               onClick={sendThumbsUpInc_1}
-              style={{ color: "green" }}
+              style={{ color: "green"}}
               className="fa-regular fa-thumbs-up fa-1xl"
             ></i>
             <p>{review.thumbsUp}</p>
@@ -151,90 +164,34 @@ function MovieReview(prp) {
           <div className={"col"}>
             <i
               onClick={sendThumbsDownInc_1}
-              style={{ color: "red" }}
+              style={{ color: "red" ,paddingLeft:"10px" }}
               className="fa-regular fa-thumbs-down fa-1xl"
             ></i>
-            <p>{review.thumbsDown}</p>
+            <p  style={{ paddingLeft:"10px" }}>{review.thumbsDown}</p>
           </div>
         </div>
+            </span>
+        ))}
 
 
-        <p style={styleObj}> {review_2.reviewTitle} </p>
-        <p style={{ color: "#4A5CFF", fontSize: 12, fontWeight: "bold" }}>
-          {" "}
-          {usernameData}{" "}
-        </p>
-        <p style={{ color: "white", fontSize: "14px" }}>
-          {review_2.reviewText}
-        </p>
 
-        <div className={"row"}>
-          <div className={"col-1"}>
-            <i
-              onClick={sendThumbsUpInc_2}
-              style={{ color: "green" }}
-              className="fa-regular fa-thumbs-up fa-1xl"
-            ></i>
-            <p>{review_2.thumbsUp}</p>
-          </div>
-
-          <div className={"col"}>
-            <i
-              onClick={sendThumbsDownInc_2}
-              style={{ color: "red" }}
-              className="fa-regular fa-thumbs-down fa-1xl"
-            ></i>
-            <p>{review_2.thumbsDown}</p>
-          </div>
-        </div>
-
-        <p style={styleObj}> {review_3.reviewTitle} </p>
-        <p style={{ color: "#4A5CFF", fontSize: 12, fontWeight: "bold" }}>
-          {" "}
-          {usernameData}{" "}
-        </p>
-        <p style={{ color: "white", fontSize: "14px" }}>
-          {review_3.reviewText}
-        </p>
-
-        <div className={"row"}>
-          <div className={"col-1"}>
-            <i
-              onClick={sendThumbsUpInc_3
-            }
-              style={{ color: "green" }}
-              className="fa-regular fa-thumbs-up fa-1xl"
-            ></i>
-            <p>{review_3.thumbsUp}</p>
-          </div>
-
-          <div className={"col"}>
-            <i
-              onClick={sendThumbsDownInc_3}
-              style={{ color: "red" }}
-              className="fa-regular fa-thumbs-down fa-1xl"
-            ></i>
-            <p>{review_3.thumbsDown}</p>
-          </div>
-        </div>
 
       <div style={{ paddingTop: "30px" }}>
         <i
-          onClick={() => {
-            setA(a - 3), setB(b - 3), setC(c - 3);
-          }}
-          style={{ color: "#e1ad0b", paddingBottom:"10%" }}
-          className="fa-solid fa-circle-chevron-left fa-2xl"
+            onClick={() => {
+              setA(a - 3), setB(b - 3), setC(c - 3);
+            }}
+            style={{ color: "#e1ad0b", paddingBottom:"10%" }}
+            className="fa-solid fa-circle-chevron-left fa-2xl"
         ></i>
         <i
-          onClick={() => {
-            setA(a + 3), setB(b + 3), setC(c + 3);
-          }}
-          style={{ color: "#e1ad0b", paddingLeft: "100px" }}
-          className="fa-solid fa-circle-chevron-right fa-2xl"
+            onClick={() => {
+              setA(a + 3), setB(b + 3), setC(c + 3);
+            }}
+            style={{ color: "#e1ad0b", paddingLeft: "100px" }}
+            className="fa-solid fa-circle-chevron-right fa-2xl"
         ></i>
       </div>
-    </div>
     </div>
   );
 }
