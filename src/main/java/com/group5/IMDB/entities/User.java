@@ -1,11 +1,10 @@
 package com.group5.IMDB.entities;
 
 import lombok.Data;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
+import javax.persistence.*;
 import javax.validation.constraints.Email;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
@@ -37,5 +36,14 @@ public class User {
 
     @Column(name = "phone_number", columnDefinition = "bigint(10)", nullable = false)
     private Long phoneNumber;
+
+
+    @OneToMany //(fetch = FetchType.EAGER)
+    @JoinTable(name = "username_userreview", joinColumns = {
+            @JoinColumn(name ="user_name" , referencedColumnName = "user_name")},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "review_id", referencedColumnName = "review_id" ,unique = true)
+            })
+    private List<Review> review;
 
 }
