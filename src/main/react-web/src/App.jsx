@@ -12,6 +12,7 @@ import BookingPage from "./components/Booking/BookingPage";
 import Login from "./components/User/Login";
 import UserReviewPage from "./pages/UserReviewPage";
 import config from "./config";
+import MovieDetailsPage from "./pages/MovieDetailsPage";
 
 const oktaAuth = new OktaAuth(config.oidc);
 
@@ -48,12 +49,15 @@ function App() {
         >
           <Container>
             <HeaderBar />
+            <Route path="/movie/:movieId" component={MovieDetailsPage} />
+            {/* <SecureRoute path="/booking" component={Booking} /> */}
             <Route path="/" exact component={HomePage} />
             <Route path="/booking" component={BookingPage} />{" "}
             {/* <!-- SecureRoute /--> */}
             <Route path="/userreviews" component={UserReviewPage} />
             <Route path="/login" render={() => <Login />} />
             <Route path="/login/callback" component={LoginCallback} />
+            <Route path="/" exact component={HomePage} />
           </Container>
         </Security>
       </StateContext.Provider>

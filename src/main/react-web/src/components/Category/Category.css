@@ -1,4 +1,4 @@
-.row {
+.category-row .row {
   flex-wrap: nowrap;
   overflow-y: hidden;
   overflow-x: scroll;

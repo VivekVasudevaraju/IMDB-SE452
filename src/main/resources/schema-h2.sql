@@ -66,6 +66,15 @@ CREATE TABLE movie_genres (
     FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
 );
 
+CREATE TABLE ratings (
+    rating_id           BIGINT AUTO_INCREMENT,
+    -- movie_id            BIGINT NOT NULL,
+    -- user_name           VARCHAR(255) NOT NULL,
+    rating_level        INTEGER NOT NULL,
+
+    PRIMARY KEY (rating_id)
+);
+
 CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
@@ -78,15 +87,6 @@ CREATE TABLE reviews (
     -- review_likes        INTEGER NOT NULL,
 
     PRIMARY KEY (review_id)
-);
-
-CREATE TABLE ratings (
-    rating_id           BIGINT AUTO_INCREMENT,
-    -- movie_id            BIGINT NOT NULL,
-    -- user_name           VARCHAR(255) NOT NULL,
-    rating_level        INTEGER NOT NULL,
-
-    PRIMARY KEY (rating_id)
 );
 
 CREATE TABLE users (

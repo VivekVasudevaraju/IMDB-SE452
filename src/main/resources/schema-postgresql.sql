@@ -24,7 +24,7 @@ CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE sequence START 11;
 
 CREATE TABLE categories (
-    category_id         SERIAL,
+    category_id         BIGINT AUTO_INCREMENT,
     category            VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (category_id)
@@ -66,6 +66,15 @@ CREATE TABLE movie_genres (
     FOREIGN KEY (genre_id) REFERENCES genres(genre_id)
 );
 
+CREATE TABLE ratings (
+    rating_id           BIGINT AUTO_INCREMENT,
+    -- movie_id            BIGINT NOT NULL,
+    -- user_name           VARCHAR(255) NOT NULL,
+    rating_level        INTEGER NOT NULL,
+
+    PRIMARY KEY (rating_id)
+);
+
 CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
@@ -80,31 +89,21 @@ CREATE TABLE reviews (
     PRIMARY KEY (review_id)
 );
 
-CREATE TABLE ratings (
-    rating_id           SERIAL,
-    -- movie_id            BIGINT NOT NULL,
-    -- user_name           VARCHAR(255) NOT NULL,
-    rating_level        INTEGER NOT NULL,
-
-    PRIMARY KEY (rating_id)
-);
-
 CREATE TABLE users (
     user_name           VARCHAR(50) NOT NULL,
     first_name          VARCHAR(50) NOT NULL,
     last_name           VARCHAR(50) NOT NULL,
-    email               VARCHAR(50) NOT NULL,
-    zipcode             INTEGER,
+    email               VARCHAR(50) NOT NULL UNIQUE,
+    zipcode             INTEGER(6),
     state               VARCHAR(50),
     city                VARCHAR(50),
-    phone_number        BIGINT,
+    phone_number        BIGINT(10),
 
-    PRIMARY KEY (user_name),
-    UNIQUE (email)
+    PRIMARY KEY (user_name)
 );
 
 CREATE TABLE rating_user (
-    rating_user_id SERIAL,
+    rating_user_id BIGINT AUTO_INCREMENT,
     rating_id BIGINT,
     user_name VARCHAR(50),
 
@@ -163,10 +162,10 @@ CREATE TABLE theatre_auditorium (
 );
 
 CREATE TABLE auditoriums (
-    auditorium_id       SERIAL,
+    auditorium_id       BIGINT AUTO_INCREMENT,
     auditorium_name     VARCHAR(255) NOT NULL,
     available_seats     INTEGER NOT NULL,
-    
+
     PRIMARY KEY (auditorium_id)
 );
 
@@ -180,7 +179,7 @@ CREATE TABLE showtimes (
 );
 
 CREATE TABLE tickets (
-    ticket_id           SERIAL,
+    ticket_id           BIGINT AUTO_INCREMENT,
     user_name           VARCHAR(255) NOT NULL,
     movie_id            BIGINT NOT NULL,
     theatre_id          BIGINT NOT NULL,

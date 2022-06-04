@@ -1,7 +1,4 @@
 
-
-
-
 -- Theatre Table Dummy Data
 
 insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
