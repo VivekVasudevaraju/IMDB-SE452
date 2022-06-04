@@ -78,7 +78,7 @@ CREATE TABLE ratings (
 CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
-    review_text         VARCHAR(255) NOT NULL,
+    review_text         VARCHAR(2500) NOT NULL,
     review_likes        INTEGER NOT NULL,
     review_dislikes     INTEGER NOT NULL,
 

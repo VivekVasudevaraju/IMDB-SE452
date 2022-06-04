@@ -58,15 +58,24 @@ insert into reviews (review_id, review_title, review_text,review_likes,review_di
 values (6,'Lolita', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',70,50);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (7,'Carmina and Amen (Carmina y amén)',
-        'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.',01,03);
+values (7,'Not enough multiverse and maybe too much madness',
+        'Sam Raimi definitely put a splash of horror in this action film. Doctor Strange in the Multiverse of Madness is darker
+         & more violent than any previous MCU movie, which could be considered a strength.
+         However, I felt like there was not enough multiverse and maybe too much madness.
+        Despite the entertaining visuals, the plot is fairly chaotic, and the acting & dialogue are
+        inconsistent. This movie is an entertaining ride, but its a little too messy to stand on its own.',01,03);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (8,'Dollman', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',50,04);
+values (8,'A beautiful fable for now and the future', 'I believe everyone has a right to their opinion about films or other topics.
+However from a lot of the comments I have read about this film, I do not think many got the gist of the message
+from the author and the film maker. This film is a great modern fable, a fable in the dictionary is defined as a brief fictitious story that teaches a moral.
+There are many morals defined in this film but foremost is integrity and a simple goodness. I have a half brother who grew up in the Southern U.S. and on one occasion we were
+discussing this film and he said he felt it portrayed Southerners as dimwitted.'
+,50,04);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (9,'One Deadly Summer (L''été meurtrier)',
-        'Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat.',04,0);
+values (9,'A great movie you can watch again and again',
+        'Because you''ll probably be confused the first time around. Its not a coincidence it stars some of the greatest actors of our time.',04,0);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
 values (10,'Life Is But a Dream', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.',30,10);
@@ -113,6 +122,10 @@ insert into users (user_name, first_name, last_name, email, zipcode, state, city
 -- insert into rating_user (rating_id, user_name) values (4, 'bgorse1');
 -- insert into rating_user (rating_id, user_name) values (5, 'bgorse1');
 
+-- username_userreview Dummy Data
+insert into username_userreview (username_userreview_id,user_name,review_id) values (1,'radin9',7);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (2,'nlivoir8',8);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (3,'lmacmichael6',9);
 
 -- Audiotorium Data
 insert into auditoriums (auditorium_name, available_seats) values ('Livefish', 46);
