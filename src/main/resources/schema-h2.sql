@@ -78,7 +78,7 @@ CREATE TABLE ratings (
 CREATE TABLE reviews (
     review_id           BIGINT,
     review_title        VARCHAR(255) NOT NULL,
-    review_text         VARCHAR(255) NOT NULL,
+    review_text         VARCHAR(2500) NOT NULL,
     review_likes        INTEGER NOT NULL,
     review_dislikes     INTEGER NOT NULL,
 
@@ -110,6 +110,15 @@ CREATE TABLE rating_user (
     PRIMARY KEY (rating_user_id),
     FOREIGN KEY (rating_id) REFERENCES ratings(rating_id),
     FOREIGN KEY (user_name) REFERENCES users(user_name)
+);
+
+CREATE TABLE username_userreview (
+username_userreview_id BIGINT AUTO_INCREMENT,
+user_name VARCHAR(50),
+review_id BIGINT,
+PRIMARY KEY (username_userreview_id),
+FOREIGN KEY (review_id) REFERENCES reviews(review_id),
+FOREIGN KEY (user_name) REFERENCES users(user_name)
 );
 
 CREATE TABLE casts (

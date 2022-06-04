@@ -6,14 +6,32 @@ function MovieReview(prp) {
   const [review, setReview] = useState([]);
   const [a, setA] = useState(0);
   const [c, setC] = useState(3);
+  const [myUserMovieData, setMyUserMovieData] = useState([]);
+
   const [likeCount, setLikeCount] = useState(0);
   const [dislikeCount, setDislikeCount] = useState(0);
+
+  // useEffect(() => {
+  //   async function getData() {
+  //
+  //     const response_2 = await axios.get("/api/users/");
+  //     setMyUserMovieData(response_2.data);
+  //
+  //     console.log("My Movie Data: " + myUserMovieData)
+  //   }
+  //   getData();
+  // }, []);
 
 
   useEffect(() => {
     async function getData() {
       const response = await axios.get("/api/review/userreviews");
         setReview(response.data);
+
+      // const response_2 = await axios.get("/api/users/");
+      // setMyUserMovieData(response_2.data);
+      //
+      // console.log("My Movie Data: " + myUserMovieData)
     }
     getData();
   }, [likeCount,dislikeCount,userData,a, c]);
@@ -70,7 +88,9 @@ function MovieReview(prp) {
                </div>
 
                <div style={{color: "#4A5CFF", fontSize: 14, fontWeight: "bold"}}>
-                 MovieLover96
+
+              {review.user == null ? "ANONYMOUS USER" : review.user.userName  }
+
                </div>
 
                <div style={{paddingTop: "10px", color: "white", fontSize: "17px", paddingBottom: "10px"}}>
