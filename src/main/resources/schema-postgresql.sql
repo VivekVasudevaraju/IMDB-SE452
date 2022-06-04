@@ -112,6 +112,15 @@ CREATE TABLE rating_user (
     FOREIGN KEY (user_name) REFERENCES users(user_name)
 );
 
+CREATE TABLE username_userreview (
+                                     username_userreview_id BIGINT AUTO_INCREMENT,
+                                     user_name VARCHAR(50),
+                                     review_id BIGINT,
+                                     PRIMARY KEY (username_userreview_id),
+                                     FOREIGN KEY (review_id) REFERENCES reviews(review_id),
+                                     FOREIGN KEY (user_name) REFERENCES users(user_name)
+);
+
 CREATE TABLE casts (
     cast_id             BIGINT NOT NULL,
     cast_name           VARCHAR(255) NOT NULL,
