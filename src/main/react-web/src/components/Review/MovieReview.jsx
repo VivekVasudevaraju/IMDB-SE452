@@ -1,43 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,useParams } from "react";
 import axios from "axios";
 
 function MovieReview(prp) {
-  const movieDummyData =
-    " Low expectations were what I had when the trailer first appeared on my phone screen." +
-    " I wasn't even interested to watch it till the end. I would roll my eyes on the animation style, its not eye-catching nor it is impressive." +
-    "But damnnnnnnn! I wasnt expecting it to be good. Its a feature animated film filled with genuine laughter,comical characters and an above the par plot";
-
   const userData = prp.reviewData
-
-  const usernameData = "MovieLover724";
-  const userTitleData = "Movie Was Worth A Watch!";
-  const test = "";
   const [review, setReview] = useState([]);
-  const [review_2, setReview_2] = useState("");
-  const [review_3, setReview_3] = useState("");
   const [a, setA] = useState(0);
-  const [b, setB] = useState(2);
   const [c, setC] = useState(3);
   const [likeCount, setLikeCount] = useState(0);
   const [dislikeCount, setDislikeCount] = useState(0);
 
+
   useEffect(() => {
     async function getData() {
-      const response = await axios.get(`api/review/userreviews`);
+      const response = await axios.get("api/review/userreviews");
         setReview(response.data);
-
-
-      const response_2 = await axios.get(`/api/review/find/${b}/`);
-        setReview_2(response_2.data);
-
-
-      const response_3 = await axios.get(`/api/review/find/${c}/`);
-        setReview_3(response_3.data);
-
-      //console.log(response)
     }
     getData();
-  }, [likeCount,dislikeCount,userData,a, b, c]);
+  }, [likeCount,dislikeCount,userData,a, c]);
 
 
   const styleObj = {
@@ -47,21 +26,17 @@ function MovieReview(prp) {
     paddingTop:"25px"
   };
 
-  const strNum = 0;
-  const endNum = 3
+
   let sendThumbsUpInc_1;
   let sendThumbsDownInc_1;
   return (
 
     <div className={"row"}>
-
-        {review.slice(a,c).map((review) => (
+      {review.slice(a,c).map((review) => (
             <span className={"col-9"}>
-
 
                 {sendThumbsUpInc_1 = async (e) => {
                   e.preventDefault();
-
                 try{
                 console.log("ID is:: " + review.id)
                 await axios.put(`/api/review/updatethumbsup/${review.id}`, );
@@ -86,12 +61,9 @@ function MovieReview(prp) {
                 console.log("REVIEW Dislikes: " + review.review_dislikes)
               }catch (error){
                 console.log(error)
+                  }
+                }
               }
-
-              }
-              }
-
-
 
                <div style={styleObj}>
                  {review.reviewTitle}
@@ -128,20 +100,17 @@ function MovieReview(prp) {
             </span>
         ))}
 
-
-
-
       <div style={{ paddingTop: "30px" }}>
         <i
             onClick={() => {
-              setA(a - 3), setB(b - 3), setC(c - 3);
+              setA(a - 3), setC(c - 3);
             }}
             style={{ color: "#e1ad0b", paddingBottom:"10%" }}
             className="fa-solid fa-circle-chevron-left fa-2xl"
         ></i>
         <i
             onClick={() => {
-              setA(a + 3), setB(b + 3), setC(c + 3);
+              setA(a + 3), setC(c + 3);
             }}
             style={{ color: "#e1ad0b", paddingLeft: "100px" }}
             className="fa-solid fa-circle-chevron-right fa-2xl"
@@ -150,4 +119,5 @@ function MovieReview(prp) {
     </div>
   );
 }
+
 export default MovieReview;

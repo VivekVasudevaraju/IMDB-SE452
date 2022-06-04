@@ -74,7 +74,7 @@ function UserReviewPage() {
 
 
             <div className={"col"} style={{paddingLeft:"80px"}}>
-                <h1 className="display-1">USER REVIEWS</h1>
+                <h1 className="display-3">USER REVIEWS</h1>
                 <br/>
 
                 <MovieReview

@@ -54,6 +54,7 @@ function App() {
             <Route path="/" exact component={HomePage} />
             <Route path="/booking" component={BookingPage} />{" "}
             {/* <!-- SecureRoute /--> */}
+            <Route path="/userreviews/:id" component={UserReviewPage} />
             <Route path="/userreviews" component={UserReviewPage} />
             <Route path="/login" render={() => <Login />} />
             <Route path="/login/callback" component={LoginCallback} />
