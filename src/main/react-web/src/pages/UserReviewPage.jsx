@@ -5,7 +5,7 @@ import {useParams} from "react-router-dom";
 
 function UserReviewPage() {
     const {theMovieId} = useParams()
-    const apiURL = "api/review/add/"
+    const apiURL = "/api/review/add/"
     const [myReviewTitle,setMyReviewTitle] = useState("")
     const [myReviewData,setMyReviewData] = useState("")
     const [myMovieData,setMovieData] = useState( [])
