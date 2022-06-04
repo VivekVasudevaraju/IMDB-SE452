@@ -1,12 +1,25 @@
 import React, {useState,useEffect} from "react"
 import MovieReview from "../components/Review/MovieReview";
 import axios from "axios";
+import {useParams} from "react-router-dom";
 
 function UserReviewPage() {
+    const {theMovieId} = useParams()
     const apiURL = "api/review/add/"
     const [myReviewTitle,setMyReviewTitle] = useState("")
     const [myReviewData,setMyReviewData] = useState("")
+    const [myMovieData,setMovieData] = useState( [])
 
+
+    useEffect(() => {
+    async function getData() {
+        const response = await axios.get(`/api/movie/${theMovieId}`)
+        setMovieData(response.data);
+    }
+    getData();
+    console.log(theMovieId)
+    console.log(myMovieData)
+    }, [])
 
     const  sendDataToAPI = async (e) => {
         e.preventDefault();
@@ -39,9 +52,9 @@ function UserReviewPage() {
 
             <div className={"col-6"}>
 
-                <h1 style={{color:"#ffcb00"}} className="display-3">Moon Knight</h1>
+                <h1 style={{color:"#ffcb00"}} className="display-3">{myMovieData.movieTitle}</h1>
                 <br/>
-                <img src="https://m.media-amazon.com/images/M/MV5BYTc5OWNhYjktMThlOS00ODUxLTgwNDQtZjdjYjkyM2IwZTZlXkEyXkFqcGdeQXVyNTA3MTU2MjE@._V1_QL75_UX380_CR0,0,380,562_.jpg" alt=""/>
+                <img src={myMovieData.movieImg} alt=""/>
 
                 <div style={{paddingTop:"25px"}} className={"row"}>
                     <p style={{fontSize:"38px",paddingLeft:"175px"}} className="col-1">7/10</p>

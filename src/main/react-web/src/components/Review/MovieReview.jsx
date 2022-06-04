@@ -12,7 +12,7 @@ function MovieReview(prp) {
 
   useEffect(() => {
     async function getData() {
-      const response = await axios.get("api/review/userreviews");
+      const response = await axios.get("/api/review/userreviews");
         setReview(response.data);
     }
     getData();
