@@ -38,24 +38,26 @@ values (9,'Springfield', 'Marcus Theatres', 'Illinois', '62794');
 
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (1, 'Bad Words', 'Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.',110,07);
+values (1, 'Wanda in the Multiverse of Happiness', 'The genre of this movie is horror-comedy. In a near future, this movie will eventually be renamed, and be called "Wanda in the Multiverse of Happiness. Victoria Alonso knows it. Sam Raimi knows it. Michael Waldron knows it. And I know it :) PS: Thank you for the second post credits scene :D.',110,07);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (2,'Command Performance',
-        'Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.',0,0);
+values (2,'Dont believe the negative reviews',
+        'WOW. Are people picky now a days.. I''m not sure why this is getting negative reviews. Haters gonna hate I guess. I loved this movie. It has great visuals, outstanding acting and a great horror side to it (thank you Sami). Please go watch this and judge for yourself.',0,0);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (3,'Pine Flat', 'Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum.',01,0);
+values (3,'What the hell was that??', 'I''m sorry but is there anyone who liked this movie. I love SF, and even that pinch of horor is good but there is absolutley no plot. Boring conversations, too many unnecessary side characters and fight scenes. I felt like I was watching some low budget movie.',01,0);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (4,'Tortilla Soup',
-        'Mauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.',0,0);
+values (4,'The usual Marvel formula',
+        'I like Oscar Isaac as much as the next guy but even he can''t keep me entertained. This show falls into the usual Marvel trap once again. The wacky tone is fine when I''m watching a 2 hour Marvel movie on my couch on a lazy Sunday afternoon.',7,3);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (5,'Benji', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.',0,0);
+values (5,'I expected more', 'I sincerely expected much more from this tv show, especially knowing that within the cast of actors were Oscar Isaac and Ethan Hawke. After the first episode everything seemed very promising, but I found this series boring. I can rescue some of the action scenes that are very good.',0,0);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (6,'Lolita', 'Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede.',70,50);
+values (6,'This doesnt feel Marvel, I like it!', 'I don''t know anything about Moon Knight, I did not understand most of it but its interesting and different.
+I think the costume should have been less silly.
+This doesnt feel like a comic book series more like The Mummy. If you liked The Mummy watch it!',70,50);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
 values (7,'Not enough multiverse and maybe too much madness',
@@ -78,7 +80,7 @@ values (9,'A great movie you can watch again and again',
         'Because you''ll probably be confused the first time around. Its not a coincidence it stars some of the greatest actors of our time.',04,0);
 
 insert into reviews (review_id, review_title, review_text,review_likes,review_dislikes)
-values (10,'Life Is But a Dream', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.',30,10);
+values (10,'Powerful imagery, strong foundation setting', 'A strong first episode setting the scene of a multiple personality protagonist. The reflection metaphors work well (mirrors, puddles, scales ...) even if they are pasted on so thickly. So too the missing time around the girl, the goldfish and most impactfully the fighting. The use of implied violence is compelling especially in the car chase where there is already explosive action - this also informs us of the character of the alter ego.',30,10);
 
 
 -- Ratings Table Dummy Data
@@ -123,9 +125,16 @@ insert into users (user_name, first_name, last_name, email, zipcode, state, city
 -- insert into rating_user (rating_id, user_name) values (5, 'bgorse1');
 
 -- username_userreview Dummy Data
-insert into username_userreview (username_userreview_id,user_name,review_id) values (1,'radin9',7);
-insert into username_userreview (username_userreview_id,user_name,review_id) values (2,'nlivoir8',8);
-insert into username_userreview (username_userreview_id,user_name,review_id) values (3,'lmacmichael6',9);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (1,'gtwiddell0',1);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (2,'radin9',2);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (3,'nlivoir8',3);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (4,'icolebrook7',4);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (5,'lmacmichael6',5);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (6,'rfippe5',6);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (7,'mpodd4',7);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (8,'jbrearley3',8);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (9,'ggratland2',9);
+insert into username_userreview (username_userreview_id,user_name,review_id) values (10,'bgorse1',10);
 
 -- Audiotorium Data
 insert into auditoriums (auditorium_name, available_seats) values ('Livefish', 46);

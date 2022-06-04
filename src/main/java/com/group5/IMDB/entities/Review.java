@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 
 @Entity
@@ -39,5 +40,14 @@ public class Review implements Serializable {
 
     @Column(name = "review_dislikes", columnDefinition = "bigint")
     private Integer thumbsDown = 0;
+
+
+    @OneToOne //(fetch = FetchType.EAGER)
+    @JoinTable(name = "username_userreview", joinColumns = {
+            @JoinColumn(name ="review_id" , referencedColumnName = "review_id")},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "user_name", referencedColumnName = "user_name" ,unique = true)
+            })
+    private User user;
 
 }

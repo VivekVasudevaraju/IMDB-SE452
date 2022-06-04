@@ -8,6 +8,7 @@ function UserReviewPage() {
     const apiURL = "/api/review/add/"
     const [myReviewTitle,setMyReviewTitle] = useState("")
     const [myReviewData,setMyReviewData] = useState("")
+
     const [myMovieData,setMovieData] = useState( [])
 
 

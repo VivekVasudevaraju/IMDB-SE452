@@ -38,12 +38,12 @@ public class User {
     private Long phoneNumber;
 
 
-    @OneToMany //(fetch = FetchType.EAGER)
-    @JoinTable(name = "username_userreview", joinColumns = {
-            @JoinColumn(name ="user_name" , referencedColumnName = "user_name")},
-            inverseJoinColumns = {
-                    @JoinColumn(name = "review_id", referencedColumnName = "review_id" ,unique = true)
-            })
-    private List<Review> review;
+//    @OneToMany //(fetch = FetchType.EAGER)
+//    @JoinTable(name = "username_userreview", joinColumns = {
+//            @JoinColumn(name ="user_name" , referencedColumnName = "user_name")},
+//            inverseJoinColumns = {
+//                    @JoinColumn(name = "review_id", referencedColumnName = "review_id" ,unique = true)
+//            })
+//    private List<Review> review;
 
 }
