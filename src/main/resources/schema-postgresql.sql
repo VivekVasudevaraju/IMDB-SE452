@@ -24,7 +24,7 @@ CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
 CREATE SEQUENCE sequence START 11;
 
 CREATE TABLE categories (
-    category_id         BIGINT AUTO_INCREMENT,
+    category_id         SERIAL,
     category            VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (category_id)
@@ -67,7 +67,7 @@ CREATE TABLE movie_genres (
 );
 
 CREATE TABLE ratings (
-    rating_id           BIGINT AUTO_INCREMENT,
+    rating_id           SERIAL,
     -- movie_id            BIGINT NOT NULL,
     -- user_name           VARCHAR(255) NOT NULL,
     rating_level        INTEGER NOT NULL,
@@ -103,9 +103,9 @@ CREATE TABLE users (
 );
 
 CREATE TABLE rating_user (
-    rating_user_id BIGINT AUTO_INCREMENT,
-    rating_id BIGINT,
-    user_name VARCHAR(50),
+    rating_user_id      SERIAL,
+    rating_id           BIGINT,
+    user_name           VARCHAR(50),
 
     PRIMARY KEY (rating_user_id),
     FOREIGN KEY (rating_id) REFERENCES ratings(rating_id),
@@ -162,7 +162,7 @@ CREATE TABLE theatre_auditorium (
 );
 
 CREATE TABLE auditoriums (
-    auditorium_id       BIGINT AUTO_INCREMENT,
+    auditorium_id       SERIAL,
     auditorium_name     VARCHAR(255) NOT NULL,
     available_seats     INTEGER NOT NULL,
 
@@ -179,7 +179,7 @@ CREATE TABLE showtimes (
 );
 
 CREATE TABLE tickets (
-    ticket_id           BIGINT AUTO_INCREMENT,
+    ticket_id           SERIAL,
     user_name           VARCHAR(255) NOT NULL,
     movie_id            BIGINT NOT NULL,
     theatre_id          BIGINT NOT NULL,
