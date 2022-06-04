@@ -25,6 +25,9 @@ public class Review implements Serializable {
     @Column(name = "review_id", columnDefinition = "bigint",nullable = true)
     private Long id;
 
+//    @Column(name = "movie_id", columnDefinition = "bigint",nullable = true)
+//    private Long movieId;
+
     @Column(name = "review_title", columnDefinition = "varchar(100)",nullable = false)
     private String reviewTitle;
 

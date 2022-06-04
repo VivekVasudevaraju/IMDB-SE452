@@ -31,11 +31,6 @@ function UserReviewPage() {
     }, [myReviewTitle,myReviewData])
 
 
-    function abc(){
-
-    }
-
-
 
         return(
 
