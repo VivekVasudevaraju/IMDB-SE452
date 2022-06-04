@@ -88,7 +88,9 @@ function MovieReview(prp) {
                </div>
 
                <div style={{color: "#4A5CFF", fontSize: 14, fontWeight: "bold"}}>
-                 {review.user.userName}
+
+              {review.user == null ? "ANONYMOUS USER" : review.user.userName  }
+
                </div>
 
                <div style={{paddingTop: "10px", color: "white", fontSize: "17px", paddingBottom: "10px"}}>
