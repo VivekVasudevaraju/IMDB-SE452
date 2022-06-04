@@ -121,6 +121,16 @@ FOREIGN KEY (review_id) REFERENCES reviews(review_id),
 FOREIGN KEY (user_name) REFERENCES users(user_name)
 );
 
+CREATE TABLE movie_userreview (
+movie_userreview_id BIGINT AUTO_INCREMENT,
+movie_id BIGINT,
+review_id BIGINT,
+PRIMARY KEY (movie_userreview_id),
+FOREIGN KEY (review_id) REFERENCES reviews(review_id),
+FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
+);
+
+
 CREATE TABLE casts (
     cast_id             BIGINT NOT NULL,
     cast_name           VARCHAR(255) NOT NULL,
