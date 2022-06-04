@@ -12,7 +12,7 @@ function MovieReview(prp) {
   const usernameData = "MovieLover724";
   const userTitleData = "Movie Was Worth A Watch!";
   const test = "";
-  const [review, setReview] = useState("");
+  const [review, setReview] = useState([]);
   const [review_2, setReview_2] = useState("");
   const [review_3, setReview_3] = useState("");
   const [a, setA] = useState(1);
@@ -37,9 +37,90 @@ function MovieReview(prp) {
       //console.log(response)
     }
     getData();
-  }, [userData,a, b, c]);
+  }, [likeCount,dislikeCount,userData,a, b, c]);
 
 
+  const  sendThumbsUpInc_1 = async (e) => {
+    e.preventDefault();
+
+    try{
+      await axios.put(`/api/review/updatethumbsup/${review.id}`, );
+      setLikeCount(likeCount+1);
+      console.log("REVIEW ID: " + review.id)
+      console.log("REVIEW Likes: " + review.likes)
+
+    }catch (error){
+      console.log(error)
+    }
+
+  }
+
+  const  sendThumbsDownInc_1 = async (e) => {
+    e.preventDefault();
+
+    try{
+      await axios.put(`/api/review/updatethumbsdown/${review.id}`, );
+      setDislikeCount(dislikeCount+1);
+      console.log("REVIEW Dislikes: " + review.review_dislikes)
+    }catch (error){
+      console.log(error)
+    }
+
+  }
+
+
+  const  sendThumbsUpInc_2 = async (e) => {
+    e.preventDefault();
+
+    try{
+      await axios.put(`/api/review/updatethumbsup/${review_2.id}`, );
+      setLikeCount(likeCount+1);
+      console.log("REVIEW_2 ID: " + review_2.id)
+    }catch (error){
+      console.log(error)
+    }
+
+  }
+
+
+  const  sendThumbsDownInc_2 = async (e) => {
+    e.preventDefault();
+
+    try{
+      await axios.put(`/api/review/updatethumbsdown/${review_2.id}`, );
+      setDislikeCount(dislikeCount+1);
+      console.log("REVIEW Dislikes: " + review_2.review_dislikes)
+    }catch (error){
+      console.log(error)
+    }
+
+  }
+
+  const  sendThumbsUpInc_3 = async (e) => {
+    e.preventDefault();
+
+    try{
+      await axios.put(`/api/review/updatethumbsup/${review_3.id}`, );
+      setLikeCount(likeCount+1);
+      console.log("REVIEW_3 ID: " + review_3.id)
+    }catch (error){
+      console.log(error)
+    }
+
+  }
+
+  const  sendThumbsDownInc_3 = async (e) => {
+    e.preventDefault();
+
+    try{
+      await axios.put(`/api/review/updatethumbsdown/${review_3.id}`, );
+      setDislikeCount(dislikeCount+1);
+      console.log("REVIEW Dislikes: " + review_3.review_dislikes)
+    }catch (error){
+      console.log(error)
+    }
+
+  }
 
   const styleObj = {
     fontSize: 24,
@@ -60,7 +141,7 @@ function MovieReview(prp) {
         <div className={"row"}>
           <div className={"col-1"}>
             <i
-              onClick={() => setLikeCount(review.thumbsUp + 1)}
+              onClick={sendThumbsUpInc_1}
               style={{ color: "green" }}
               className="fa-regular fa-thumbs-up fa-1xl"
             ></i>
@@ -69,7 +150,7 @@ function MovieReview(prp) {
 
           <div className={"col"}>
             <i
-              onClick={() => setDislikeCount(dislikeCount + 1)}
+              onClick={sendThumbsDownInc_1}
               style={{ color: "red" }}
               className="fa-regular fa-thumbs-down fa-1xl"
             ></i>
@@ -90,7 +171,7 @@ function MovieReview(prp) {
         <div className={"row"}>
           <div className={"col-1"}>
             <i
-              onClick={() => setLikeCount(likeCount + 1)}
+              onClick={sendThumbsUpInc_2}
               style={{ color: "green" }}
               className="fa-regular fa-thumbs-up fa-1xl"
             ></i>
@@ -99,7 +180,7 @@ function MovieReview(prp) {
 
           <div className={"col"}>
             <i
-              onClick={() => setDislikeCount(dislikeCount + 1)}
+              onClick={sendThumbsDownInc_2}
               style={{ color: "red" }}
               className="fa-regular fa-thumbs-down fa-1xl"
             ></i>
@@ -119,7 +200,8 @@ function MovieReview(prp) {
         <div className={"row"}>
           <div className={"col-1"}>
             <i
-              onClick={() => setLikeCount(likeCount + 1)}
+              onClick={sendThumbsUpInc_3
+            }
               style={{ color: "green" }}
               className="fa-regular fa-thumbs-up fa-1xl"
             ></i>
@@ -128,7 +210,7 @@ function MovieReview(prp) {
 
           <div className={"col"}>
             <i
-              onClick={() => setDislikeCount(dislikeCount + 1)}
+              onClick={sendThumbsDownInc_3}
               style={{ color: "red" }}
               className="fa-regular fa-thumbs-down fa-1xl"
             ></i>
