@@ -136,6 +136,9 @@ insert into username_userreview (username_userreview_id,user_name,review_id) val
 insert into username_userreview (username_userreview_id,user_name,review_id) values (9,'ggratland2',9);
 insert into username_userreview (username_userreview_id,user_name,review_id) values (10,'bgorse1',10);
 
+
+
+
 -- Audiotorium Data
 insert into auditoriums (auditorium_name, available_seats) values ('Livefish', 46);
 insert into auditoriums (auditorium_name, available_seats) values ('Tambee', 07);
@@ -187,6 +190,30 @@ insert into movies (movie_title, description, duration, movie_img) values ('Batm
 insert into movies (movie_title, description, duration, movie_img) values ('Halo', 'Cras in purus eu magna vulputate luctus.', 199, 'https://m.media-amazon.com/images/M/MV5BYzhlOTkzZDMtNDYxYS00NTY2LWJjZDEtNjI3NmE3MTI2NGU2XkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX380_CR0,0,380,562_.jpg');
 
 insert into movies (movie_title, description, duration, movie_img) values ('John Wick 2', 'Aliquam quis turpis eget elit sodales scelerisque.', 72, 'https://m.media-amazon.com/images/M/MV5BYzk0MGFlZGMtYTk4ZS00MDFiLWJhNDAtODhmYWI2NmNhZDU4XkEyXkFqcGdeQXVyODA1NjQ0OTY@._V1_QL75_UX380_CR0,4,380,562_.jpg');
+
+
+
+-- movie_userreview Dummy Data
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (1, 1, 1);
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (2, 1, 6);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (3, 2, 2);
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (4, 2, 3);
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (5, 2, 4);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (6, 3, 5);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (7, 4, 6);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (8, 5, 7);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (9, 6, 8);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (10, 7, 9);
+
+insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (11, 8, 10);
+
+
 
 -- Movie_Categories Table Dummy Data
 insert into movie_categories (movie_id, category_id) VALUES (1,1);
