@@ -15,7 +15,7 @@ function MovieReview(prp) {
   const [review, setReview] = useState([]);
   const [review_2, setReview_2] = useState("");
   const [review_3, setReview_3] = useState("");
-  const [a, setA] = useState(1);
+  const [a, setA] = useState(0);
   const [b, setB] = useState(2);
   const [c, setC] = useState(3);
   const [likeCount, setLikeCount] = useState(0);
@@ -129,10 +129,13 @@ function MovieReview(prp) {
     paddingTop:"25px"
   };
 
+  const strNum = 0;
+  const endNum = 3
   return (
+
     <div className={"row"}>
 
-        {review.map((review) => (
+        {review.slice(a,c).map((review) => (
             <span className={"col-9"}>
 
                <div style={styleObj}>
