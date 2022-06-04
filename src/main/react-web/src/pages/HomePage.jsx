@@ -21,7 +21,7 @@ const HomePage = () => {
   useEffect(() => {
     async function getData() {
       const response = await axios.get("/api/category/");
-      console.log(response.data)
+      console.log(response.data);
       setCategories(response.data);
     }
     getData();

@@ -9,7 +9,7 @@ const Category = ({ title, movies }) => {
       <h4 style={{ padding: "1em 0em 1em 0em" }}>{title}</h4>
       <Row className="category-row">
         {movies.map((movie) => (
-          <Col>
+          <Col key={movie.movieId}>
             <Movie
               key={movie.movieId}
               title={movie.movieTitle}
