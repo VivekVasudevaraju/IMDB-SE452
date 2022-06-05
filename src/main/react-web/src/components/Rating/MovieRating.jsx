@@ -8,16 +8,22 @@ import "./MovieRating.css";
 import { Rating } from "react-simple-star-rating";
 
 const MovieRating = ({ show, handleClose }) => {
-  const [ratingLevel, setRating] = useState(0);
+  const [rating, setRating] = useState({ ratingId: 0, ratingLevel: 0 });
   const history = useHistory();
   const [saveRatingFailed, setSaveRatingFailed] = useState(false);
   const { authState } = useOktaAuth();
   const { state } = useContext(StateContext);
   const { user } = state;
 
-  const [rate, storeRating] = useResource(() => ({
+  const [rate, storeRating] = useResource((ratingLevel) => ({
     url: "/api/rating/",
     method: "post",
+    data: { ratingLevel, user },
+  }));
+
+  const [updateRate, UpdateRating] = useResource((ratingId, ratingLevel) => ({
+    url: `/api/rating/${ratingId}`,
+    method: "put",
     data: { ratingLevel, user },
   }));
 
@@ -28,13 +34,34 @@ const MovieRating = ({ show, handleClose }) => {
       } else {
         setSaveRatingFailed(false);
         console.log(rate.data);
+        setRating(rate.data);
         handleClose();
       }
     }
   }, [rate]);
 
+  useEffect(() => {
+    if (
+      updateRate &&
+      updateRate.isLoading === false &&
+      (updateRate.data || updateRate.error)
+    ) {
+      if (updateRate.error) {
+        setSaveRatingFailed(true);
+      } else {
+        setSaveRatingFailed(false);
+        console.log(updateRate.data);
+        setRating(updateRate.data);
+        handleClose();
+      }
+    }
+  }, [updateRate]);
+
   const handleRating = (rate) => {
-    setRating(rate);
+    setRating({
+      ...rating,
+      ratingLevel: rate,
+    });
   };
 
   const validate = () => {
@@ -42,7 +69,11 @@ const MovieRating = ({ show, handleClose }) => {
       history.push("/login");
       handleClose();
     } else {
-      storeRating(ratingLevel);
+      if (rating.ratingId == 0) {
+        storeRating(rating.ratingLevel);
+      } else {
+        UpdateRating(rating.ratingId, rating.ratingLevel);
+      }
     }
   };
 
@@ -65,7 +96,7 @@ const MovieRating = ({ show, handleClose }) => {
             <div className="movie-rating">
               <Rating
                 onClick={handleRating}
-                ratingValue={ratingLevel}
+                ratingValue={rating.ratingLevel}
                 fillColor="#65A1F0"
                 iconsCount={10}
               />
@@ -80,7 +111,7 @@ const MovieRating = ({ show, handleClose }) => {
             <Button
               variant="dark"
               className="rate-button"
-              disabled={ratingLevel.length === 0}
+              disabled={rating.ratingLevel.length === 0}
               type="submit"
             >
               Rate
