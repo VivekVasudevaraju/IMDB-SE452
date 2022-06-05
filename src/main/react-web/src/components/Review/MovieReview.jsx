@@ -34,7 +34,7 @@ function MovieReview(prp) {
   useEffect(() => {
     console.log("Man with big bow")
     doIt();
-  }, []);
+  }, [a,c,dislikeCount,likeCount]);
 
 
   //
@@ -72,130 +72,94 @@ function MovieReview(prp) {
 
 
   return (
+      <div className={"row"}>
+        {review.slice(a,c).map((review) => (
+            <span className={"col-9"}>
 
-    <div className={"row"}>
-      {review.map( (r) => (
+                {sendThumbsUpInc_1 = async (e) => {
+                  e.preventDefault();
+                  try{
+                    console.log("ID is:: " + review.id)
+                    await axios.put(`/api/review/updatethumbsup/${review.id}`, );
+                    setLikeCount(likeCount+1);
+                    console.log("REVIEW ID: " + review.id)
+                    console.log("REVIEW Likes: " + review.likes)
 
-          <span>
-            <h1>{r.reviewTitle} </h1>
-            {r.reviewText}
-          </span>
+                  }catch (error){
+                    console.log("BROKE!")
+                    console.log(error)
+                  }
 
+                }
+                }
 
+              { sendThumbsDownInc_1 = async (e) => {
+                e.preventDefault();
 
-                )) }
+                try{
+                  await axios.put(`/api/review/updatethumbsdown/${review.id}`, );
+                  setDislikeCount(dislikeCount+1);
+                  console.log("REVIEW Dislikes: " + review.review_dislikes)
+                }catch (error){
+                  console.log(error)
+                }
+              }
+              }
 
+              <div style={styleObj}>
+                 {review.reviewTitle}
+               </div>
 
+               <div style={{color: "#4A5CFF", fontSize: 14, fontWeight: "bold"}}>
 
+              {review.user == null ? "ANONYMOUS USER" : review.user.userName  }
 
-      {/*  <span>*/}
-    {/*    {review.review.map( (r)=> (*/}
-    {/*        <div>*/}
-    {/*          <h1>Hello</h1>*/}
-    {/*        </div>*/}
-    {/*    )) }*/}
-    {/*  </span>*/}
+               </div>
 
-    {/*  {review.slice(0,3).map( (review) => (*/}
-    {/*        <span className={"col-9"}>*/}
-    {/*            */}
-    {/*            {sendThumbsUpInc_1 = async (e) => {*/}
-    {/*              e.preventDefault();*/}
-    {/*            try{*/}
-    {/*            console.log("ID is:: " + review.review.id)*/}
-    {/*            await axios.put(`/api/review/updatethumbsup/${review.review.id}`, );*/}
-    {/*            setLikeCount(likeCount+1);*/}
-    {/*            console.log("REVIEW ID: " + review.review.id)*/}
-    {/*            console.log("REVIEW Likes: " + review.review.likes)*/}
-
-    {/*          }catch (error){*/}
-    {/*            console.log("BROKE!")*/}
-    {/*            console.log(error)*/}
-    {/*          }*/}
-
-    {/*          }*/}
-    {/*            }*/}
-
-    {/*          { sendThumbsDownInc_1 = async (e) => {*/}
-    {/*            e.preventDefault();*/}
-
-    {/*            try{*/}
-    {/*            await axios.put(`/api/review/updatethumbsdown/${review.review.id}`, );*/}
-    {/*            setDislikeCount(dislikeCount+1);*/}
-    {/*            console.log("REVIEW Dislikes: " + review.review_dislikes)*/}
-    {/*          }catch (error){*/}
-    {/*            console.log(error)*/}
-    {/*              }*/}
-    {/*            }*/}
-    {/*          }*/}
-
-    {/*           <div style={styleObj}>*/}
-    {/*             {review.review.reviewTitle}*/}
-    {/*           </div>*/}
-
-    {/*           <div style={{color: "#4A5CFF", fontSize: 14, fontWeight: "bold"}}>*/}
-
-    {/*          {review.review.user == null ? "ANONYMOUS USER" : review.review.user.userName  }*/}
-
-    {/*           </div>*/}
-
-    {/*           <div style={{paddingTop: "10px", color: "white", fontSize: "17px", paddingBottom: "10px"}}>*/}
-    {/*                            {review.review.reviewText}*/}
-    {/*           </div>*/}
+               <div style={{paddingTop: "10px", color: "white", fontSize: "17px", paddingBottom: "10px"}}>
+                                {review.reviewText}
+               </div>
 
 
-    {/*    <div className={"row"}>*/}
-    {/*      <div className={"col-1"}>*/}
-    {/*        <i*/}
-    {/*          onClick={sendThumbsUpInc_1}*/}
-    {/*          style={{ color: "green"}}*/}
-    {/*          className="fa-regular fa-thumbs-up fa-1xl"*/}
-    {/*        ></i>*/}
-    {/*        <p>{review.review.thumbsUp}</p>*/}
-    {/*      </div>*/}
+        <div className={"row"}>
+          <div className={"col-1"}>
+            <i
+                onClick={sendThumbsUpInc_1}
+                style={{ color: "green"}}
+                className="fa-regular fa-thumbs-up fa-1xl"
+            ></i>
+            <p>{review.thumbsUp}</p>
+          </div>
 
-    {/*      <div className={"col"}>*/}
-    {/*        <i*/}
-    {/*          onClick={sendThumbsDownInc_1}*/}
-    {/*          style={{ color: "red" ,paddingLeft:"10px" }}*/}
-    {/*          className="fa-regular fa-thumbs-down fa-1xl"*/}
-    {/*        ></i>*/}
-    {/*        <p  style={{ paddingLeft:"10px" }}>{review.review.thumbsDown}</p>*/}
-    {/*      </div>*/}
-    {/*    </div>*/}
-    {/*        </span>*/}
-    {/*    ))}*/}
+          <div className={"col"}>
+            <i
+                onClick={sendThumbsDownInc_1}
+                style={{ color: "red" ,paddingLeft:"10px" }}
+                className="fa-regular fa-thumbs-down fa-1xl"
+            ></i>
+            <p  style={{ paddingLeft:"10px" }}>{review.thumbsDown}</p>
+          </div>
+        </div>
+            </span>
+        ))}
 
-
-
-
-    {/*  { reviewArrayData.map( reviewArrayData => (*/}
-    {/*      console.log(reviewArrayData.reviewTitle)*/}
-    {/*  ))}*/}
-
-
-
-
-    {/*  <div style={{ paddingTop: "30px" }}>*/}
-    {/*    <i*/}
-    {/*        onClick={() => {*/}
-    {/*          setA(a - 3), setC(c - 3);*/}
-    {/*        }}*/}
-    {/*        style={{ color: "#e1ad0b", paddingBottom:"10%" }}*/}
-    {/*        className="fa-solid fa-circle-chevron-left fa-2xl"*/}
-    {/*    ></i>*/}
-    {/*    <i*/}
-    {/*        onClick={() => {*/}
-    {/*          setA(a + 3), setC(c + 3);*/}
-    {/*        }}*/}
-    {/*        style={{ color: "#e1ad0b", paddingLeft: "100px" }}*/}
-    {/*        className="fa-solid fa-circle-chevron-right fa-2xl"*/}
-    {/*    ></i>*/}
-    {/*  </div>*/}
-    </div>
-
-
-
+        <div style={{ paddingTop: "30px" }}>
+          <i
+              onClick={() => {
+                setA(a - 3), setC(c - 3);
+              }}
+              style={{ color: "#e1ad0b", paddingBottom:"10%" }}
+              className="fa-solid fa-circle-chevron-left fa-2xl"
+          ></i>
+          <i
+              onClick={() => {
+                setA(a + 3), setC(c + 3);
+              }}
+              style={{ color: "#e1ad0b", paddingLeft: "100px" }}
+              className="fa-solid fa-circle-chevron-right fa-2xl"
+          ></i>
+        </div>
+      </div>
   );
 }
 
