@@ -1,3 +1,5 @@
+DROP TABLE IF EXISTS movie_awards;
+DROP TABLE IF EXISTS movie_actors;
 DROP TABLE IF EXISTS theatre_auditorium;
 DROP TABLE IF EXISTS movie_cast;
 DROP TABLE IF EXISTS movie_theatres;
@@ -18,6 +20,8 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS casts;
 DROP TABLE IF EXISTS theatres;
 DROP TABLE IF EXISTS auditoriums;
+DROP TABLE IF EXISTS awards;
+DROP TABLE IF EXISTS actors;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 DROP SEQUENCE IF EXISTS sequence;
 
