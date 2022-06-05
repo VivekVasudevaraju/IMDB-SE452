@@ -2,14 +2,16 @@ import React from "react";
 import { Col, Row } from "react-bootstrap";
 import SingleAward from "./SingleAward";
 
-function AwardSection() {
+function AwardSection({awards=[]}) {
   return (
     <Col lg={{span: 5, offset:2}}>
       <Row>
         <Col lg={12} className="d-flex justify-content-between">
-          <h3>Award</h3>
+          <h3>Awards</h3>
         </Col>
-        <SingleAward />
+        {awards.map((award) => (
+          <SingleAward key={award.id}  awardTitle={award.awardTitle}/> 
+        ))}
       </Row>
     </Col>
   );

@@ -230,3 +230,39 @@ CREATE TABLE tickets (
     FOREIGN KEY (auditorium_id) REFERENCES auditoriums(auditorium_id),
     FOREIGN KEY (showtime_id) REFERENCES showtimes(showtime_id)
 );
+
+CREATE TABLE awards (
+    award_id            SERIAL,
+    award_title         VARCHAR(255) NOT NULL,
+
+    PRIMARY KEY (award_id)
+);
+
+CREATE TABLE movie_awards (
+    movie_awards_id     SERIAL,
+    movie_id            BIGINT NOT NULL,
+    award_id            BIGINT NOT NULL,
+
+    PRIMARY KEY (movie_awards_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
+    FOREIGN KEY (award_id) REFERENCES awards(award_id)
+);
+
+CREATE TABLE actors (
+    actor_id            SERIAL,
+    actor_name          VARCHAR(255) NOT NULL,
+    actor_character     VARCHAR(255) NOT NULL,
+    actor_image         TEXT NOT NULL,
+
+    PRIMARY KEY (actor_id)
+);
+
+CREATE TABLE movie_actors (
+    movie_actors_id     SERIAL,
+    movie_id            BIGINT NOT NULL,
+    actor_id            BIGINT NOT NULL,
+
+    PRIMARY KEY (movie_actors_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
+    FOREIGN KEY (actor_id) REFERENCES actors(actor_id)
+);
