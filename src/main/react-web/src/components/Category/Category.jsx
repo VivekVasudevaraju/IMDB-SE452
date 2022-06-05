@@ -10,13 +10,7 @@ const Category = ({ title, movies }) => {
       <Row className="category-row">
         {movies.map((movie) => (
           <Col key={movie.movieId}>
-            <Movie
-              key={movie.movieId}
-              title={movie.movieTitle}
-              imageUrl={movie.movieImg}
-              rating="7.4"
-              movieId={movie.movieId}
-            />
+            <Movie key={movie.movieId} movieData={movie} />
           </Col>
         ))}
       </Row>
