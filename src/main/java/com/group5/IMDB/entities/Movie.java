@@ -2,11 +2,8 @@ package com.group5.IMDB.entities;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "movies")
@@ -29,6 +26,15 @@ public class Movie {
 
     @Column(name = "movie_img", columnDefinition = "text", nullable = false)
     private String movieImg;
+
+
+    @OneToMany //(fetch = FetchType.EAGER)
+    @JoinTable(name = "movie_userreview", joinColumns = {
+            @JoinColumn(name ="movie_id" , referencedColumnName = "movie_id")},
+            inverseJoinColumns = {
+                    @JoinColumn(name = "review_id", referencedColumnName = "review_id" ,unique = true)
+            })
+    private List<Review> review;
 
 }
 
