@@ -1,11 +1,15 @@
 package com.group5.IMDB.entities;
 
 import lombok.Data;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "auditoriums")
@@ -22,5 +26,9 @@ public class Auditorium {
 
     @Column(name = "available_seats", columnDefinition = "integer", nullable = false)
     private int availableSeats;
+
+    @OneToMany // (fetch = FetchType.LAZY)
+    @JoinColumn(name = "auditorium_id")
+    private List<Showtime> showtimes;
 
 }

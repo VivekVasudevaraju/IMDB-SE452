@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS tickets;
 DROP TABLE IF EXISTS showtimes;
 DROP TABLE IF EXISTS movie_cast;
-DROP TABLE IF EXISTS theatre_movie;
+DROP TABLE IF EXISTS movie_theatres;
 DROP TABLE IF EXISTS movie_categories;
 DROP TABLE IF EXISTS username_userreview;
 DROP TABLE IF EXISTS movie_userreview;
@@ -167,15 +167,6 @@ CREATE TABLE movie_cast (
     FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
 );
 
-CREATE TABLE theatre_movie (
-    theatre_movie_id    BIGINT,
-    theatre_id          BIGINT NOT NULL,
-    movie_id            BIGINT NOT NULL,
-
-    PRIMARY KEY (theatre_movie_id),
-    FOREIGN KEY (movie_id) REFERENCES movies(movie_id)
-);
-
 CREATE TABLE theatres (
     theatre_id          BIGINT,
     theatre_city        VARCHAR,
@@ -186,12 +177,14 @@ CREATE TABLE theatres (
     PRIMARY KEY (theatre_id)
 );
 
-CREATE TABLE theatre_auditorium (
-    theatre_auditorium_id BIGINT,
+CREATE TABLE movie_theatres (
+    movie_theatres_id    BIGINT,
     theatre_id          BIGINT NOT NULL,
-    auditorium_id       BIGINT NOT NULL,
+    movie_id            BIGINT NOT NULL,
 
-    PRIMARY KEY (theatre_auditorium_id)
+    PRIMARY KEY (movie_theatres_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
+    FOREIGN KEY (theatre_id) REFERENCES theatres(theatre_id)
 );
 
 CREATE TABLE auditoriums (
@@ -202,10 +195,20 @@ CREATE TABLE auditoriums (
     PRIMARY KEY (auditorium_id)
 );
 
+CREATE TABLE theatre_auditorium (
+    theatre_auditorium_id BIGINT,
+    theatre_id          BIGINT NOT NULL,
+    auditorium_id       BIGINT NOT NULL,
+
+    PRIMARY KEY (theatre_auditorium_id),
+    FOREIGN KEY (theatre_id) REFERENCES theatres(theatre_id),   
+    FOREIGN KEY (auditorium_id) REFERENCES auditoriums(auditorium_id)
+);
+
 CREATE TABLE showtimes (
     showtime_id         BIGINT NOT NULL,
     auditorium_id       BIGINT NOT NULL,
-    start_time          TIME(0) WITHOUT TIME ZONE NOT NULL,
+    start_time          VARCHAR(255) NOT NULL,
 
     PRIMARY KEY (showtime_id),
     FOREIGN KEY (auditorium_id) REFERENCES auditoriums(auditorium_id)

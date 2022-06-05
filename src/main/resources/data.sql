@@ -1,39 +1,3 @@
-
--- Theatre Table Dummy Data
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (0,'Springfield', 'AMC Entertainment', 'Illinois', '62794');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (1,'Peoria', 'Apple Cinemas	', 'Illinois', '61614');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (2,'Carol Stream', 'Apple Cinemas	', 'Illinois', '60351');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (3,'Naperville', 'Marcus Theatres', 'Illinois', '60567');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (4,'Evanston', 'AMC Entertainment	', 'Illinois', '60208');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (5,'Peoria', 'AMC Entertainment	', 'Illinois', '61614');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (6,'Chicago', 'AMC Entertainment	', 'Illinois', '60611');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (7,'Chicago', 'AMC Entertainment	', 'Illinois', '60611');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (8,'Naperville', 'AMC Entertainment	', 'Illinois', '60567');
-
-insert into theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode)
-values (9,'Springfield', 'Marcus Theatres', 'Illinois', '62794');
-
-
-
-
 -- Reviews Table Dummy Data
 
 
@@ -144,19 +108,6 @@ insert into username_userreview (username_userreview_id,user_name,review_id) val
 
 
 
--- Audiotorium Data
-insert into auditoriums (auditorium_name, available_seats) values ('Livefish', 46);
-insert into auditoriums (auditorium_name, available_seats) values ('Tambee', 07);
-insert into auditoriums (auditorium_name, available_seats) values ('Digitube', 30);
-insert into auditoriums (auditorium_name, available_seats) values ('Plajo', 37);
-insert into auditoriums (auditorium_name, available_seats) values ('Blogtag', 14);
-insert into auditoriums (auditorium_name, available_seats) values ('Jabbertype', 95);
-insert into auditoriums (auditorium_name, available_seats) values ('Skyble', 60);
-insert into auditoriums (auditorium_name, available_seats) values ('Avavee', 58);
-insert into auditoriums (auditorium_name, available_seats) values ('Gabspot', 66);
-insert into auditoriums (auditorium_name, available_seats) values ('Linklinks', 15);
-
-
 -- Categories Table Dummy Data
 insert into categories (category) values ('Upcoming');
 insert into categories (category) values ('In Theaters');
@@ -229,6 +180,62 @@ insert into movie_categories (movie_id, category_id) VALUES (5,3);
 insert into movie_categories (movie_id, category_id) VALUES (6,1);
 insert into movie_categories (movie_id, category_id) VALUES (7,1);
 insert into movie_categories (movie_id, category_id) VALUES (8,1);
+
+-- Theatre Table Dummy Data
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (0,'Springfield', 'AMC Entertainment', 'Illinois', '62794');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (1,'Peoria', 'Apple Cinemas', 'Illinois', '61614');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (2,'Carol Stream', 'Apple Cinemas', 'Illinois', '60351');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (3,'Naperville', 'Marcus Theatres', 'Illinois', '60567');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (4,'Evanston', 'AMC Entertainment', 'Illinois', '60208');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (5,'Peoria', 'AMC Entertainment', 'Illinois', '61614');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (6,'Chicago', 'AMC Entertainment', 'Illinois', '60611');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (7,'Chicago', 'AMC Entertainment', 'Illinois', '60611');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (8,'Naperville', 'AMC Entertainment', 'Illinois', '60567');
+INSERT INTO theatres (theatre_id,theatre_city, theatre_name, theatre_state, theatre_zipcode) VALUES (9,'Springfield', 'Marcus Theatres', 'Illinois', '62794');
+
+-- Theatre Movie Dummy Data
+INSERT INTO movie_theatres (movie_theatres_id, theatre_id, movie_id) VALUES (0, 0, 1);
+INSERT INTO movie_theatres (movie_theatres_id, theatre_id, movie_id) VALUES (1, 0, 2);
+INSERT INTO movie_theatres (movie_theatres_id, theatre_id, movie_id) VALUES (2, 1, 1);
+INSERT INTO movie_theatres (movie_theatres_id, theatre_id, movie_id) VALUES (3, 1, 3);
+INSERT INTO movie_theatres (movie_theatres_id, theatre_id, movie_id) VALUES (4, 2, 4);
+INSERT INTO movie_theatres (movie_theatres_id, theatre_id, movie_id) VALUES (5, 2, 5);
+
+-- Audiotorium Dummy Data
+insert into auditoriums (auditorium_name, available_seats) values ('Livefish', 46);
+insert into auditoriums (auditorium_name, available_seats) values ('Tambee', 07);
+insert into auditoriums (auditorium_name, available_seats) values ('Digitube', 30);
+insert into auditoriums (auditorium_name, available_seats) values ('Plajo', 37);
+insert into auditoriums (auditorium_name, available_seats) values ('Blogtag', 14);
+insert into auditoriums (auditorium_name, available_seats) values ('Jabbertype', 95);
+insert into auditoriums (auditorium_name, available_seats) values ('Skyble', 60);
+insert into auditoriums (auditorium_name, available_seats) values ('Avavee', 58);
+insert into auditoriums (auditorium_name, available_seats) values ('Gabspot', 66);
+insert into auditoriums (auditorium_name, available_seats) values ('Linklinks', 15);
+
+-- Theatre Auditorium Dummy Data
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (0, 0, 1);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (1, 0, 2);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (2, 1, 3);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (3, 1, 4);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (4, 2, 5);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (5, 2, 6);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (6, 3, 7);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (7, 3, 8);
+INSERT INTO theatre_auditorium (theatre_auditorium_id, theatre_id, auditorium_id) VALUES (8, 4, 9);
+
+-- Showtimes Dummy Data
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (0, 1, '10:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (1, 1, '07:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (2, 1, '12:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (3, 1, '01:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (4, 1, '06:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (5, 2, '04:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (6, 2, '13:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (7, 3, '21:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (8, 3, '22:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (9, 3, '17:00:00');
+INSERT INTO showtimes (showtime_id, auditorium_id, start_time) VALUES (10, 4, '02:00:00');
 
 -- Movie_Ratings Table Dummy Data
 insert into movie_ratings (movie_id, rating_id) VALUES (1,1);
