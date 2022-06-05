@@ -84,15 +84,15 @@ values (10,'Powerful imagery, strong foundation setting', 'A strong first episod
 
 
 -- Ratings Table Dummy Data
-insert into ratings (rating_level) values (1);
-insert into ratings (rating_level) values (2);
-insert into ratings (rating_level) values (3);
-insert into ratings (rating_level) values (4);
-insert into ratings (rating_level) values (5);
-insert into ratings (rating_level) values (6);
-insert into ratings (rating_level) values (7);
-insert into ratings (rating_level) values (8);
-insert into ratings (rating_level) values (9);
+insert into ratings (rating_level) values (10);
+insert into ratings (rating_level) values (20);
+insert into ratings (rating_level) values (30);
+insert into ratings (rating_level) values (40);
+insert into ratings (rating_level) values (50);
+insert into ratings (rating_level) values (60);
+insert into ratings (rating_level) values (70);
+insert into ratings (rating_level) values (80);
+insert into ratings (rating_level) values (90);
 insert into ratings (rating_level) values (10);
 
 -- Users Table Dummy Data

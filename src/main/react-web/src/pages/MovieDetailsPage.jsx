@@ -6,25 +6,23 @@ import MovieExtraDetails from "../components/MovieExtraDetails/MovieExtraDetails
 import MovieInformation from "../components/MovieInformation/MovieInformation";
 
 function MovieDetailsPage() {
+  const { movieId } = useParams();
+  const [movieData, setMovieData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const {movieId} = useParams()
-  const [movieData, setMovieData] = useState(null)
-  const [isLoading, setIsLoading] = useState(true)
-
-  async function getMovieDetails(){
-    try{
-      const {data} = await axios.get(`/api/movie/${movieId}`)
-      setMovieData(data)
-      setIsLoading(false)
-    }
-    catch(ex){
-      setIsLoading(false)
+  async function getMovieDetails() {
+    try {
+      const { data } = await axios.get(`/api/movie/${movieId}`);
+      setMovieData(data);
+      setIsLoading(false);
+    } catch (ex) {
+      setIsLoading(false);
     }
   }
 
   useEffect(() => {
-    getMovieDetails()
-  }, [])
+    getMovieDetails();
+  }, []);
   return isLoading ? (
     <>
       <style>
@@ -34,7 +32,7 @@ function MovieDetailsPage() {
           }
           `}
       </style>
-    <Loading />
+      <Loading />
     </>
   ) : (
     <>
@@ -46,7 +44,7 @@ function MovieDetailsPage() {
           `}
       </style>
       <MovieInformation movieData={movieData} />
-      <MovieExtraDetails reviews={movieData.review} movieId={movieId}/>
+      <MovieExtraDetails reviews={movieData.review} movieId={movieId} />
     </>
   );
 }

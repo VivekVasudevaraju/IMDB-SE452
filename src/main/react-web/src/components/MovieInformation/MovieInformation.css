@@ -1,5 +1,9 @@
 .movie-description-container {
-    flex-grow: 1;
-    max-height: 350px;
-    overflow-y: auto;
+  flex-grow: 1;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.yourRating {
+  padding-right: 5px;
 }

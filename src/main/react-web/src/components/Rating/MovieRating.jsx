@@ -2,13 +2,14 @@ import React, { useState, useContext, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useResource } from "react-request-hook";
 import { Modal, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import StateContext from "../../store/Contexts";
 import { useOktaAuth } from "@okta/okta-react";
 import "./MovieRating.css";
 import { Rating } from "react-simple-star-rating";
 
-const MovieRating = ({ show, handleClose }) => {
-  const [rating, setRating] = useState({ ratingId: 0, ratingLevel: 0 });
+const MovieRating = ({ movie, myRating, show, handleClose }) => {
+  const [rating, setRating] = useState(myRating);
   const history = useHistory();
   const [saveRatingFailed, setSaveRatingFailed] = useState(false);
   const { authState } = useOktaAuth();
@@ -18,13 +19,13 @@ const MovieRating = ({ show, handleClose }) => {
   const [rate, storeRating] = useResource((ratingLevel) => ({
     url: "/api/rating/",
     method: "post",
-    data: { ratingLevel, user },
+    data: { ratingLevel, user, movie },
   }));
 
   const [updateRate, UpdateRating] = useResource((ratingId, ratingLevel) => ({
     url: `/api/rating/${ratingId}`,
     method: "put",
-    data: { ratingLevel, user },
+    data: { ratingLevel, user, movie },
   }));
 
   useEffect(() => {
@@ -36,6 +37,7 @@ const MovieRating = ({ show, handleClose }) => {
         console.log(rate.data);
         setRating(rate.data);
         handleClose();
+        history.push("/");
       }
     }
   }, [rate]);
@@ -53,6 +55,7 @@ const MovieRating = ({ show, handleClose }) => {
         console.log(updateRate.data);
         setRating(updateRate.data);
         handleClose();
+        history.push("/");
       }
     }
   }, [updateRate]);
@@ -69,6 +72,7 @@ const MovieRating = ({ show, handleClose }) => {
       history.push("/login");
       handleClose();
     } else {
+      console.log(movie);
       if (rating.ratingId == 0) {
         storeRating(rating.ratingLevel);
       } else {
@@ -77,6 +81,7 @@ const MovieRating = ({ show, handleClose }) => {
     }
   };
 
+  console.log(rating);
   return (
     <>
       <Modal show={show} onHide={handleClose} centered="true">
@@ -91,7 +96,7 @@ const MovieRating = ({ show, handleClose }) => {
           </Modal.Header>
           <Modal.Body>
             <Form.Label className="movie-name" htmlFor="movie-title">
-              <h4>Avatar: The Way of Water</h4>
+              <h4>{movie.movieTitle}</h4>
             </Form.Label>
             <div className="movie-rating">
               <Rating
