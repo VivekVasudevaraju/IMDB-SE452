@@ -1,141 +1,247 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import { Container, Form, InputGroup, FormControl } from "react-bootstrap";
-import Movie from "../Movies/Movie";
+import React, { useEffect, useContext, useState } from "react";
+import { Container } from "react-bootstrap";
+import { Rating } from "react-simple-star-rating";
+import StateContext from "../../store/Contexts";
 import "./BookingPage.css";
+import axios from "axios";
+import $ from "jquery";
 
 const BookingPage = () => {
-  return (
-    <Container className="col-lg-12 d-flex justify-content-between mt-3">
-      <div className="col-lg-4 mr-3">
-        <h4>Doctor Strange</h4>
-        <Movie
-          title="Doctor Strange"
-          imageUrl="https://m.media-amazon.com/images/M/MV5BNWM0ZGJlMzMtZmYwMi00NzI3LTgzMzMtNjMzNjliNDRmZmFlXkEyXkFqcGdeQXVyMTM1MTE1NDMx._V1_QL75_UX380_CR0,0,380,562_.jpg"
-          rating="7.4"
-        />
-      </div>
-      <div className="col-lg-4 mr-3">
-        <div className="theatre_location">
-          <h5>Theatre locations</h5>
-          <Form>
-            <div key="default-radio" className="mb-3">
-              <Form.Check
-                type="radio"
-                id="default-radio"
-                label="Check this switch"
-              />
+  const [data, setData] = useState([]);
+  const [show, setShow] = useState([]);
+  const [rating, setRating] = useState(0);
+  const [showTheatre, selectShowTheatre] = useState("");
+  const [showTime, selectShowTime] = useState("");
+  const [showDate, selectShowDate] = useState("");
+  const [showSeats, selectShowSeats] = useState(1);
+  const { state } = useContext(StateContext);
+  const { user } = state;
+  const currentDate = new Date();
+
+  console.log("User", user);
+
+  const updateTheatre = (e) => {
+    let theatre_name = e.target.defaultValue;
+    selectShowTheatre(theatre_name);
+    let shows = [];
+    data.movie_theatre.forEach((element) => {
+      if (element.theatreName == theatre_name) {
+        element.theatre_auditoriums.forEach((s) => {
+          shows = [...shows, ...s.showtimes];
+        });
+      }
+    });
+    setShow(shows);
+  };
+
+  const selectDate = (e) => {
+    selectShowDate(e.target.innerHTML);
+  };
+
+  const selectTime = (e) => {
+    selectShowTime(e.target.innerHTML);
+  };
+
+  const selectSeats = (e) => {
+    selectShowSeats(e.target.value);
+  };
+
+  const bookMovie = (e) => {
+    const ticket = {
+      theatre: showTheatre,
+      date: showDate,
+      time: showTime,
+      seats: showSeats,
+    };
+
+    console.log(ticket);
+  };
+
+  useEffect(() => {
+    async function getData() {
+      const response = await axios.get("/api/movie/1");
+      console.log(response.data);
+      setData(response.data);
+
+      let shows = [];
+      response.data.movie_theatre[0].theatre_auditoriums.forEach((element) => {
+        shows = [...shows, ...element.showtimes];
+      });
+      setShow(shows);
+
+      let rating = 0;
+      response.data.ratings.forEach((rat) => {
+        rating += rat.ratingLevel;
+      });
+      setRating(rating / response.data.ratings.length);
+    }
+    getData();
+  }, []);
+
+  if (data.length != 0) {
+    $(".btn-group > .btn").on("click", function () {
+      $(this).addClass("active").siblings().removeClass("active");
+    });
+
+    return (
+      <Container className="col-lg-12 d-flex justify-content-between mt-3">
+        <div className="col-lg-4 d-flex flex-column mr-3">
+          <div className="movie">
+            <h4>{data.movieTitle}</h4>
+            <div className="card" style={{ width: "75%" }}>
+              <img
+                className="card-img-top"
+                src={data.movieImg}
+                alt="Card image cap"
+              ></img>
+              <div className="card-body d-flex align-items-center">
+                <Rating
+                  ratingValue={rating}
+                  emptyColor="#f5c518"
+                  iconsCount={1}
+                  readonly="true"
+                />
+                <p
+                  className="card-text"
+                  style={{ marginLeft: "0.5rem", fontSize: "2rem" }}
+                >
+                  {rating}
+                </p>
+              </div>
             </div>
-          </Form>
-          <Form>
-            <div key="default-radio" className="mb-3">
-              <Form.Check
-                type="radio"
-                id="default-radio"
-                label="Check this switch"
-              />
-            </div>
-          </Form>
-          <Form>
-            <div key="default-radio" className="mb-3">
-              <Form.Check
-                type="radio"
-                id="default-radio"
-                label="Check this switch"
-              />
-            </div>
-          </Form>
-          <Form>
-            <div key="default-radio" className="mb-3">
-              <Form.Check
-                type="radio"
-                id="default-radio"
-                label="Check this switch"
-              />
-            </div>
-          </Form>
-        </div>
-        <h5>Dates</h5>
-        <div className="dates">
-          <div className="date">
-            <span>
-              <text className="num_date">12</text>
-            </span>
-            <span>
-              <text className="day">Mon</text>
-            </span>
           </div>
-          <div className="date">
-            <text className="num_date">13</text>
-            <text className="day">Tue</text>
-          </div>
-          <div className="date">
-            <text className="num_date">14</text>
-            <text className="day">Wed</text>
-          </div>
-          <div className="date">
-            <text className="num_date">15</text>
-            <text className="day">Thu</text>
-          </div>
-          <div className="date">
-            <text className="num_date">16</text>
-            <text className="day">Fri</text>
-          </div>
-        </div>
-        <br />
-        <br />
-        <h5>Showtimes</h5>
-        <div className="col-lg-12 d-flex flex-wrap mr-3">
-          <div className="showtime col-lg-3">
-            <span>
-              <text>10:10 AM</text>
-            </span>
-          </div>
-          <div className="showtime col-lg-3">
-            <span>
-              <text>12:00 PM</text>
-            </span>
-          </div>
-          <div className="showtime col-lg-3">
-            <span>
-              <text>12:00 PM</text>
-            </span>
-          </div>
-          <div className="showtime col-lg-3">
-            <span>
-              <text>12:00 PM</text>
-            </span>
-          </div>
-          <div className="showtime col-lg-3">
-            <span>
-              <text>12:00 PM</text>
-            </span>
-          </div>
-        </div>
-        <br />
-        <br />
-        <h5>Number of tickets</h5>
-        <InputGroup className="mb-3">
-          <InputGroup.Text id="inputGroup-sizing-default">
-            # of tickets
-          </InputGroup.Text>
-          <FormControl
-            aria-label="Default"
-            aria-describedby="inputGroup-sizing-default"
-          />
-        </InputGroup>
-      </div>
-      <div className="col-lg-4">
-        <div className="col-lg-12 ticket">
-          <h5 style={{ padding: "1rem 0 0 1rem;" }}>Ticket Booking</h5>
-          <div className="ticket_print">
-            <h6>Doctor Strange</h6>
+          <div className="theatre_location d-flex flex-column">
+            <h5 style={{ marginBottom: "0.5rem", marginTop: "1.5rem" }}>
+              Theatre locations
+            </h5>
+            {data.movie_theatre.map((element, i) => {
+              return (
+                <label key={i}>
+                  <input
+                    type="radio"
+                    id={element.theatreName}
+                    name="fav_language"
+                    value={element.theatreName}
+                    onChange={updateTheatre}
+                  ></input>
+                  {element.theatreName}
+                </label>
+              );
+            })}
           </div>
         </div>
-        <div className="col-lg-12"></div>
-      </div>
-    </Container>
-  );
+        <div className="col-lg-4 mr-3">
+          <h5>Dates</h5>
+          <div className="btn-toolbar" role="toolbar">
+            <div
+              className="btn-group d-flex flex-between"
+              role="group"
+              style={{ marginRight: "1rem", flexWrap: "wrap" }}
+              key="date"
+            >
+              {[...Array(5)].map((x, i) => (
+                <button
+                  type="button"
+                  className="btn btn-secondary select"
+                  onClick={selectDate}
+                >
+                  {new Date(
+                    currentDate.setDate(currentDate.getDate() + i)
+                  ).toLocaleDateString("en-us", {
+                    weekday: "short",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </button>
+              ))}
+            </div>
+          </div>
+          <br />
+          <h5>Showtimes</h5>
+          <div className="col-lg-12 d-flex flex-wrap mr-3">
+            <div className="btn-toolbar" role="toolbar">
+              <div
+                className="btn-group d-flex flex-between"
+                role="group"
+                style={{ marginRight: "1rem", flexWrap: "wrap" }}
+                key="show_time"
+              >
+                {show.map((element, i) => {
+                  return (
+                    <button
+                      type="button"
+                      className="btn btn-secondary select"
+                      onClick={selectTime}
+                    >
+                      {new Date(
+                        "February 04, 2021 " + element.startTime
+                      ).toLocaleString("en-US", {
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true,
+                      })}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <br />
+          <h5>Number of tickets</h5>
+          <input
+            min="1"
+            max="10"
+            defaultValue="1"
+            type="number"
+            placeholder="# of tickets"
+            onChange={selectSeats}
+          ></input>
+        </div>
+        <div className="col-lg-4">
+          <div className="col-lg-12 ticket">
+            <h5 style={{ padding: "1rem 0 0 1rem", fontWeight: "bold" }}>
+              Ticket Booking
+            </h5>
+            <div className="ticket_print">
+              <h6 className="print_info">{data.movieTitle}</h6>
+              <div className="d-flex justify-content-between">
+                <div className=" d-flex flex-column">
+                  <p className="print_title">Cinema</p>
+                  <p className="print_info">{showTheatre}</p>
+                  <p className="print_title">Time</p>
+                  <p className="print_info">{showTime}</p>
+                </div>
+                <div className=" d-flex flex-column">
+                  <p className="print_title">Date</p>
+                  <p className="print_info">{showDate}</p>
+                  <p className="print_title">No. of seats</p>
+                  <p className="print_info">{showSeats}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-lg-12 checkout">
+            <h5 style={{ padding: "1rem 0 0 1rem", fontWeight: "bold" }}>
+              Checkout
+            </h5>
+            <div className="total d-flex justify-content-between">
+              <p>Total</p>
+              <p>${showSeats * 10}</p>
+            </div>
+            <button
+              type="button"
+              className="btn btn-success booked"
+              onClick={bookMovie}
+            >
+              Watch Movie
+            </button>
+          </div>
+        </div>
+      </Container>
+    );
+  } else {
+    return <div>Loading...</div>;
+  }
 };
 
 export default BookingPage;
