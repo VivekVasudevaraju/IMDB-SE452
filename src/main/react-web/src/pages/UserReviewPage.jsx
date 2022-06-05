@@ -94,6 +94,7 @@ function UserReviewPage() {
                 <MovieReview
                   reviewTitle={myReviewTitle}
                   reviewData={myReviewData}
+                  movieIdParam = {theMovieId}
                 />
 
                 {/*<MovieReview*/}
