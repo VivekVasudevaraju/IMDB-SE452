@@ -11,10 +11,8 @@ import {
 import { BsSearch } from "react-icons/bs";
 import { Link } from "react-router-dom";
 import UserCard from "../components/User/UserCard";
-import Rating from "../components/Rating/MovieRating";
 
 const HeaderBar = () => {
-  const [showRating, setShowRating] = useState(false);
   return (
     <Navbar bg="dark" expand="lg">
       <Container fluid>
@@ -44,13 +42,6 @@ const HeaderBar = () => {
           <Nav.Link className="link" href="#tv_shows">
             TV Shows
           </Nav.Link>
-          <Nav.Link className="link" href="#liked">
-            Liked
-          </Nav.Link>
-          <Button variant="dark" onClick={() => setShowRating(true)}>
-            Rate
-          </Button>
-          <Rating show={showRating} handleClose={() => setShowRating(false)} />
         </Navbar.Collapse>
         <Nav
           className="me-auto my-2 my-lg-0"
@@ -58,9 +49,6 @@ const HeaderBar = () => {
           navbarScroll
         >
           <NavDropdown title="User" id="navbarScrollingDropdown">
-            <NavDropdown.Item>
-              <Link to={"/userreviews"}> user review </Link>
-            </NavDropdown.Item>
             <NavDropdown.Item href="#profile">Profile</NavDropdown.Item>
             <NavDropdown.Item href="#setting">Settings</NavDropdown.Item>
             <NavDropdown.Divider />
