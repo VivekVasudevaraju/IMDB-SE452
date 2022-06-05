@@ -1,51 +1,99 @@
-.dates {
-    display: flex;
-    margin-top: 1rem;
-    color: black;
+.card:hover {
+  transform: none;
+  transition: none;
 }
 
-.date {
-    width: 10rem;
-    height: 3.75rem;
-    background-color: #fcfff7;
-    margin-right: 1.5rem;
-    border-radius: 15%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    font-weight: bold;
-    font: 1.5rem;
+label {
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.5rem 1rem 0.5rem 0;
 }
 
-.day {
-    font-weight: normal !important;
-    font-size: 1rem !important;
+label > input {
+  margin-right: 0.5rem;
 }
 
-.showtime {
-    width: 7.3rem;
-    height: 2rem;
-    background-color: #fcfff7;
-    margin-right: 1.5rem;
-    margin-top: 1rem;
-    border-radius: 5%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    color: black;
-    font-weight: bold;
-    font: 1.5rem;
+.select {
+  background-color: #fcfff7;
+  color: black;
+  border: none;
+  min-width: 120px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  max-width: 100px;
+  border-radius: 0.25rem !important;
+  margin-right: 1rem;
+}
+
+.select:hover {
+  background-color: #fcfff7;
+  color: black;
+  transform: scale(1.05);
+  transition: transform 0.1s ease;
+}
+
+.active {
+  background-color: #f5c518 !important;
+  color: black !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .ticket {
-    color: black;
-    background-color: #f5c518;
+  color: black;
+  background-color: #f5c518;
+  padding: 0.1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 5rem;
 }
 
 .ticket_print {
-    background-color: #fcfff7;
-    margin: 3rem;
-    border-radius: 8%;
+  min-width: 75%;
+  background-color: #fcfff7;
+  margin: 1rem 2rem 2rem 2rem;
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.2);
+}
+
+.print_title {
+  margin: 0;
+  font-weight: 300;
+}
+
+.print_info {
+  font-weight: 600;
+}
+
+.checkout {
+  margin-left: 5rem;
+  background-color: #636c64;
+  padding: 0 0 0.25rem 0.25rem;
+  margin-left: 5rem;
+}
+
+.total {
+  margin: 0 1rem 0 1rem;
+  background-color: #f5c518;
+  color: black;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.total > p {
+  margin: 0;
+}
+
+.booked {
+  width: 93%;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  font-weight: bold;
+  font-size: 1.15rem;
 }

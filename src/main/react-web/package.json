@@ -13,6 +13,7 @@
     "@okta/okta-signin-widget": "^6.3.3",
     "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
+    "jquery": "^3.6.0",
     "react": "^18.0.0",
     "react-bootstrap": "^2.4.0",
     "react-dom": "^18.0.0",
