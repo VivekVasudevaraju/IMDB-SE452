@@ -1,6 +1,9 @@
 package com.group5.IMDB.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -49,5 +52,13 @@ public class Review implements Serializable {
                     @JoinColumn(name = "user_name", referencedColumnName = "user_name" ,unique = true)
             })
     private User user;
+
+    @JsonBackReference
+    @ManyToOne(fetch = FetchType.EAGER, optional = true)
+    @JoinTable(name = "movie_userreview", joinColumns = @JoinColumn(name = "review_id", referencedColumnName = "review_id", nullable = true), inverseJoinColumns = @JoinColumn(name = "movie_id", referencedColumnName = "movie_id", nullable = true))
+    @JsonIgnoreProperties("reviews")
+    @ToString.Exclude
+    private Movie movie;
+
 
 }

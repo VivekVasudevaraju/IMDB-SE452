@@ -21,13 +21,14 @@ function UserReviewPage() {
     console.log(theMovieId)
     console.log(myMovieData)
     }, [])
+    const movieDta = myMovieData.movieId;
 
     const  sendDataToAPI = async (e) => {
         e.preventDefault();
 
         try{
             console.log(myReviewTitle,myReviewData)
-            await axios.post(apiURL, {reviewTitle:myReviewTitle,reviewText:myReviewData});
+            await axios.post(apiURL, {reviewTitle:myReviewTitle,reviewText:myReviewData,movie:{movieId:movieDta} });
             setMyReviewData(myReviewData + " ");
         }catch (error){
             console.log(error)
