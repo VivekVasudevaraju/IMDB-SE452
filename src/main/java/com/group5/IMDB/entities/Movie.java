@@ -1,6 +1,7 @@
 package com.group5.IMDB.entities;
 
 import lombok.Data;
+import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -46,5 +47,23 @@ public class Movie implements Serializable {
                                         @JoinColumn(name = "theatre_id", referencedColumnName = "theatre_id", unique = true)
                         })
         private List<Theatre> movie_theatre;
+
+        @OneToMany
+        @JoinTable(name = "movie_awards", joinColumns = {
+                @JoinColumn(name = "movie_id", referencedColumnName = "movie_id")},
+                inverseJoinColumns = {
+                @JoinColumn(name = "award_id", referencedColumnName = "award_id", unique = true)
+                })
+        @ToString.Exclude
+        private List<Award> awards;
+
+        @OneToMany
+        @JoinTable(name = "movie_actors", joinColumns = {
+                @JoinColumn(name = "movie_id", referencedColumnName = "movie_id")},
+                inverseJoinColumns = {
+                        @JoinColumn(name = "actor_id", referencedColumnName = "actor_id", unique = true)
+                })
+        @ToString.Exclude
+        private List<Actor> actors;
 
 }

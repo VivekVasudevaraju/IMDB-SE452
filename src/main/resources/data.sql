@@ -248,3 +248,20 @@ insert into movie_ratings (movie_id, rating_id) VALUES (7,7);
 insert into movie_ratings (movie_id, rating_id) VALUES (8,8);
 insert into movie_ratings (movie_id, rating_id) VALUES (2,9);
 insert into movie_ratings (movie_id, rating_id) VALUES (3,10);
+
+-- Award Table Dummy Data
+INSERT INTO awards (award_id, award_title) VALUES (1, 'MTV Award for Best Actor');
+INSERT INTO awards (award_id, award_title) VALUES (2, 'MTV Award for Best Actress');
+INSERT INTO awards (award_id, award_title) VALUES (3, 'MTV Award for Best Villain');
+
+-- Movie Awards Dummy Data
+INSERT INTO movie_awards (movie_awards_id, award_id, movie_id) VALUES (1,1,1);
+INSERT INTO movie_awards (movie_awards_id, award_id, movie_id) VALUES (2,2,2);
+INSERT INTO movie_awards (movie_awards_id, award_id, movie_id) VALUES (3,3,3);
+
+-- Actor Table Dummy Data
+INSERT INTO actors (actor_id, actor_name, actor_character, actor_image) VALUES (1, 'Benedict Cumberbatch', 'Dr. Stephen Strange', '');
+
+-- Movie Actors Dummy Data
+INSERT INTO movie_actors (movie_actors_id, actor_id, movie_id) VALUES (1,1,1);
+
