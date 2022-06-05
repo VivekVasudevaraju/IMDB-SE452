@@ -1,7 +1,5 @@
 package com.group5.IMDB.entities;
 
- 
-
 import lombok.Data;
 import lombok.ToString;
 

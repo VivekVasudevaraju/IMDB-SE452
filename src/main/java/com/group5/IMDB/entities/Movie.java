@@ -2,13 +2,24 @@ package com.group5.IMDB.entities;
 
 import lombok.Data;
 
-import javax.persistence.*;
+
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
 
 @Entity
 @Table(name = "movies")
 @Data
-public class Movie {
+public class Movie implements Serializable {
 
     @Id
     @GeneratedValue
@@ -35,6 +46,8 @@ public class Movie {
                     @JoinColumn(name = "review_id", referencedColumnName = "review_id" ,unique = true)
             })
     private List<Review> review;
+    @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
+	private List<Rating> ratings = new ArrayList<>();
 
 }
 

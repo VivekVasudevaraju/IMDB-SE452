@@ -3,6 +3,9 @@ DROP TABLE IF EXISTS showtimes;
 DROP TABLE IF EXISTS movie_cast;
 DROP TABLE IF EXISTS theatre_movie;
 DROP TABLE IF EXISTS movie_categories;
+DROP TABLE IF EXISTS username_userreview;
+DROP TABLE IF EXISTS movie_userreview;
+DROP TABLE IF EXISTS movie_ratings;
 DROP TABLE IF EXISTS movies;
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS movie_genres;
@@ -110,6 +113,16 @@ CREATE TABLE rating_user (
     PRIMARY KEY (rating_user_id),
     FOREIGN KEY (rating_id) REFERENCES ratings(rating_id),
     FOREIGN KEY (user_name) REFERENCES users(user_name)
+);
+
+CREATE TABLE movie_ratings (
+    movie_rating_id SERIAL,
+    movie_id BIGINT,
+    rating_id BIGINT,
+
+    PRIMARY KEY (movie_rating_id),
+    FOREIGN KEY (movie_id) REFERENCES movies(movie_id),
+    FOREIGN KEY (rating_id) REFERENCES ratings(rating_id)
 );
 
 CREATE TABLE username_userreview (
