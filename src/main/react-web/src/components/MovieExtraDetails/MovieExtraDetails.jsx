@@ -5,12 +5,12 @@ import './MovieExtraDetails.css'
 import AwardSection from "./AwardSection";
 import CastSection from "./CastSection";
 
-function MovieExtraDetails() {
+function MovieExtraDetails({reviews}) {
   return (
     <Row className="mt-5">
       <Col lg={6}>
         <Row>
-          <ReviewSection />
+          <ReviewSection reviews={reviews}/>
           <AwardSection />
         </Row>
       </Col>
