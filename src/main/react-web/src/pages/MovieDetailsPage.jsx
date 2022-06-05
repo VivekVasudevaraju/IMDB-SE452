@@ -46,7 +46,7 @@ function MovieDetailsPage() {
           `}
       </style>
       <MovieInformation movieData={movieData} />
-      <MovieExtraDetails reviews={movieData.review}/>
+      <MovieExtraDetails reviews={movieData.review} movieId={movieId}/>
     </>
   );
 }

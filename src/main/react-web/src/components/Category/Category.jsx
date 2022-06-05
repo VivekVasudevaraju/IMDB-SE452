@@ -15,6 +15,7 @@ const Category = ({ title, movies }) => {
               title={movie.movieTitle}
               imageUrl={movie.movieImg}
               rating="7.4"
+              movieId={movie.movieId}
             />
           </Col>
         ))}
