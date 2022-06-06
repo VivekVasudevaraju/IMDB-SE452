@@ -13,17 +13,11 @@ import java.util.List;
 @Data
 public class Genre {
 
-    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    @Column(name = "genre_id")
-      private Long id;
 
-//
-//    @Column(name = "genre_name")
-      private String name;
+    private Long genreId;
 
-//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "genre" , cascade = CascadeType.ALL)
-//    @JsonIgnoreProperties("genres")
-    private List<Movie_Genre> movie_genres = new ArrayList<>();
+    private String name;
+
+    private Long movieId;
 
 }
