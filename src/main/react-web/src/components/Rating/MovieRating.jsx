@@ -19,13 +19,13 @@ const MovieRating = ({ movie, myRating, show, handleClose }) => {
   const [rate, storeRating] = useResource((ratingLevel) => ({
     url: "/api/rating/",
     method: "post",
-    data: { ratingLevel, user, movie },
+    data: { ratingLevel, user, movie: { movieId: movie.movieId } },
   }));
 
   const [updateRate, UpdateRating] = useResource((ratingId, ratingLevel) => ({
     url: `/api/rating/${ratingId}`,
     method: "put",
-    data: { ratingLevel, user, movie },
+    data: { ratingLevel, user, movie: { movieId: movie.movieId } },
   }));
 
   useEffect(() => {

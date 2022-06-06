@@ -44,7 +44,12 @@ function MovieDetailsPage() {
           `}
       </style>
       <MovieInformation movieData={movieData} />
-      <MovieExtraDetails reviews={movieData.review} awards={movieData.awards} movieId={movieId} cast={movieData.actors}/>
+      <MovieExtraDetails
+        reviews={movieData.reviews}
+        awards={movieData.awards}
+        movieId={movieId}
+        cast={movieData.actors}
+      />
     </>
   );
 }
