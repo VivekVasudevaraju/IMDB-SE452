@@ -28,14 +28,14 @@ public class Rating implements Serializable {
 
     @Id
     @SequenceGenerator(
-        name = "sequence",
-        sequenceName = "sequence",
+        name = "sequence_2",
+        sequenceName = "sequence_2",
         allocationSize = 1,
         initialValue = 11
     )
     @GeneratedValue(
         strategy = GenerationType.AUTO,
-        generator = "sequence"
+        generator = "sequence_2"
     )
     @Column(name = "rating_id", columnDefinition = "bigint")
     private Long ratingId;
