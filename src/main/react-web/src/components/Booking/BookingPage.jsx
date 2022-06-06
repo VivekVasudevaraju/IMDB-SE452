@@ -1,7 +1,8 @@
-import React, { useEffect, useContext, useState } from "react";
+import React, { useEffect, useContext, useState, useResource } from "react";
 import { Container } from "react-bootstrap";
 import { Rating } from "react-simple-star-rating";
 import StateContext from "../../store/Contexts";
+import { useParams } from "react-router-dom";
 import "./BookingPage.css";
 import axios from "axios";
 import $ from "jquery";
@@ -16,9 +17,10 @@ const BookingPage = () => {
   const [showSeats, selectShowSeats] = useState(1);
   const { state } = useContext(StateContext);
   const { user } = state;
+  const { bookingId } = useParams();
   const currentDate = new Date();
 
-  console.log("User", user);
+  // console.log("User", user);
 
   const updateTheatre = (e) => {
     let theatre_name = e.target.defaultValue;
@@ -46,20 +48,34 @@ const BookingPage = () => {
     selectShowSeats(e.target.value);
   };
 
-  const bookMovie = (e) => {
+  const bookMovie = async (e) => {
     const ticket = {
       theatre: showTheatre,
       date: showDate,
       time: showTime,
       seats: showSeats,
+      userName: user.userName,
     };
 
     console.log(ticket);
+
+    try {
+      await axios.post("/api/book", ticket);
+      alert("Movie Booked!");
+    } catch (error) {
+      console.log(error);
+    }
+
+    // const [tickets, storeTickets] = useResource((tix) => ({
+    //   url: "/api/rating/",
+    //   method: "post",
+    //   data: ticket,
+    // }));
   };
 
   useEffect(() => {
     async function getData() {
-      const response = await axios.get("/api/movie/1");
+      const response = await axios.get(`/api/movie/${bookingId}`);
       console.log(response.data);
       setData(response.data);
 

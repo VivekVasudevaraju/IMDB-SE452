@@ -8,17 +8,13 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 public class Ticket {
 
-    private Long ticketId;
+    private String theatre;
+
+    private String showTime;
+
+    private String time;
+
+    private String seats;
 
     private String userName;
-
-    private Long movieId;
-
-    private Long threatreId;
-
-    private Long auditoriumId;
-
-    private Long showtimeId;
-
-    private int seatsBooked;
 }

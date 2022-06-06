@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.group5.IMDB.entities.Ticket;
 import com.group5.IMDB.services.TicketService;
+import org.springframework.http.HttpStatus;
 
 import lombok.extern.java.Log;
 
@@ -24,9 +25,11 @@ public class TicketController {
     private TicketService service;
 
     @PostMapping
-    public ResponseEntity createRating(@RequestBody Ticket ticket) throws URISyntaxException {
+    public ResponseEntity createTicket(@RequestBody Ticket ticket) throws URISyntaxException {
         service.save(ticket);
-        return ResponseEntity.created(new URI("/rating/" + ticket.getThreatreId())).body(ticket);
+        return new ResponseEntity<>(ticket, HttpStatus.OK);
+        // return ResponseEntity.created(new URI("/ticket/" +
+        // ticket.getTheatre())).body(ticket);
     }
-    
+
 }
