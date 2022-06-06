@@ -1,14 +1,14 @@
-import React, {useState,useEffect} from "react"
+import React, {useState,useEffect,} from "react"
 import MovieReview from "../components/Review/MovieReview";
 import axios from "axios";
-import {useParams} from "react-router-dom";
+import {useParams, useHistory} from "react-router-dom";
 
 function UserReviewPage() {
     const {theMovieId} = useParams()
     const apiURL = "/api/review/add/"
     const [myReviewTitle,setMyReviewTitle] = useState("")
     const [myReviewData,setMyReviewData] = useState("")
-
+    const history = useHistory();
     const [myMovieData,setMovieData] = useState( [])
 
 
@@ -30,6 +30,8 @@ function UserReviewPage() {
             console.log(myReviewTitle,myReviewData)
             await axios.post(apiURL, {reviewTitle:myReviewTitle,reviewText:myReviewData,movie:{movieId:movieDta} });
             setMyReviewData(myReviewData + " ");
+            history.push(`/movie/${theMovieId}`)
+
         }catch (error){
             console.log(error)
         }
