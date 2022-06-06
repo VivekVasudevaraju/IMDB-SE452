@@ -3,7 +3,6 @@ package com.group5.IMDB.entities;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -34,13 +33,6 @@ public class Movie implements Serializable {
 
         @Column(name = "movie_img", columnDefinition = "text", nullable = false)
         private String movieImg;
-
-        @OneToMany // (fetch = FetchType.EAGER)
-        @JoinTable(name = "movie_userreview", joinColumns = {
-                        @JoinColumn(name = "movie_id", referencedColumnName = "movie_id") }, inverseJoinColumns = {
-                                        @JoinColumn(name = "review_id", referencedColumnName = "review_id", unique = true)
-                        })
-        private List<Review> review;
 
         @JsonManagedReference
         @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
