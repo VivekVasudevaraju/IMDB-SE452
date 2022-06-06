@@ -167,7 +167,7 @@ insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (9, 
 
 insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (10, 7, 9);
 
-insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (11, 8, 10);
+-- insert into movie_userreview(movie_userreview_id,movie_id,review_id) values (11, 8, 10);
 
 
 
