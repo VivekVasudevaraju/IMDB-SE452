@@ -10,7 +10,7 @@ public class Ticket {
 
     private String theatre;
 
-    private String showTime;
+    private String date;
 
     private String time;
 

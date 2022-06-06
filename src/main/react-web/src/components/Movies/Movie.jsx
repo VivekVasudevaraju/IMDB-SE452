@@ -12,13 +12,17 @@ const Movie = ({ movieData }) => {
     let ratingTotal = 0;
     const { ratings } = movieData;
 
-    ratings.forEach((rating) => {
-      const { ratingLevel } = rating;
-      ratingTotal += ratingLevel;
-    });
+    if (ratings.length > 0) {
+      ratings.forEach((rating) => {
+        const { ratingLevel } = rating;
+        ratingTotal += ratingLevel;
+      });
 
-    const avgRating = ratingTotal / ratings.length / 10;
-    return Math.round(avgRating * 10) / 10;
+      const avgRating = ratingTotal / ratings.length / 10;
+      return Math.round(avgRating * 10) / 10;
+    } else {
+      return 0;
+    }
   }
 
   return (
