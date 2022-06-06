@@ -51,7 +51,7 @@ function App() {
             <HeaderBar />
             <Route path="/movie/:movieId" component={MovieDetailsPage} />
             {/* <SecureRoute path="/booking" component={Booking} /> */}
-            <Route path="/booking" component={BookingPage} />{" "}
+            <Route path="/booking/:bookingId" component={BookingPage} />{" "}
             {/* <!-- SecureRoute /--> */}
             <Route path="/userreviews/:theMovieId" component={UserReviewPage} />
             {/*<Route path="/userreviews" component={UserReviewPage} />*/}

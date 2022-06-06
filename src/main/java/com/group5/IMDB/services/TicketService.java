@@ -18,13 +18,8 @@ public class TicketService {
         return repo.findAll();
     }
 
-    public List<Ticket> find(long id) {
-        return repo.findByMovieId(id);
-    }
-
     public void save(Ticket ticket) {
         repo.save(ticket);
     }
 
 }
-
