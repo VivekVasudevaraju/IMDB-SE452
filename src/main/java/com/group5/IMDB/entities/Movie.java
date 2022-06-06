@@ -62,16 +62,10 @@ public class Movie implements Serializable {
         @ToString.Exclude
         private List<Award> awards;
 
-        @OneToMany
-        @JoinTable(name = "movie_actors", joinColumns = {
-                @JoinColumn(name = "movie_id", referencedColumnName = "movie_id")},
-                inverseJoinColumns = {
-                        @JoinColumn(name = "actor_id", referencedColumnName = "actor_id", unique = true)
-                })
-        @ToString.Exclude
+        //private List<Long> actorIds;
+
+        @Transient
         private List<Actor> actors;
-
-
 
         @JsonManagedReference
         @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
