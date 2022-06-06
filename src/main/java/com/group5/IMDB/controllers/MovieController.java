@@ -1,7 +1,5 @@
 package com.group5.IMDB.controllers;
 
-
-import com.group5.IMDB.entities.Movie;
 import com.group5.IMDB.services.MovieService;
 import lombok.extern.java.Log;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,4 +21,5 @@ public class MovieController {
     public ResponseEntity<Object> getMovieDetails(@PathVariable("movie_id") Long movieId){
         return movieService.getMovieDetails(movieId);
     }
+
 }

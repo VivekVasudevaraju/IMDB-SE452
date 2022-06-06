@@ -3,24 +3,20 @@ package com.group5.IMDB.entities;
 
 import lombok.Data;
 
-import javax.persistence.*;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-@Entity
-@Table(name = "actors")
+@Document
 @Data
 public class Actor {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "actor_id")
-    private Long id;
+    private Long actorId;
 
-    @Column(name = "actor_name")
     private String actorName;
 
-    @Column(name = "actor_character")
     private String actorCharacter;
 
-    @Column(name = "actor_image")
     private String actorImage;
+
+    private Long movieId;
 }
+
