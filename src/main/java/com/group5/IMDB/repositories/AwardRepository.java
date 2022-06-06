@@ -1,7 +1,10 @@
 package com.group5.IMDB.repositories;
 
 import com.group5.IMDB.entities.Award;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
-public interface AwardRepository extends JpaRepository<Award, Long> {
+import java.util.List;
+
+public interface AwardRepository extends MongoRepository<Award, Long> {
+    List<Award> findByMovieId(Long movieId);
 }
