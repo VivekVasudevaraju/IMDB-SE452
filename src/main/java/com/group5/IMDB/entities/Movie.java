@@ -57,6 +57,10 @@ public class Movie implements Serializable {
         private List<Award> awards = new ArrayList<>();
 
         @Transient
+        private List<Genre> genres = new ArrayList<>();
+
+
+        @Transient
         private List<Actor> actors = new ArrayList<>();
 
         @JsonManagedReference

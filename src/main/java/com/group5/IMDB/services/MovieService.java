@@ -2,6 +2,7 @@ package com.group5.IMDB.services;
 
 import com.group5.IMDB.entities.Actor;
 import com.group5.IMDB.entities.Award;
+import com.group5.IMDB.entities.Genre;
 import com.group5.IMDB.entities.Movie;
 import com.group5.IMDB.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,14 +25,18 @@ public class MovieService {
     @Autowired
     private AwardService awardService;
 
+    @Autowired
+    private GenreService genreService;
     public ResponseEntity<Object> getMovieDetails(Long movieId){
         try {
             Optional<Movie> movie = movieRepository.findById(movieId);
             Long id = movie.get().getMovieId();
             List<Actor> actorDetails = actorService.find(id);
             List<Award> awardDetails = awardService.find(id);
+            List<Genre> genresDetails =  genreService.find(id);
             movie.get().setActors(actorDetails);
             movie.get().setAwards(awardDetails);
+            movie.get().setGenres(genresDetails);
             if(movie.isEmpty()){
                 return new ResponseEntity<>(new Movie(), HttpStatus.OK);
             }

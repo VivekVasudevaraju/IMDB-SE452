@@ -51,9 +51,9 @@ function MovieInformation({ movieData }) {
             <h2>{movieData.movieTitle}</h2>
             <Row className="align-items-center">
               <Col lg={6} className="overflow-auto">
-                <small className="me-3">Action</small>
-                <small className="me-3">Comedy</small>
-                <small>Drama</small>
+                {movieData.genres.map(genre=> (
+                    <small className="me-3">{genre.name}</small>
+                ))}
               </Col>
               <Col lg={6}>
                 <Rating
