@@ -140,7 +140,7 @@ CREATE TABLE username_userreview (
 
 CREATE TABLE movie_userreview (
                                      movie_userreview_id SERIAL,
-                                     movie_id SERIAL,
+                                     movie_id BIGINT,
                                      review_id BIGINT,
                                      PRIMARY KEY (movie_userreview_id),
                                      FOREIGN KEY (review_id) REFERENCES reviews(review_id),
