@@ -1,4 +1,4 @@
-import React, {useState,useEffect,} from "react"
+import React, {useState,useEffect} from "react"
 import MovieReview from "../components/Review/MovieReview";
 import axios from "axios";
 import {useParams, useHistory} from "react-router-dom";
