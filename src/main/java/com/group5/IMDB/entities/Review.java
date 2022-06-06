@@ -23,7 +23,7 @@ public class Review implements Serializable {
             initialValue = 11
     )
     @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
+            strategy = GenerationType.AUTO,
             generator = "sequence_2"
     )
     @Column(name = "review_id", columnDefinition = "bigint",nullable = true)
