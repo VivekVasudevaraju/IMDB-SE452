@@ -42,6 +42,7 @@ public class Movie implements Serializable {
                         })
         private List<Review> review;
 
+        @JsonManagedReference
         @OneToMany(mappedBy = "movie", fetch = FetchType.EAGER)
         private List<Rating> ratings = new ArrayList<>();
 

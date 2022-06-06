@@ -68,7 +68,7 @@ const HomePage = () => {
               <Category
                 key={category.categoryId}
                 title={category.category}
-                movies={category.movies}
+                movies={category.movieDetails}
               />
             );
           }

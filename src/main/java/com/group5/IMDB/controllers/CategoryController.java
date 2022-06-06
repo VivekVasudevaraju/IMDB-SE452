@@ -2,11 +2,14 @@ package com.group5.IMDB.controllers;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 
 import com.group5.IMDB.entities.Category;
+import com.group5.IMDB.entities.Movie;
 import com.group5.IMDB.services.CategoryService;
+import com.group5.IMDB.services.MovieService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -29,17 +32,28 @@ public class CategoryController {
     @Autowired
     private CategoryService service;
 
+    @Autowired
+    private MovieService movieService;
+
     @GetMapping("/")
     public List<Category> getAllCategories() {
-        List<Category> category = service.findAll();
-        log.log(Level.SEVERE, category.toString());
-        return category;
+        List<Category> categories = service.findAll();
+        categories.forEach(category -> {
+            List<Movie> movieDetails = new ArrayList<>();
+            category.getMovies().forEach(movie -> {
+                Movie movieData = movieService.find(movie);
+                movieDetails.add(movieData);
+            });
+            category.setMovieDetails(movieDetails);
+        });
+        log.log(Level.SEVERE, categories.toString());
+        return categories;
     }
 
     @GetMapping("/{categoryId}")
     public Category read(@PathVariable("categoryId") Long categoryId) {
-        Category category = service.find(categoryId);     
-        log.log(Level.SEVERE, category.toString());
+        Category category = service.findByCategoryId(categoryId);
+        log.log(Level.INFO, category.toString());
         return category;
     }
 

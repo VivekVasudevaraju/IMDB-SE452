@@ -18,6 +18,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -50,6 +51,7 @@ public class Rating implements Serializable {
     })
     private User user;
 
+    @JsonBackReference
     @ManyToOne(fetch = FetchType.EAGER, optional = true)
 	@JoinTable(name = "Movie_Ratings", joinColumns = @JoinColumn(name = "rating_id", referencedColumnName = "rating_id", nullable = true), inverseJoinColumns = @JoinColumn(name = "movie_id", referencedColumnName = "movie_id", nullable = true))
 	@JsonIgnoreProperties("ratings")

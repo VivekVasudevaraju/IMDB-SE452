@@ -27,4 +27,8 @@ public class MovieService {
         }
     }
 
+    public Movie find(long id) {
+        return movieRepository.findById(id).orElse(new Movie());
+    }
+
 }

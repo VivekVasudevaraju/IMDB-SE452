@@ -22,8 +22,8 @@ public class CategoryService {
         return repo.findById(id).orElse(new Category());
     }
 
-    public Category findByCategory(String category) {
-        return repo.findByCategory(category);
+    public Category findByCategoryId(long categoryId) {
+        return repo.findByCategoryId(categoryId);
     }
 
     public void save(Category category) {
