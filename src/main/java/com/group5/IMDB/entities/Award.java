@@ -1,19 +1,14 @@
 package com.group5.IMDB.entities;
 
-
 import lombok.Data;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+import javax.persistence.Id;
 
-@Entity
-@Table(name = "awards")
+@Document
 @Data
 public class Award {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "award_id")
-    private Long id;
-
-    @Column(name = "award_title")
+    private Long awardId;
     private String awardTitle;
+    private Long movieId;
 }
